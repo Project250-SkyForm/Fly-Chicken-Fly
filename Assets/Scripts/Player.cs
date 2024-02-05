@@ -109,7 +109,8 @@ public class Player : AnimatedEntity
                     Speed = 0;
                     falling = false;
                     current_platform = platform;    //record the information of the collider maybe
-                    Debug.Log("Depature on playform");
+                    DataManager.Instance.UpdateHighestScore((int)transform.position.y);
+                    //Debug.Log("Depature on playform");
                 }
                 else if (Speed>=0){         //going up and hit the platform above
                     Speed = 0;   
@@ -117,7 +118,7 @@ public class Player : AnimatedEntity
                     falling = true;
                     Interrupt (interruptAnimationCycle);
                     lump -= 1;
-                    Debug.Log("hit the platform");
+                    //Debug.Log("hit the platform");
                 }
 
             }

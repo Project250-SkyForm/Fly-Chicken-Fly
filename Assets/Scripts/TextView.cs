@@ -28,8 +28,6 @@ public class TextView : MonoBehaviour
     void Update()
     {
         meter = camera.transform.position.y;
-        text.text = "Altitude:" + meter;    //convect the float to string, 
-        //!!!!! do not add any space or _ these kinds of character 
-
+        text.text = "Altitude:" + meter;    
     }
 }
