@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : AnimatedEntity
 {   
+
     private const float Gravity = -9.81f;
     private const float camera_const = 5;
     private const float standing_const = 1.0f;
@@ -16,8 +17,6 @@ public class Player : AnimatedEntity
     private AudioSource audioSource;
     private Platform current_platform;
     private SpriteRenderer spriteRenderer;
-    private int lump = 3;
-
 
     public List<Sprite> interruptAnimationCycle;
     public BackgroundScroll background;
@@ -78,7 +77,7 @@ public class Player : AnimatedEntity
         Vector3 cameraPosition = Camera.main.transform.position;    //determine whether the camera is too high to see the player
         if (cameraPosition.y > transform.position.y + camera_const){    //stop the motions of both the background and camera and left & right rect
             Interrupt (interruptAnimationCycle);
-            lump -= 1;
+            EventController.Instance.AddLump();
             Vector3 newPos = Camera.main.transform.position;
             newPos.y = transform.position.y + camera_const;
             Camera.main.transform.position = newPos;
@@ -117,7 +116,7 @@ public class Player : AnimatedEntity
                     current_platform = platform;
                     falling = true;
                     Interrupt (interruptAnimationCycle);
-                    lump -= 1;
+                    EventController.Instance.AddLump();
                     //Debug.Log("hit the platform");
                 }
 

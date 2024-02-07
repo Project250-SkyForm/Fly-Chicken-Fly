@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // Import the UI namespace, this is used to find out the text component
 
-public class TextView : MonoBehaviour
+public class AltitudeView : MonoBehaviour
 {
     private float meter;
     private Text text; // Now text is of type UnityEngine.UI.Text
-    public BackgroundScroll camera;
+    public PlayerMovement player;
 
     // Start is called before the first frame update
     void Start()
     {
-        meter = camera.transform.position.y;
+        meter = player.transform.position.y;
         
         // Get the Text component from the gameObject
         text = gameObject.GetComponent<Text>();
@@ -27,7 +27,7 @@ public class TextView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        meter = camera.transform.position.y;
+        meter = player.transform.position.y;
         text.text = "Altitude:" + meter;    
     }
 }

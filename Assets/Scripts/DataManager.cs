@@ -3,72 +3,114 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Collections.Generic;
 
+
+public class PlayerData
+{
+    public int numberOfEggs;
+    public int numberOfGolds;
+    public bool isLocked;
+    public int highestScore;
+
+    public int GetHighestScore()
+    {
+        return highestScore;
+    }
+
+    public void SetHighestScore(int highest)
+    {
+        highestScore = highest;
+    }
+
+    public int GetEggs()
+    {
+        return numberOfEggs;
+    }
+
+    public void SetEggs(int eggs)
+    {
+        numberOfEggs = eggs;
+    }
+
+    public int GetGold()
+    {
+        return numberOfGolds;
+    }
+
+    public void SetGold(int gold)
+    {
+        numberOfGolds = gold;
+    }
+
+    public bool IsLocked()
+    {
+        return isLocked;
+    }
+
+    public void SetLock(bool isLock)
+    {
+        isLocked = isLock;
+    }
+}
+
+
 public class DataManager : MonoBehaviour
 {
      //Singleton pattern
     private static DataManager _instance;
     public static DataManager Instance { get { return _instance; } }
-    
-    public List<int> myIntList;
-    private int max_num_score = 10;
-    private int scoreList;
 
-     // Retrieve the previous high score from PlayerPrefs
-    private int highestScore;
+    private string savedJson;
+    private PlayerData loadedData;
+
+    // Retrieve the previous high score from PlayerPrefs
+    //private int highestScore;
     
-     void Awake(){
+     void Awake(){      // I use awake here instead of Start because I need the highest score to be initialized for the Rankview to be shown
         _instance = this;
-        highestScore = PlayerPrefs.GetInt("highestScore", 0);
+        // Load the JSON string from PlayerPrefs
+        savedJson = PlayerPrefs.GetString("playerData");
+        loadedData = JsonUtility.FromJson<PlayerData>(savedJson) ?? new PlayerData();
+        string updatedJson = JsonUtility.ToJson(loadedData);
+        Debug.Log(updatedJson);
+        Debug.Log("Updated and Saved Player Data - Eggs: " + loadedData.GetEggs() +
+              ", Golds: " + loadedData.GetGold() +
+              ", Unlocked: " + loadedData.IsLocked() +
+              ", Highest Score: " + loadedData.GetHighestScore());
+    }
+
+    void Start(){
+
     }
 
 
-    void Start()
-    {
-        // can be used for storing list
+    void UpdateData(){
+        // Convert the modified data back to a JSON string
+        string updatedJson = JsonUtility.ToJson(loadedData);
 
-        // // Convert the list to a JSON string
-        // string json = JsonUtility.ToJson(myIntList);        
-
-        // // Save the JSON string to PlayerPrefs
-        // PlayerPrefs.SetString("myIntList", json);
-        // PlayerPrefs.Save();
-        // // Retrieve the JSON string from PlayerPrefs
-        // string savedJson = PlayerPrefs.GetString("myIntList");
-
-        // // Convert the JSON string back to a list
-        // List<int> loadedList = JsonUtility.FromJson<List<int>>(savedJson);
-
-        // // Now 'loadedList' contains the values stored in 'myIntList'
-        // Debug.Log("Loaded List: " + string.Join(", ", loadedList));
-        // Debug.Log("Highest: " + string.Join(", ", highestScore));
+        // Save the updated JSON string to PlayerPrefs
+        PlayerPrefs.SetString("playerData", updatedJson);
+        PlayerPrefs.Save();
     }
 
     public void UpdateHighestScore(int current_height)
     {
-       
-        int previousHighest = PlayerPrefs.GetInt("highestScore", 0);
+        int previousHighest = loadedData.GetHighestScore();
 
         // Compare the current score with the previous high score
         if (current_height > previousHighest)
         {
             // Update PlayerPrefs with the new high score
-            PlayerPrefs.SetInt("highestScore", current_height);
-            PlayerPrefs.Save(); // Save the current_height to make changes permanent
-            Debug.Log("Congratulations! New high score!");
-            highestScore = current_height;
+            loadedData.SetHighestScore(current_height);
+            UpdateData();
         }
-
-        // Display rankings or any other relevant information
-        Debug.Log("Previous High Score: " + previousHighest);
     }
 
     public void setZero(){      //reset the PlayerPrefs info
-        PlayerPrefs.SetInt("highestScore",0);
-        PlayerPrefs.Save();
-        highestScore = 0;
+        
     }
 
     public int getHighestScore(){
-        return  highestScore;
+        //return  highestScore;
+        return loadedData.GetHighestScore();
     }
 }
