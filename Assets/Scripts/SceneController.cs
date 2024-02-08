@@ -12,6 +12,7 @@ public class SceneController : MonoBehaviour
 
     void Awake(){
         _instance = this;
+        DontDestroyOnLoad(gameObject); // Keep the EventController object persistent across scenes
     }
 
     public void ChangeScene(string targetSceneName)
@@ -19,5 +20,9 @@ public class SceneController : MonoBehaviour
         Debug.Log(targetSceneName);
         
         SceneManager.LoadScene(targetSceneName);
+    }
+
+    public void SetGameMode(string gameMode){
+        DataManager.Instance.currentGameMode = gameMode;
     }
 }

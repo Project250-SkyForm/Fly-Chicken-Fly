@@ -28,6 +28,7 @@ public class AltitudeView : MonoBehaviour
     void Update()
     {
         meter = player.transform.position.y;
-        text.text = "Altitude:" + meter;    
+        string formattedMeter = meter.ToString("F2");
+        text.text =formattedMeter+"M";    
     }
 }

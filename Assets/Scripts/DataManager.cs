@@ -61,17 +61,21 @@ public class DataManager : MonoBehaviour
 
     private string savedJson;
     private PlayerData loadedData;
+    public string currentGameMode;
 
     // Retrieve the previous high score from PlayerPrefs
     //private int highestScore;
     
      void Awake(){      // I use awake here instead of Start because I need the highest score to be initialized for the Rankview to be shown
         _instance = this;
+
+        DontDestroyOnLoad(gameObject); // Keep the EventController object persistent across scenes
         // Load the JSON string from PlayerPrefs
         savedJson = PlayerPrefs.GetString("playerData");
         loadedData = JsonUtility.FromJson<PlayerData>(savedJson) ?? new PlayerData();
+        // loadedData.SetHighestScore(0);
+        // UpdateData();
         string updatedJson = JsonUtility.ToJson(loadedData);
-        Debug.Log(updatedJson);
         Debug.Log("Updated and Saved Player Data - Eggs: " + loadedData.GetEggs() +
               ", Golds: " + loadedData.GetGold() +
               ", Unlocked: " + loadedData.IsLocked() +
@@ -101,6 +105,7 @@ public class DataManager : MonoBehaviour
         {
             // Update PlayerPrefs with the new high score
             loadedData.SetHighestScore(current_height);
+            RankingView.Instance.setScores(current_height);
             UpdateData();
         }
     }
