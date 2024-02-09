@@ -121,12 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &83613839 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7891380611416083761, guid: 5afd9a6600cc2ac40809aa17f3bcf818,
-    type: 3}
-  m_PrefabInstance: {fileID: 1128096225}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &83613841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 493685811554577527, guid: 5afd9a6600cc2ac40809aa17f3bcf818,
@@ -1546,6 +1540,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5afd9a6600cc2ac40809aa17f3bcf818, type: 3}
+--- !u!1 &1128096226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7891380611416083761, guid: 5afd9a6600cc2ac40809aa17f3bcf818,
+    type: 3}
+  m_PrefabInstance: {fileID: 1128096225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1158358024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,7 +2061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  jump: 8
+  jump: 20
   isJumping: 0
 --- !u!50 &1366631712
 Rigidbody2D:
@@ -2932,7 +2932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1677654889
 Transform:
   m_ObjectHideFlags: 0
@@ -2956,19 +2956,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1677654888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63caf29571baf146a30e076893a1537, type: 3}
+  m_Script: {fileID: 11500000, guid: 2262bbff447457b42bda8a6bdd5b88a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platforms: {fileID: 1371890125}
-  platform: {fileID: 83613839}
-  movingPlatform: {fileID: 1796958806}
-  levelWidth: 20
-  verticalSpacing: 6
-  horizontalSpacing: 7
-  timeBetweenPlatforms: 1
+  platformPrefab: {fileID: 1128096226}
+  frequency: 2
   totalPlatforms: 10
-  numRegularPlatforms: 3
-  numMovingPlatforms: 1
+  verticalOffset: 2
+  horizontalMinOffset: -5
+  horizontalMaxOffset: 5
+  minDistanceBetweenPlatforms: 1
 --- !u!1 &1714004997
 GameObject:
   m_ObjectHideFlags: 0

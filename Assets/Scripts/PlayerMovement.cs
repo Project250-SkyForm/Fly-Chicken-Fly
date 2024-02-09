@@ -50,13 +50,5 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
         }
     }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Ground") && isJumping)
-        {
-            isJumping = false;
-        }
-    }
 }
 
