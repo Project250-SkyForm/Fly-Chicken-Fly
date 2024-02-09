@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -32,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-
         // Jump control
         if (Input.GetKeyDown(KeyCode.W) && !isJumping)
         {
@@ -47,15 +45,21 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
-            if (transform.position.y< other.transform.position.y){  //hit the platform
+            if (transform.position.y < other.transform.position.y)
+            {
                 EventController.Instance.AddLump(); //for testing
             }
-            
+
             AudioController.Instance.PlayChickenJump();
         }
     }
 
-
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Ground") && isJumping)
+        {
+            isJumping = false;
+        }
+    }
 }
-
 
