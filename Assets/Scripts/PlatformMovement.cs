@@ -18,7 +18,6 @@ public class PlatformMovement : MonoBehaviour
         {
             // Change direction to move the platform back
             direction *= -1;
-
         }
     }
 
@@ -27,5 +26,8 @@ public class PlatformMovement : MonoBehaviour
     {
         float newX = direction > 0 ? leftBound : rightBound;
         transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+    }
+    public int getDirection(){
+        return direction;
     }
 }

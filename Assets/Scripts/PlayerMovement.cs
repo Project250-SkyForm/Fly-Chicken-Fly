@@ -39,19 +39,17 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, jump);
             isJumping = true;
             EventController.Instance.StartCameraMoving();
+            EventController.Instance.StartBackgroundMoving();
+            AudioController.Instance.PlayChickenJump();
         }
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("MovingPlatform"))
         {
+            DataManager.Instance.UpdateHighestScore((int)transform.position.y);
             isJumping = false;
-            if (transform.position.y< other.transform.position.y){  //hit the platform
-                EventController.Instance.AddLump(); //for testing
-            }
-            
-            AudioController.Instance.PlayChickenJump();
         }
     }
 

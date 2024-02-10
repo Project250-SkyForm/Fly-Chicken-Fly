@@ -26,6 +26,6 @@ public class RankingView : MonoBehaviour
     }
 
     public void setScores(int highest){
-        text.text = "Highest Scores: " + highest;
+        text.text = "Highest Scores: " + highest + " M";
     }
 }
