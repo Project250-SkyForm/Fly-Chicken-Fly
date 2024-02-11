@@ -6,13 +6,13 @@ public class NewPlatformGen : MonoBehaviour
     public GameObject regularPlatformPrefab;
     public GameObject movingPlatformPrefab;
     public int totalPlatforms = 10;
-    public float minX = -5f;
-    public float maxX = 5f;
-    public float verticalDistanceBetweenPlatforms = 2f;
+    public float minX = -7f;
+    public float maxX = 6f;
+    public float verticalDistanceBetweenPlatforms = 4.5f;
     public float timeBetweenPlatforms = 2f;
-    public float startingYPosition = 0f;
+    public float startingYPosition = 5.77f;
     public int movingPlatformsFrequency = 3; // Number of regular platforms between moving platforms
-    public float additionalVerticalDistanceForMoving = 2f; // Additional vertical distance for moving platforms
+    public float additionalVerticalDistanceForMoving = 6.8f; // Additional vertical distance for moving platforms
 
     void Start()
     {
