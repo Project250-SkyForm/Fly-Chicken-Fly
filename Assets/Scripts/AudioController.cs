@@ -10,7 +10,7 @@ public class AudioController : MonoBehaviour
     
     // Initialize audio source and audio clips
     public AudioSource chicken;
-    public AudioClip chickenHit, chickenJump, chickenGrassWalk, chickenCloudWalk;
+    public AudioClip chickenHit, chickenJump, chickenGrassWalk, chickenCloudWalk, chickenLand;
     public AudioClip[] chickenBarks;
 
     void Awake(){
@@ -33,6 +33,10 @@ public class AudioController : MonoBehaviour
 
     public void PlayChickenCloudWalk(){
         chicken.PlayOneShot(chickenCloudWalk);
+    }
+
+    public void PlayChickenLand(){
+        chicken.PlayOneShot(chickenLand);
     }
 
     // Plays a bark every 10 seconds 
