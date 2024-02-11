@@ -979,9 +979,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 782966346}
-  - component: {fileID: 782966345}
   - component: {fileID: 782966348}
   - component: {fileID: 782966347}
+  - component: {fileID: 782966345}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -998,10 +998,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 782966344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 035d79b068ab44b45928e5c2edf2edd1, type: 3}
+  m_Script: {fileID: 11500000, guid: f3e48dfbdd2c90040bedfe0dd0506f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGameMode: 
 --- !u!4 &782966346
 Transform:
   m_ObjectHideFlags: 0
@@ -1242,7 +1241,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1340857703}
+      - m_Target: {fileID: 782966345}
         m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
@@ -1871,49 +1870,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1340857702
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1340857704}
-  - component: {fileID: 1340857703}
-  m_Layer: 0
-  m_Name: GameController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1340857703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340857702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3e48dfbdd2c90040bedfe0dd0506f5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1340857704
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340857702}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.400039, y: 15.85282, z: -0.045790177}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1356781108
 GameObject:
   m_ObjectHideFlags: 0
