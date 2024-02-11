@@ -7,12 +7,14 @@ public class BackgroundScroll : MonoBehaviour
     public float const_speed;
     public float speed; // control scroll speed from unity, for the camera itis -1, background is -0.8
     private Vector3 StartPos; // initial starting position
+    public SpriteRenderer spriteRenderer; // get the sprite renderer of the background
 
     // Start is called before the first frame update
     void Start()
     {
         StartPos = transform.position; // get initial starting pos of background
         speed = 0;
+        spriteRenderer = GetComponent<SpriteRenderer>(); // get the sprite renderer of the background
     }
 
     // Update is called once per frame

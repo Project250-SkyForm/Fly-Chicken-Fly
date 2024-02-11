@@ -20,6 +20,10 @@ public class PlatformSpawner : MonoBehaviour
     {
         for (int i = 0; i < totalPlatforms; i++)
         {
+
+            horizontalMinOffset = EventController.Instance.background.spriteRenderer.bounds.size.x/4;
+            horizontalMaxOffset = EventController.Instance.background.spriteRenderer.bounds.size.x/2;
+
             // Calculate random horizontal offset within specified range
             float randomHorizontalOffset = Random.Range(horizontalMinOffset, horizontalMaxOffset);
 
