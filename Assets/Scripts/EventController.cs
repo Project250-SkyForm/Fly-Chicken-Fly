@@ -9,10 +9,18 @@ public class EventController : MonoBehaviour
 
     private int lump=0;
 
+    public int shrinkScore = 30;
+    public float minFieldOfView = 2f;
+    public float shrinkAmount = 0.005f;
+
+    public float minXBoundary = -1;
+    public float maxXBoundary = 1;
+
     public PlayerMovement player;
     public LumpView lumpView;
     public BackgroundScroll camera;
     public BackgroundScroll background;
+    public Camera gameCamera;
     public float cameraGoDownDistance;
 
     void Awake(){
@@ -30,10 +38,24 @@ public class EventController : MonoBehaviour
                 newPos.y -= cameraGoDownDistance; 
             }
             camera.transform.position = newPos; 
+            UpdateXBoundary();
             StopCameraMoving();
             StopBackgroundMoving();
             AddLump();
         }
+        if (player.transform.position.y > shrinkScore){
+            Debug.Log("Y Position: " + player.transform.position.y + " Shrink Score: " + shrinkScore);
+            ShrinkView();
+        }
+    }
+
+    private void UpdateXBoundary(){
+        float backgroundWidth = background.spriteRenderer.bounds.size.x; // Get the actual width of the background sprite
+        float halfWidth = backgroundWidth / 2f;
+        
+        // Calculate boundaries
+        minXBoundary = background.transform.position.x - halfWidth;
+        maxXBoundary = background.transform.position.x + halfWidth;
     }
 
     public void AddLump(){
@@ -44,6 +66,14 @@ public class EventController : MonoBehaviour
             SceneController.Instance.ChangeScene("GameOverScene");
         }
         LumpGenerator.Instance.GenerateImages();
+    }
+
+    public float GetMinXBoundary(){
+        return minXBoundary;
+    }
+
+    public float GetMaxXBoundary(){
+        return maxXBoundary;
     }
 
     public void StopCameraMoving(){
@@ -60,5 +90,32 @@ public class EventController : MonoBehaviour
 
     public void StartBackgroundMoving(){
         background.Continue();
+    }
+
+    private void ShrinkView(){
+        StartCoroutine(ShrinkViewOverTime());
+    }
+
+    // Coroutine for smooth shrinking
+    private IEnumerator ShrinkViewOverTime(){
+        float targetScaleX = background.transform.localScale.x * shrinkAmount;
+        float minScaleX = minFieldOfView / 5.0f;
+
+        if (targetScaleX > minScaleX){
+            while (background.transform.localScale.x > targetScaleX && targetScaleX > minScaleX){
+                Vector3 scale = background.transform.localScale;
+                scale.x = Mathf.MoveTowards(scale.x, targetScaleX, Time.deltaTime * shrinkAmount); // Adjust Time.deltaTime * shrinkAmount to control the speed
+                background.transform.localScale = scale;
+
+                float backgroundWidth = background.spriteRenderer.bounds.size.x; // Get the actual width of the background sprite
+                float halfWidth = backgroundWidth / 2f;
+                
+                // Calculate boundaries
+                minXBoundary = background.transform.position.x - halfWidth;
+                maxXBoundary = background.transform.position.x + halfWidth;
+
+                yield return null;
+            }
+        }
     }
 }

@@ -18,9 +18,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Movement controls
-        float move = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(move * speed, body.velocity.y);
+    float move = Input.GetAxis("Horizontal");
+    Vector2 newVelocity = new Vector2(move * speed, body.velocity.y);
+
+    // Adjust player movement based on the current boundaries
+    Vector2 newPosition = transform.position + new Vector3(newVelocity.x, 0, 0) * Time.deltaTime;
+    newPosition.x = Mathf.Clamp(newPosition.x, GetMinXBoundary(), GetMaxXBoundary());
+
+    // Apply the adjusted position directly or adjust velocity accordingly
+    body.velocity = new Vector2((newPosition.x - transform.position.x) / Time.deltaTime, body.velocity.y);
 
         if (move < 0)
         {
@@ -42,13 +48,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
+    void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("MovingPlatform"))
         {
             DataManager.Instance.UpdateHighestScore((int)transform.position.y);
             isJumping = false;
         }
+    }
+
+    float GetMinXBoundary(){
+        return EventController.Instance.GetMinXBoundary();
+    }
+
+    float GetMaxXBoundary(){
+        return EventController.Instance.GetMaxXBoundary();
     }
 }
 
