@@ -813,6 +813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   const_speed: -1
   speed: 2
+  spriteRenderer: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1043,10 +1044,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168588c895601084285f357a7bf71ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shrinkScore: 15
+  minFieldOfView: 1.5
+  shrinkAmount: 0.5
+  minXBoundary: -10
+  maxXBoundary: 10
   player: {fileID: 1366631711}
   lumpView: {fileID: 1855876129}
   camera: {fileID: 519420030}
   background: {fileID: 1434310875}
+  gameCamera: {fileID: 519420031}
   cameraGoDownDistance: 10
 --- !u!1 &821526351
 GameObject:
@@ -2353,7 +2360,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 2.180008
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -2722,6 +2729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   const_speed: 0.8
   speed: 0
+  spriteRenderer: {fileID: 1434310873}
 --- !u!1 &1505489521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,7 +2775,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.22257328, y: -0.8034606}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0.06000567, y: 0, z: 0, w: 0}
     pivot: {x: 0.5052623, y: 0.46051776}
@@ -2778,7 +2786,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.942118, y: 2.6069212}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &1505489524
 SpriteRenderer:
@@ -3186,8 +3194,8 @@ MonoBehaviour:
   frequency: 2
   totalPlatforms: 10
   verticalOffset: 2
-  horizontalMinOffset: -5
-  horizontalMaxOffset: 5
+  horizontalMinOffset: -1
+  horizontalMaxOffset: 1
   minDistanceBetweenPlatforms: 1
 --- !u!1 &1714004997
 GameObject:

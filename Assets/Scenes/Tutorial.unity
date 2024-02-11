@@ -179,7 +179,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &344263916
 PrefabInstance:
@@ -297,7 +297,7 @@ PrefabInstance:
     - target: {fileID: 1006432522480839599, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1006432522480839599, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
@@ -815,6 +815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   const_speed: -1
   speed: 0
+  spriteRenderer: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1013,7 +1014,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &782966347
 MonoBehaviour:
@@ -1045,10 +1046,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168588c895601084285f357a7bf71ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shrinkScore: 30
+  minFieldOfView: 2
+  shrinkAmount: 0.005
+  minXBoundary: -1
+  maxXBoundary: 1
   player: {fileID: 1366631711}
   lumpView: {fileID: 1429913369}
   camera: {fileID: 519420030}
   background: {fileID: 1434310875}
+  gameCamera: {fileID: 0}
   cameraGoDownDistance: 10
 --- !u!1 &821526351
 GameObject:
@@ -1681,7 +1688,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1240648022
 GameObject:
@@ -2441,6 +2448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   const_speed: 0.8
   speed: 0
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1505489521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,7 +2752,7 @@ PrefabInstance:
     - target: {fileID: 1006432522480839599, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1006432522480839599, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
@@ -2887,7 +2895,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1677654890
 MonoBehaviour:
@@ -3510,7 +3518,7 @@ PrefabInstance:
     - target: {fileID: 1006432522480839599, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1006432522480839599, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
