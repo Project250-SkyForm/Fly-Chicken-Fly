@@ -1015,8 +1015,9 @@ MonoBehaviour:
   chicken: {fileID: 1366631714}
   chickenHit: {fileID: 8300000, guid: 453b604b4873b4f919a8d13d4f035857, type: 3}
   chickenJump: {fileID: 8300000, guid: 00f475aa7a55248af82fad0b44627118, type: 3}
-  chickenGrassWalk: {fileID: 0}
+  chickenGrassWalk: {fileID: 8300000, guid: 17c73001174eb4a60823338c13b7ee27, type: 3}
   chickenCloudWalk: {fileID: 0}
+  chickenLand: {fileID: 8300000, guid: 0d509dfd61daf406bae96047d78c35f0, type: 3}
   chickenBarks: []
 --- !u!114 &782966348
 MonoBehaviour:
