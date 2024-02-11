@@ -719,7 +719,7 @@ RectTransform:
   - {fileID: 1366351931}
   - {fileID: 1158358025}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1006,7 +1006,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &782966347
 MonoBehaviour:
@@ -1340,7 +1340,7 @@ Transform:
   m_LocalScale: {x: 1.064446, y: 1.686036, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094156832
 GameObject:
@@ -2360,7 +2360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  jump: 20
+  jump: 25
   isJumping: 0
 --- !u!50 &1366631712
 Rigidbody2D:
@@ -3251,7 +3251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regularPlatformPrefab: {fileID: 1128096226}
   movingPlatformPrefab: {fileID: 1796958806}
-  totalPlatforms: 10
+  totalPlatforms: 100
   minX: -7
   maxX: 6
   verticalDistanceBetweenPlatforms: 5
@@ -3297,7 +3297,7 @@ Transform:
   - {fileID: 1505489522}
   - {fileID: 408555910}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1714004999
 Rigidbody2D:
@@ -3904,7 +3904,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1990616647
 GameObject:
@@ -4027,7 +4027,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1006432524469088442}
   m_PrefabAsset: {fileID: 0}
-
 --- !u!1001 &1006432524469088442
 PrefabInstance:
   m_ObjectHideFlags: 0
