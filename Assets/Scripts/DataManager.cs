@@ -62,6 +62,7 @@ public class DataManager : MonoBehaviour
     private string savedJson;
     private PlayerData loadedData;
     public string currentGameMode;
+    public string playerName;
 
     // Retrieve the previous high score from PlayerPrefs
     //private int highestScore;
@@ -117,5 +118,9 @@ public class DataManager : MonoBehaviour
     public int getHighestScore(){
         //return  highestScore;
         return loadedData.GetHighestScore();
+    }
+
+    public void setPlayerName(string name){
+        playerName = name;
     }
 }
