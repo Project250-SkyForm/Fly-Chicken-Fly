@@ -42,6 +42,7 @@ public class EventController : MonoBehaviour
             StopCameraMoving();
             StopBackgroundMoving();
             AddLump();
+            AudioController.Instance.PlayChickenHit();
         }
         if (player.transform.position.y > shrinkScore){
             Debug.Log("Y Position: " + player.transform.position.y + " Shrink Score: " + shrinkScore);

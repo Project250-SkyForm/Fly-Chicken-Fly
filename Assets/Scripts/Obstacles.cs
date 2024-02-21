@@ -57,6 +57,8 @@ public class Obstacles : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other){
+        AudioSource audioSource = GetComponent<AudioSource>();
+        
         switch (type)
         {
             case "HandleUpKnife":
@@ -64,6 +66,7 @@ public class Obstacles : MonoBehaviour
                 if (other.gameObject.CompareTag("Ground"))
                 {
                     fallingSpeed = 0;
+                    audioSource.Stop();
                 }
                 else if (other.gameObject.CompareTag("MovingPlatform") && movingPlatform==null)
                 {
@@ -75,6 +78,7 @@ public class Obstacles : MonoBehaviour
                     // direction = movingInfo.getDirection();
                     gapX = transform.position.x - movingPlatform.transform.position.x;
                     fallingSpeed = 0;
+                    audioSource.Stop();
                 }
                 break;
             
@@ -96,4 +100,12 @@ public class Obstacles : MonoBehaviour
         }
 
     }
+
+    void OnDestroy(){
+        AudioSource audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+        }
+}
 }

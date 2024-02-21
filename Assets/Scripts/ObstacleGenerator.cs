@@ -61,6 +61,7 @@ public class ObstacleGenerator : MonoBehaviour
             transform.position = newPosition;
             // Instantiate a new knife object at the calculated position
             GameObject newObject = Instantiate(thisObstacle, newPosition, Quaternion.identity);
+            AudioController.Instance.PlayObstacleFall(newObject.GetComponent<AudioSource>());
             // change the newKnife z value to 0
             Vector3 newPos = newObject.transform.position;
             newPos.z = 0; 
