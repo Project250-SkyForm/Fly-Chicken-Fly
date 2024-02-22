@@ -12,7 +12,6 @@ public class SceneController : MonoBehaviour
 
     void Awake(){
         _instance = this;
-        DontDestroyOnLoad(gameObject); // Keep the EventController object persistent across scenes
     }
 
     public void ChangeScene(string targetSceneName)
