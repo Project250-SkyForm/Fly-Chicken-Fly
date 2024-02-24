@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class NewPlatformGen : MonoBehaviour
 {
     public GameObject regularPlatformPrefab;
     public GameObject movingPlatformPrefab;
     public int totalPlatforms = 10;
+    public int platformsOnScreenLimit = 5; // Adjust this to control the number of platforms on the screen
     public float minX = -7f;
     public float maxX = 6f;
     public float verticalDistanceBetweenPlatforms = 4.5f;
     public float timeBetweenPlatforms = 2f;
     public float startingYPosition = 5.77f;
-    public int movingPlatformsFrequency = 3; // Number of regular platforms between moving platforms
-    public float additionalVerticalDistanceForMoving = 6.8f; // Additional vertical distance for moving platforms
+    public int movingPlatformsFrequency = 3;
+    public float movingPlatformScale = 6.8f;
+
+    private List<GameObject> platforms = new List<GameObject>();
 
     void Start()
     {
@@ -28,8 +32,8 @@ public class NewPlatformGen : MonoBehaviour
         {
             if (regularPlatformCounter == movingPlatformsFrequency)
             {
-                GenerateMovingPlatform(currentY + additionalVerticalDistanceForMoving);
-                regularPlatformCounter = 0; // Reset the counter after generating a moving platform
+                GenerateMovingPlatform(currentY + movingPlatformScale);
+                regularPlatformCounter = 0;
             }
             else
             {
@@ -38,6 +42,13 @@ public class NewPlatformGen : MonoBehaviour
             }
 
             currentY += verticalDistanceBetweenPlatforms;
+
+            // Check if the number of platforms exceeds the limit
+            if (platforms.Count > platformsOnScreenLimit)
+            {
+                DestroyOldestPlatform();
+            }
+
             yield return new WaitForSeconds(timeBetweenPlatforms);
         }
     }
@@ -46,15 +57,25 @@ public class NewPlatformGen : MonoBehaviour
     {
         float randomX = Random.Range(minX, maxX);
         Vector2 spawnPosition = new Vector2(randomX, yPosition);
-        Instantiate(regularPlatformPrefab, spawnPosition, Quaternion.identity);
+        GameObject platform = Instantiate(regularPlatformPrefab, spawnPosition, Quaternion.identity);
+        platforms.Add(platform);
     }
 
     void GenerateMovingPlatform(float yPosition)
     {
         float randomX = Random.Range(minX, maxX);
         Vector2 spawnPosition = new Vector2(randomX, yPosition);
-        Instantiate(movingPlatformPrefab, spawnPosition, Quaternion.identity);
+        GameObject platform = Instantiate(movingPlatformPrefab, spawnPosition, Quaternion.identity);
+        platforms.Add(platform);
+    }
+
+    void DestroyOldestPlatform()
+    {
+        if (platforms.Count > 0)
+        {
+            Destroy(platforms[0]);
+            platforms.RemoveAt(0);
+        }
     }
 }
-
 
