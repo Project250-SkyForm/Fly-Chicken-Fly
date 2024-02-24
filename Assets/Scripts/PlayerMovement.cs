@@ -40,14 +40,19 @@ public class PlayerMovement : MonoBehaviour
         // Jump control
         if (Input.GetKeyDown(KeyCode.W) && !isJumping)
         {
-            body.velocity = new Vector2(body.velocity.x, jump);
-            isJumping = true;
-            EventController.Instance.StartCameraMoving();
-            EventController.Instance.StartBackgroundMoving();
-            AudioController.Instance.PlayChickenJump();
+            ChickenJump();
+            
         }
     }
 
+    public void ChickenJump(){
+        body.velocity = new Vector2(body.velocity.x, jump);
+        isJumping = true;
+        EventController.Instance.StartCameraMoving();
+        EventController.Instance.StartBackgroundMoving();
+         AudioController.Instance.PlayChickenJump();
+    }
+    
     void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("MovingPlatform"))
         {

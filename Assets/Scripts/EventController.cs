@@ -28,21 +28,28 @@ public class EventController : MonoBehaviour
     }
     
     void Update(){
+        // Event when player touch the bottom of the camera, the camera should push the player up a jump
         if (player.transform.position.y < camera.transform.position.y - cameraGoDownDistance){
             Vector3 newPos = camera.transform.position;
             if (camera.transform.position.y - cameraGoDownDistance < 8.5f){
                 newPos.y = 8.5f;
-                
             }
             else{
-                newPos.y -= cameraGoDownDistance; 
+                newPos.y -= 4; 
             }
             camera.transform.position = newPos; 
             UpdateXBoundary();
-            StopCameraMoving();
-            StopBackgroundMoving();
-            AddLump();
         }
+        /*
+        not used speeding up camera
+        // if the player is higher than the half height of camera
+        else if (player.transform.position.y > camera.transform.position.y ){
+            // Vector3 newPos = camera.transform.position;
+            // newPos.y += 4;
+            // camera.transform.position = newPos;
+            camera.transform.Translate(translation: Vector3.down * -5 * Time.deltaTime);
+        }
+        */
         if (player.transform.position.y > shrinkScore){
             Debug.Log("Y Position: " + player.transform.position.y + " Shrink Score: " + shrinkScore);
             ShrinkView();
@@ -64,6 +71,7 @@ public class EventController : MonoBehaviour
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
             Debug.Log("End Game");
             SceneController.Instance.ChangeScene("GameOverScene");
+            Destroy(gameObject);
         }
         //LumpGenerator.Instance.GenerateImages();
     }

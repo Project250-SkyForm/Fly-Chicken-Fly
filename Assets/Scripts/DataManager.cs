@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Collections.Generic;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerData
 {
@@ -64,9 +64,6 @@ public class DataManager : MonoBehaviour
     public string currentGameMode;
     public string playerName;
 
-    // Retrieve the previous high score from PlayerPrefs
-    //private int highestScore;
-    
      void Awake(){      // I use awake here instead of Start because I need the highest score to be initialized for the Rankview to be shown
         _instance = this;
 
