@@ -75,7 +75,7 @@ public class EventController : MonoBehaviour
             Debug.Log("End Game");
             SceneController.Instance.ChangeScene("GameOverScene");
         }
-        LumpGenerator.Instance.GenerateImages();
+        //LumpGenerator.Instance.GenerateImages();
     }
 
     public float GetMinXBoundary(){
