@@ -15,13 +15,21 @@ public class SceneController : MonoBehaviour
     }
 
     public void ChangeScene(string targetSceneName)
-    {
-        Debug.Log(targetSceneName);
-        
+    { 
         SceneManager.LoadScene(targetSceneName);
     }
 
     public void SetGameMode(string gameMode){
         DataManager.Instance.currentGameMode = gameMode;
+    }
+
+    public string CheckScene(){
+        // Get the currently active scene
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Get the name of the current scene
+        string sceneName = currentScene.name;
+        Debug.Log(sceneName);    
+        return sceneName;
     }
 }

@@ -6,7 +6,7 @@ public class CameraScript : MonoBehaviour
 {
     public GameObject player;
     public float gapY;      // the distance that the camera is higher than player
-    public float smoothTime = 0.3f;  // Smoothing time for camera movement
+    public float smoothTime = 0.15f;  // Smoothing time for camera movement
     private Vector3 velocity = Vector3.zero;
 
     // Start is called before the first frame update

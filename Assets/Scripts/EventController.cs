@@ -39,12 +39,9 @@ public class EventController : MonoBehaviour
             }
             camera.transform.position = newPos; 
             UpdateXBoundary();
-            player.ChickenJump();
-            //StopCameraMoving();
-            //StopBackgroundMoving();
-            AddLump();
         }
-
+        /*
+        not used speeding up camera
         // if the player is higher than the half height of camera
         else if (player.transform.position.y > camera.transform.position.y ){
             // Vector3 newPos = camera.transform.position;
@@ -52,7 +49,7 @@ public class EventController : MonoBehaviour
             // camera.transform.position = newPos;
             camera.transform.Translate(translation: Vector3.down * -5 * Time.deltaTime);
         }
-
+        */
         if (player.transform.position.y > shrinkScore){
             Debug.Log("Y Position: " + player.transform.position.y + " Shrink Score: " + shrinkScore);
             ShrinkView();
@@ -74,6 +71,7 @@ public class EventController : MonoBehaviour
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
             Debug.Log("End Game");
             SceneController.Instance.ChangeScene("GameOverScene");
+            Destroy(gameObject);
         }
         //LumpGenerator.Instance.GenerateImages();
     }
