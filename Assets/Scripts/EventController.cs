@@ -17,6 +17,7 @@ public class EventController : MonoBehaviour
     public float maxXBoundary = 1;
 
     public PlayerMovement player;
+    public EnemyMovement enemy;
     public LumpView lumpView;
     public BackgroundScroll camera;
     public BackgroundScroll background;
