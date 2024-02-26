@@ -313,7 +313,7 @@ MonoBehaviour:
   player: {fileID: 1366631710}
   catchUpSpeed: 2
   maxDistance: 20
-  catchUpDelay: 1
+  catchUpDelay: 4
   detectionRadius: 10
 --- !u!50 &227263537
 Rigidbody2D:
@@ -1858,6 +1858,7 @@ MonoBehaviour:
   shrinkScore: 15
   minFieldOfView: 1.5
   shrinkAmount: 0.5
+  initialBoundary: 0
   minXBoundary: -10
   maxXBoundary: 10
   player: {fileID: 1366631711}
