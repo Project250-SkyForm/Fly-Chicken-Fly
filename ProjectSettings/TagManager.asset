@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - MovingPlatform
   - Enemy
+  - LeftBoundary
+  - RightBoundary
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Play Scene
   - Enemy
   - Player
-  - 
+  - Boundary
   - 
   - 
   - 
@@ -47,4 +49,7 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 4240313311
+    locked: 0
+  - name: Boundary
+    uniqueID: 2537510863
     locked: 0
