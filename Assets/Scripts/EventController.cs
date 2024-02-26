@@ -16,6 +16,7 @@ public class EventController : MonoBehaviour
 
     public float minXBoundary = -1;
     public float maxXBoundary = 1;
+    public bool startShrinking = false;
 
     public PlayerMovement player;
     public EnemyMovement enemy;
@@ -23,6 +24,8 @@ public class EventController : MonoBehaviour
     public BackgroundScroll camera;
     public BackgroundScroll background;
     public Camera gameCamera;
+    public BoundaryController leftBoundary;
+    public BoundaryController rightBoundary;
     public float cameraGoDownDistance;
 
     void Awake(){
@@ -44,7 +47,7 @@ public class EventController : MonoBehaviour
                 newPos.y -= 4; 
             }
             camera.transform.position = newPos; 
-            UpdateXBoundary();
+            // UpdateXBoundary();
         }
         /*
         not used speeding up camera
@@ -58,7 +61,10 @@ public class EventController : MonoBehaviour
         */
         if (player.transform.position.y > shrinkScore){
             Debug.Log("Y Position: " + player.transform.position.y + " Shrink Score: " + shrinkScore);
-            ShrinkView();
+            if (!startShrinking){
+                startShrinking = true;
+                StartShrinkingBoundaries();
+            }
         }
     }
 
@@ -106,30 +112,18 @@ public class EventController : MonoBehaviour
         background.Continue();
     }
 
-    private void ShrinkView(){
-        StartCoroutine(ShrinkViewOverTime());
+
+    private void StartShrinkingBoundaries()
+    {
+        leftBoundary.StartScaling(true);
+        rightBoundary.StartScaling(true);
+        Debug.Log("Start Shrinking Boundaries ");
     }
 
-    // Coroutine for smooth shrinking
-    private IEnumerator ShrinkViewOverTime(){
-        float targetScaleX = background.transform.localScale.x * shrinkAmount;
-        float minScaleX = minFieldOfView / 5.0f;
-
-        if (targetScaleX > minScaleX){
-            while (background.transform.localScale.x > targetScaleX && targetScaleX > minScaleX){
-                Vector3 scale = background.transform.localScale;
-                scale.x = Mathf.MoveTowards(scale.x, targetScaleX, Time.deltaTime * shrinkAmount); // Adjust Time.deltaTime * shrinkAmount to control the speed
-                background.transform.localScale = scale;
-
-                float backgroundWidth = background.spriteRenderer.bounds.size.x; // Get the actual width of the background sprite
-                float halfWidth = backgroundWidth / 2f;
-                
-                // Calculate boundaries
-                minXBoundary = background.transform.position.x - halfWidth;
-                maxXBoundary = background.transform.position.x + halfWidth;
-
-                yield return null;
-            }
-        }
+    public void StopShrinkingBoundaries()
+    {
+        leftBoundary.StartScaling(false);
+        rightBoundary.StartScaling(false);
+        Debug.Log("Stop Shrinking Boundaries");
     }
 }
