@@ -12,6 +12,7 @@ public class EventController : MonoBehaviour
     public int shrinkScore = 30;
     public float minFieldOfView = 2f;
     public float shrinkAmount = 0.005f;
+    public float initialBoundary = 0;
 
     public float minXBoundary = -1;
     public float maxXBoundary = 1;
@@ -29,6 +30,10 @@ public class EventController : MonoBehaviour
     }
     
     void Update(){
+        if (initialBoundary.Equals(0)){
+            UpdateXBoundary();
+            initialBoundary = 1;
+        }
         // Event when player touch the bottom of the camera, the camera should push the player up a jump
         if (player.transform.position.y < camera.transform.position.y - cameraGoDownDistance){
             Vector3 newPos = camera.transform.position;
