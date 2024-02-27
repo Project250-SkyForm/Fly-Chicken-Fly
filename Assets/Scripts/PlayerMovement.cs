@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float jump;
     public bool isJumping;
+    public bool ableToMove;
 
     // Animation variables
     public float frameRate = 0.1f; // Adjust this value to control animation speed
@@ -26,8 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        float move = 0f;
+    {   if (ableToMove){
+            float move = 0f;
 
         // Check for W, A, D keys
         if (Input.GetKey(KeyCode.W))
@@ -72,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         AnimatePlayer();
+        }
     }
 
     void AnimatePlayer()

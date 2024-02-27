@@ -13,7 +13,6 @@ public class UIController : MonoBehaviour
 
     void Awake(){
         _instance = this;
-        DontDestroyOnLoad(gameObject); // Keep the EventController object persistent across scenes
     }
 
     public void SetUIActive(GameObject ui)

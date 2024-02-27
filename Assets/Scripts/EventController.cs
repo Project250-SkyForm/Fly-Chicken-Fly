@@ -20,12 +20,16 @@ public class EventController : MonoBehaviour
     public bool startShrinking = false;
 
     public PlayerMovement player;
+    public GameObject lump1;
+    public GameObject lump2;
+    public GameObject lump3;
     public EnemyMovement enemy;
     public LumpView lumpView;
     public GoldenEggView eggView;
     public BackgroundScroll camera;
     public BackgroundScroll background;
     public Camera gameCamera;
+    public GameObject gameOverUI;
     public BoundaryController leftBoundary;
     public BoundaryController rightBoundary;
     public float cameraGoDownDistance;
@@ -82,6 +86,15 @@ public class EventController : MonoBehaviour
     public void AddLump(){
         lump += 1;
         lumpView.UpdateLump(lump);
+        if (lump == 1){
+            lump1.SetActive(true);
+        }
+        if (lump == 2){
+            lump2.SetActive(true);
+        }
+        if (lump == 3){
+            lump3.SetActive(true);
+        }
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
             Debug.Log("End Game");
             EndGame();
@@ -137,6 +150,24 @@ public class EventController : MonoBehaviour
 
     public void EndGame(){
         DataManager.Instance.UpdateGoldenEgg(egg);
-        SceneController.Instance.ChangeScene("GameOverScene");
+        PauseGame();
+        UIController.Instance.SetUIActive(gameOverUI);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f; // Pauses the game
+        player.ableToMove = false;
+    }
+
+    public void ResumeGame(){
+        Time.timeScale = 1f; // Resume the game
+        player.ableToMove = true;
+    }
+    
+    public void ReplayGame()
+    {
+        Time.timeScale = 1f; // Reset time scale to normal in case it was paused
+        SceneController.Instance.ChangeScene("PlayScene"); // Reload the current scene
     }
 }

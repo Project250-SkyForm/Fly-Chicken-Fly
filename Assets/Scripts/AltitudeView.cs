@@ -29,6 +29,6 @@ public class AltitudeView : MonoBehaviour
     {
         meter = player.transform.position.y;
         string formattedMeter = meter.ToString("F2");
-        text.text =formattedMeter+"M";    
+        text.text ="Score: "+formattedMeter;    
     }
 }
