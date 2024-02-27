@@ -20,6 +20,9 @@ public class EventController : MonoBehaviour
     public bool startShrinking = false;
 
     public PlayerMovement player;
+    public GameObject lump1;
+    public GameObject lump2;
+    public GameObject lump3;
     public EnemyMovement enemy;
     public LumpView lumpView;
     public GoldenEggView eggView;
@@ -82,6 +85,15 @@ public class EventController : MonoBehaviour
     public void AddLump(){
         lump += 1;
         lumpView.UpdateLump(lump);
+        if (lump == 1){
+            lump1.SetActive(true);
+        }
+        if (lump == 2){
+            lump2.SetActive(true);
+        }
+        if (lump == 3){
+            lump3.SetActive(true);
+        }
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
             Debug.Log("End Game");
             EndGame();
