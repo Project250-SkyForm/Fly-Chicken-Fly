@@ -61,6 +61,7 @@ public class DataManager : MonoBehaviour
 
     private string savedJson;
     private PlayerData loadedData;
+    private int goldenEgg;
     public string currentGameMode;
     public string playerName;
 
@@ -81,7 +82,8 @@ public class DataManager : MonoBehaviour
     }
 
     void Start(){
-
+        goldenEgg = loadedData.GetEggs();
+        Debug.Log(goldenEgg);
     }
 
 
@@ -109,7 +111,9 @@ public class DataManager : MonoBehaviour
     }
 
     public void UpdateGoldenEgg(int egg){
-        loadedData.SetEggs(egg);
+        goldenEgg += egg;
+        Debug.Log(goldenEgg);
+        loadedData.SetEggs(goldenEgg);
         UpdateData();
     }
 

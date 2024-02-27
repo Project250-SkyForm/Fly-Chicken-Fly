@@ -84,7 +84,7 @@ public class EventController : MonoBehaviour
         lumpView.UpdateLump(lump);
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
             Debug.Log("End Game");
-            SceneController.Instance.ChangeScene("GameOverScene");
+            EndGame();
             Destroy(gameObject);
         }
         //LumpGenerator.Instance.GenerateImages();
@@ -132,6 +132,11 @@ public class EventController : MonoBehaviour
     public void AddGoldenEgg(){
         egg+=1;
         eggView.UpdateGoldenEgg(egg);
+        //DataManager.Instance.UpdateGoldenEgg(egg);
+    }
+
+    public void EndGame(){
         DataManager.Instance.UpdateGoldenEgg(egg);
+        SceneController.Instance.ChangeScene("GameOverScene");
     }
 }
