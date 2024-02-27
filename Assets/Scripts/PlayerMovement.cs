@@ -30,49 +30,52 @@ public class PlayerMovement : MonoBehaviour
     {   if (ableToMove){
             float move = 0f;
 
-        // Check for W, A, D keys
-        if (Input.GetKey(KeyCode.W))
-        {
-            // Handle jump logic
-            if (!isJumping)
+            // Check for W, A, D keys
+            if (Input.GetKey(KeyCode.W))
             {
-                body.velocity = new Vector2(body.velocity.x, jump);
-                isJumping = true;
-                // EventController.Instance.StartCameraMoving();
-                // EventController.Instance.StartBackgroundMoving();
-                // AudioController.Instance.PlayChickenJump();
+                // Handle jump logic
+                if (!isJumping)
+                {
+                    body.velocity = new Vector2(body.velocity.x, jump);
+                    isJumping = true;
+                    // EventController.Instance.StartCameraMoving();
+                    // EventController.Instance.StartBackgroundMoving();
+                    // AudioController.Instance.PlayChickenJump();
+                }
             }
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            // Handle left movement
-            move = -1f;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            // Handle right movement
-            move = 1f;
-        }
+            if (Input.GetKey(KeyCode.A))
+            {
+                // Handle left movement
+                move = -1f;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                // Handle right movement
+                move = 1f;
+            }
 
-        Vector2 newVelocity = new Vector2(move * speed, body.velocity.y);
+            Vector2 newVelocity = new Vector2(move * speed, body.velocity.y);
 
-        // Adjust player movement based on the current boundaries
-        Vector2 newPosition = transform.position + new Vector3(newVelocity.x, 0, 0) * Time.deltaTime;
-        newPosition.x = Mathf.Clamp(newPosition.x, GetMinXBoundary(), GetMaxXBoundary());
+            // Adjust player movement based on the current boundaries
+            Vector2 newPosition = transform.position + new Vector3(newVelocity.x, 0, 0) * Time.deltaTime;
+            newPosition.x = Mathf.Clamp(newPosition.x, GetMinXBoundary(), GetMaxXBoundary());
 
-        // Apply the adjusted position directly or adjust velocity accordingly
-        body.velocity = new Vector2((newPosition.x - transform.position.x) / Time.deltaTime, body.velocity.y);
+            // Apply the adjusted position directly or adjust velocity accordingly
+            if (Time.deltaTime > 0){
+                body.velocity = new Vector2((newPosition.x - transform.position.x) / Time.deltaTime, body.velocity.y);
+            }
+            
 
-        if (move < 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-        else if (move > 0)
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
+            if (move < 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else if (move > 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
 
-        AnimatePlayer();
+            AnimatePlayer();
         }
     }
 
