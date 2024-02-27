@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 519420030}
-  disappear_distance: 0
+  disappear_distance: 20
   eternal: 1
 --- !u!1 &168354088
 GameObject:
