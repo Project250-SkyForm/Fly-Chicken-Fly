@@ -8,10 +8,11 @@ public class ObstacleGenerator : MonoBehaviour
     public GameObject handleUpKnifePrefab; // Prefab of the knife object
     public GameObject handleDownKnifePrefab;
     public GameObject polaCanPrefab;
+    public GameObject babyChickenPrefab;
     public float generateRate; // Rate at which knives will be generated
     private float nextGenerateTime; // Time when the next knife should be generated
     public BackgroundScroll camera;
-    private string[] obstaclesType = {"HandleUpKnife","HandleDownKnife","PolaCan"};
+    private string[] obstaclesType = {"HandleUpKnife","HandleDownKnife","PolaCan","BabyChicken"};
     private GameObject thisObstacle;
 
     private float cameraWidth = 40.0f;  //should be update after the implementation of shrink and expand of camera
@@ -36,6 +37,9 @@ public class ObstacleGenerator : MonoBehaviour
             case "PolaCan":
                 thisObstacle = polaCanPrefab;
                 break;
+            case "BabyChicken":
+                thisObstacle = babyChickenPrefab;
+                break;
         }
         
         // Check if it's time to generate a knife
@@ -52,7 +56,14 @@ public class ObstacleGenerator : MonoBehaviour
                         newPosition.x = camera.transform.position.x + cameraWidth/2;
                     }
                     break;
-
+                case "BabyChicken":
+                    if (direction == 1){
+                        newPosition.x = camera.transform.position.x - cameraWidth/2;
+                    }
+                    else{
+                        newPosition.x = camera.transform.position.x + cameraWidth/2;
+                    }
+                    break;
                 default:
                     float randomOffset = Random.Range(-10f, 10f); // Random offset
                     newPosition.x = camera.transform.position.x + randomOffset; // New position with random offset
@@ -72,6 +83,11 @@ public class ObstacleGenerator : MonoBehaviour
             
             switch(type){
                 case "PolaCan":
+                    newObstacle.direction = direction;
+                    newObstacle.horizontalSpeed = 10;
+                    newObstacle.fallingSpeed =1;
+                    break;
+                case "BabyChicken":
                     newObstacle.direction = direction;
                     newObstacle.horizontalSpeed = 10;
                     newObstacle.fallingSpeed =1;

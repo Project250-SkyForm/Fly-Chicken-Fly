@@ -42,6 +42,9 @@ public class Obstacles : MonoBehaviour
                 case "polaCan":
                     fallingSpeed += 0.04f;
                     break;
+                case "babyChicken":
+                    fallingSpeed += 0.04f;
+                    break;
                 case "HandleUpKnife":
                     // // Check if the platform is beyond the right or left boundary
                     // if (transform.position.x >= rightBound || transform.position.x <= leftBound)
@@ -93,8 +96,13 @@ public class Obstacles : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit Player");
-            EventController.Instance.AddLump();
+            if (type == "babyChicken"){
+                Debug.Log("Hit bb");
+                EventController.Instance.AddBabyChicken();
+            }
+            else{
+                EventController.Instance.AddLump();
+            }
             Destroy(gameObject);
             AudioController.Instance.PlayChickenHit();
         }
