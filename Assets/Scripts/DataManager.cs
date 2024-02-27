@@ -61,6 +61,7 @@ public class DataManager : MonoBehaviour
 
     private string savedJson;
     private PlayerData loadedData;
+    private int goldenEgg;
     public string currentGameMode;
     public string playerName;
 
@@ -81,7 +82,8 @@ public class DataManager : MonoBehaviour
     }
 
     void Start(){
-
+        goldenEgg = loadedData.GetEggs();
+        Debug.Log(goldenEgg);
     }
 
 
@@ -106,6 +108,13 @@ public class DataManager : MonoBehaviour
             RankingView.Instance.setScores(current_height);
             UpdateData();
         }
+    }
+
+    public void UpdateGoldenEgg(int egg){
+        goldenEgg += egg;
+        Debug.Log(goldenEgg);
+        loadedData.SetEggs(goldenEgg);
+        UpdateData();
     }
 
     public void setZero(){      //reset the PlayerPrefs info

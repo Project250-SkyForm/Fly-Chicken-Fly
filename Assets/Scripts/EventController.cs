@@ -8,6 +8,7 @@ public class EventController : MonoBehaviour
     public static EventController Instance { get { return _instance; } }
 
     private int lump=0;
+    private int egg=0;
 
     public int shrinkScore = 30;
     public float minFieldOfView = 2f;
@@ -21,6 +22,7 @@ public class EventController : MonoBehaviour
     public PlayerMovement player;
     public EnemyMovement enemy;
     public LumpView lumpView;
+    public GoldenEggView eggView;
     public BackgroundScroll camera;
     public BackgroundScroll background;
     public Camera gameCamera;
@@ -82,7 +84,7 @@ public class EventController : MonoBehaviour
         lumpView.UpdateLump(lump);
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
             Debug.Log("End Game");
-            SceneController.Instance.ChangeScene("GameOverScene");
+            EndGame();
             Destroy(gameObject);
         }
         //LumpGenerator.Instance.GenerateImages();
@@ -125,5 +127,16 @@ public class EventController : MonoBehaviour
         leftBoundary.StartScaling(false);
         rightBoundary.StartScaling(false);
         Debug.Log("Stop Shrinking Boundaries");
+    }
+
+    public void AddGoldenEgg(){
+        egg+=1;
+        eggView.UpdateGoldenEgg(egg);
+        //DataManager.Instance.UpdateGoldenEgg(egg);
+    }
+
+    public void EndGame(){
+        DataManager.Instance.UpdateGoldenEgg(egg);
+        SceneController.Instance.ChangeScene("GameOverScene");
     }
 }

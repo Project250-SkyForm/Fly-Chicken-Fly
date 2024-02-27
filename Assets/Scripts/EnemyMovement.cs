@@ -87,7 +87,7 @@ void Update()
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("End Game");
-            SceneController.Instance.ChangeScene("GameOverScene");
+            EventController.Instance.EndGame();
             Destroy(gameObject);
         }
     }
