@@ -108,6 +108,11 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public void UpdateGoldenEgg(int egg){
+        loadedData.SetEggs(egg);
+        UpdateData();
+    }
+
     public void setZero(){      //reset the PlayerPrefs info
         
     }

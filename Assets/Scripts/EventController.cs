@@ -8,6 +8,7 @@ public class EventController : MonoBehaviour
     public static EventController Instance { get { return _instance; } }
 
     private int lump=0;
+    private int egg=0;
 
     public int shrinkScore = 30;
     public float minFieldOfView = 2f;
@@ -20,6 +21,7 @@ public class EventController : MonoBehaviour
     public PlayerMovement player;
     public EnemyMovement enemy;
     public LumpView lumpView;
+    public GoldenEggView eggView;
     public BackgroundScroll camera;
     public BackgroundScroll background;
     public Camera gameCamera;
@@ -57,7 +59,7 @@ public class EventController : MonoBehaviour
         }
         */
         if (player.transform.position.y > shrinkScore){
-            Debug.Log("Y Position: " + player.transform.position.y + " Shrink Score: " + shrinkScore);
+            //Debug.Log("Y Position: " + player.transform.position.y + " Shrink Score: " + shrinkScore);
             ShrinkView();
         }
     }
@@ -131,5 +133,11 @@ public class EventController : MonoBehaviour
                 yield return null;
             }
         }
+    }
+
+    public void AddGoldenEgg(){
+        egg+=1;
+        eggView.UpdateGoldenEgg(egg);
+        DataManager.Instance.UpdateGoldenEgg(egg);
     }
 }
