@@ -29,6 +29,7 @@ public class EventController : MonoBehaviour
     public BackgroundScroll camera;
     public BackgroundScroll background;
     public Camera gameCamera;
+    public GameObject gameOverUI;
     public BoundaryController leftBoundary;
     public BoundaryController rightBoundary;
     public float cameraGoDownDistance;
@@ -149,6 +150,18 @@ public class EventController : MonoBehaviour
 
     public void EndGame(){
         DataManager.Instance.UpdateGoldenEgg(egg);
-        SceneController.Instance.ChangeScene("GameOverScene");
+        PauseGame();
+        UIController.Instance.SetUIActive(gameOverUI);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f; // Pauses the game
+    }
+
+    public void ReplayGame()
+    {
+        Time.timeScale = 1f; // Reset time scale to normal in case it was paused
+        SceneController.Instance.ChangeScene("PlayScene"); // Reload the current scene
     }
 }
