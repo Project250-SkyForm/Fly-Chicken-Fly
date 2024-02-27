@@ -38,6 +38,9 @@ public class EventController : MonoBehaviour
         _instance = this;
     }
     
+    void Start(){
+        ResumeGame();
+    }
     void Update(){
         if (initialBoundary.Equals(0)){
             UpdateXBoundary();
@@ -98,7 +101,6 @@ public class EventController : MonoBehaviour
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
             Debug.Log("End Game");
             EndGame();
-            Destroy(gameObject);
         }
         //LumpGenerator.Instance.GenerateImages();
     }
