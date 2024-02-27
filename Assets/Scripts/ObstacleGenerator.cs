@@ -80,6 +80,7 @@ public class ObstacleGenerator : MonoBehaviour
                     newObstacle.fallingSpeed =10;
                     break;
             }
+            newObstacle.eternal = false;
             // Update nextGenerateTime for the next knife
             nextGenerateTime = Time.time + generateRate;
         }

@@ -11,10 +11,11 @@ public class Obstacles : MonoBehaviour
     public int direction;
     public BackgroundScroll camera;
     public float disappear_distance;
-    private SpriteRenderer movingPlatform;
+    public SpriteRenderer movingPlatform;
     public float leftBound;
     public float rightBound;
     public float gapX;
+    public bool eternal;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class Obstacles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if (transform.position.y<camera.transform.position.y-disappear_distance){
+        if (!eternal && transform.position.y<camera.transform.position.y-disappear_distance){
             Destroy(gameObject);
         }
         else if (movingPlatform!=null){
