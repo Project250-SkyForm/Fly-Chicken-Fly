@@ -157,8 +157,14 @@ public class EventController : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f; // Pauses the game
+        player.ableToMove = false;
     }
 
+    public void ResumeGame(){
+        Time.timeScale = 1f; // Resume the game
+        player.ableToMove = true;
+    }
+    
     public void ReplayGame()
     {
         Time.timeScale = 1f; // Reset time scale to normal in case it was paused
