@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public float jump;
     public bool isJumping;
     public bool ableToMove;
+    public bool withPiggyback;
+    public float piggybackJump;
+    public float jumpConstant;
 
     // Animation variables
     public float frameRate = 0.1f; // Adjust this value to control animation speed
@@ -27,7 +30,14 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   if (ableToMove){
+    {   
+        if (withPiggyback){
+            jump = piggybackJump;
+        }
+        else{
+            jump = jumpConstant;
+        }
+        if (ableToMove){
             float move = 0f;
 
             // Check for W, A, D keys

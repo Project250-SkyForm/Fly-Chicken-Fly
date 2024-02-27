@@ -23,6 +23,9 @@ public class EventController : MonoBehaviour
     public GameObject lump1;
     public GameObject lump2;
     public GameObject lump3;
+    public GameObject piggyback;
+    public float piggybackLiftTime;
+    public float piggybackDestroyTime=0f;
     public EnemyMovement enemy;
     public LumpView lumpView;
     public GoldenEggView eggView;
@@ -42,6 +45,11 @@ public class EventController : MonoBehaviour
         ResumeGame();
     }
     void Update(){
+       
+        if (piggybackDestroyTime!=0f && Time.time > piggybackDestroyTime){
+            DeleteBabyChicken();
+        }
+
         if (initialBoundary.Equals(0)){
             UpdateXBoundary();
             initialBoundary = 1;
@@ -103,6 +111,18 @@ public class EventController : MonoBehaviour
             EndGame();
         }
         //LumpGenerator.Instance.GenerateImages();
+    }
+
+    public void AddBabyChicken(){
+        player.withPiggyback = true;
+        piggyback.SetActive(true);
+        piggybackDestroyTime = Time.time + piggybackLiftTime;
+    }
+
+    public void DeleteBabyChicken(){
+        player.withPiggyback = false;
+        piggyback.SetActive(false);
+        piggybackDestroyTime = 0f;
     }
 
     public float GetMinXBoundary(){
