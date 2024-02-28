@@ -12,7 +12,8 @@ public class ObstacleGenerator : MonoBehaviour
     public float generateRate; // Rate at which knives will be generated
     private float nextGenerateTime; // Time when the next knife should be generated
     public BackgroundScroll camera;
-    private string[] obstaclesType = {"HandleUpKnife","HandleDownKnife","PolaCan","BabyChicken"};
+    //private string[] obstaclesType = {"HandleUpKnife","HandleDownKnife","PolaCan","BabyChicken"};
+    private string[] obstaclesType = {"HandleUpKnife","HandleDownKnife","PolaCan"};
     private GameObject thisObstacle;
 
     private float cameraWidth = 40.0f;  //should be update after the implementation of shrink and expand of camera
