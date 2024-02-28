@@ -1003,10 +1003,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1366631710}
-  catchUpSpeed: 2
+  catchUpSpeed: 4
   maxDistance: 20
   catchUpDelay: 4
-  detectionRadius: 10
+  detectionRadius: 15
 --- !u!50 &227263537
 Rigidbody2D:
   serializedVersion: 4
@@ -2855,8 +2855,8 @@ MonoBehaviour:
   cloudWalkVolume: 0
   landVolume: 0
   obstacleFallVolume: 0.01
-  barkVolume: 0.1
-  backgroundMusicVolume: 0.7
+  barkVolume: 0.04
+  backgroundMusicVolume: 0.8
   chickenHits:
   - {fileID: 8300000, guid: 2af9a56e0257e4376be38015a9e51071, type: 3}
   - {fileID: 8300000, guid: 5b68d4baf7b09450a805590f0e56bbe1, type: 3}
