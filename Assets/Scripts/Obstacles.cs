@@ -29,6 +29,10 @@ public class Obstacles : MonoBehaviour
         if (!eternal && transform.position.y<camera.transform.position.y-disappear_distance){
             Destroy(gameObject);
         }
+        if (!eternal && type == "HandleUpKnife" && fallingSpeed == 0 && transform.position.y>camera.transform.position.y+0.4*disappear_distance){
+                Destroy(gameObject);
+        }
+        
         else if (movingPlatform!=null){
             Vector3 newPos = transform.position;
             // if (movingPlatform.transform.position.x < 0){
