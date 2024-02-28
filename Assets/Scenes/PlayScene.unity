@@ -687,7 +687,7 @@ MonoBehaviour:
   handleDownKnifePrefab: {fileID: 1648059462}
   polaCanPrefab: {fileID: 344263917}
   babyChickenPrefab: {fileID: 12479550}
-  generateRate: 5
+  generateRate: 1
   camera: {fileID: 519420030}
 --- !u!4 &168354090
 Transform:
