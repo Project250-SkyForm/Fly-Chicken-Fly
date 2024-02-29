@@ -29,12 +29,16 @@ public class EventController : MonoBehaviour
     public GameObject piggyback;
     public float piggybackLiftTime;
     public float piggybackDestroyTime=0f;
+    public string hardMode;
+    public ObstacleGenerator obstacleGenerator;
     public EnemyMovement enemy;
     public LumpView lumpView;
     public AltitudeView altitudeView;
     public GoldenEggView eggView;
     public BackgroundScroll camera;
     public BackgroundScroll background;
+    public BackgroundScroll BGTransDayNight;
+    public BackgroundScroll BGTransNightDay;
     public Camera gameCamera;
     public GameObject gameOverUI;
     public BoundaryController leftBoundary;
@@ -70,16 +74,16 @@ public class EventController : MonoBehaviour
             camera.transform.position = newPos; 
             // UpdateXBoundary();
         }
-        /*
-        not used speeding up camera
-        // if the player is higher than the half height of camera
-        else if (player.transform.position.y > camera.transform.position.y ){
-            // Vector3 newPos = camera.transform.position;
-            // newPos.y += 4;
-            // camera.transform.position = newPos;
-            camera.transform.Translate(translation: Vector3.down * -5 * Time.deltaTime);
+        // check bg to change gameMode
+        if (player.transform.position.y > BGTransDayNight.transform.position.y){
+            hardMode = "night";
+            ChangeHardMode(hardMode);
         }
-        */
+        else if (player.transform.position.y > BGTransNightDay.transform.position.y){
+            hardMode = "day";
+            ChangeHardMode(hardMode);
+        }
+
         if (player.transform.position.y > shrinkScore){
             //Debug.Log("Y Position: " + player.transform.position.y + " Shrink Score: " + shrinkScore);
             if (!startShrinking){
@@ -210,5 +214,14 @@ public class EventController : MonoBehaviour
     {
         Time.timeScale = 1f; // Reset time scale to normal in case it was paused
         SceneController.Instance.ChangeScene("PlayScene"); // Reload the current scene
+    }
+
+    public void ChangeHardMode(string mode){
+        if (mode == "day"){
+            obstacleGenerator.generateRate = 4;
+        }
+        else{   //night
+            obstacleGenerator.generateRate = 1;
+        }
     }
 }
