@@ -78,7 +78,7 @@ public class EventController : MonoBehaviour
         }
         */
         if (player.transform.position.y > shrinkScore){
-            Debug.Log("Y Position: " + player.transform.position.y + " Shrink Score: " + shrinkScore);
+            //Debug.Log("Y Position: " + player.transform.position.y + " Shrink Score: " + shrinkScore);
             if (!startShrinking){
                 startShrinking = true;
                 StartShrinkingBoundaries();
@@ -108,7 +108,7 @@ public class EventController : MonoBehaviour
             lump3.SetActive(true);
         }
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
-            Debug.Log("End Game");
+           //Debug.Log("End Game");
             EndGame();
         }
         //LumpGenerator.Instance.GenerateImages();
@@ -155,14 +155,14 @@ public class EventController : MonoBehaviour
     {
         leftBoundary.StartScaling(true);
         rightBoundary.StartScaling(true);
-        Debug.Log("Start Shrinking Boundaries ");
+        //Debug.Log("Start Shrinking Boundaries ");
     }
 
     public void StopShrinkingBoundaries()
     {
         leftBoundary.StartScaling(false);
         rightBoundary.StartScaling(false);
-        Debug.Log("Stop Shrinking Boundaries");
+        //Debug.Log("Stop Shrinking Boundaries");
     }
 
     public void AddGoldenEgg(){

@@ -30,7 +30,10 @@ public class AltitudeView : MonoBehaviour
     void Update()
     {
         meter = player.transform.position.y;
-        score = (meter+goldenEgg*10);
+        float newScore = meter+goldenEgg*10;
+        if (newScore>score){
+            score = newScore;
+        }
         string formattedScore = score.ToString("F2");
         text.text ="Score: "+ formattedScore;    
     }

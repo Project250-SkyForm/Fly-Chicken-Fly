@@ -9,17 +9,26 @@ public class PlayerData
     public int numberOfEggs;
     public int numberOfGolds;
     public bool isLocked;
-    public int highestScore;
+    private int maxLocalScore=5;
+    public List<int> highestScore = new List<int>(){0,0,0,0,0};  //the first one is the highest
 
-    public int GetHighestScore()
+    public int GetHighestScore(int index)
     {
-        return highestScore;
+        return highestScore[index];
     }
 
-    public void SetHighestScore(int highest)
+    public void SetHighestScore(int index, int highest)
     {
-        highestScore = highest;
+        // Insert the new highest score at the specified position
+        highestScore.Insert(index, highest);
+        
+        // If there are more than 5 scores in the list, remove the last one
+        if (highestScore.Count > maxLocalScore)
+        {
+            highestScore.RemoveAt(5); // Removes the last element (index 5)
+        }
     }
+    
 
     public int GetEggs()
     {
@@ -64,6 +73,7 @@ public class DataManager : MonoBehaviour
     private int goldenEgg;
     public string currentGameMode;
     public string playerName;
+    private int maxLocalScore=5;
 
      void Awake(){      // I use awake here instead of Start because I need the highest score to be initialized for the Rankview to be shown
         _instance = this;
@@ -72,18 +82,20 @@ public class DataManager : MonoBehaviour
         // Load the JSON string from PlayerPrefs
         savedJson = PlayerPrefs.GetString("playerData");
         loadedData = JsonUtility.FromJson<PlayerData>(savedJson) ?? new PlayerData();
-        // loadedData.SetHighestScore(0);
-        // UpdateData();
         string updatedJson = JsonUtility.ToJson(loadedData);
         Debug.Log("Updated and Saved Player Data - Eggs: " + loadedData.GetEggs() +
               ", Golds: " + loadedData.GetGold() +
               ", Unlocked: " + loadedData.IsLocked() +
-              ", Highest Score: " + loadedData.GetHighestScore());
+              ", Highest Score: " + loadedData.GetHighestScore(0));
+        for (int i = maxLocalScore-1; i>=0; i--){
+             Debug.Log("Highest: " + loadedData.GetHighestScore(i));
+        }
     }
 
     void Start(){
         goldenEgg = loadedData.GetEggs();
-        Debug.Log(goldenEgg);
+        //Debug.Log(goldenEgg);
+
     }
 
 
@@ -97,22 +109,34 @@ public class DataManager : MonoBehaviour
     }
 
     public void UpdateHighestScore(int current_height)
-    {
-        int previousHighest = loadedData.GetHighestScore();
-
-        // Compare the current score with the previous high score
-        if (current_height > previousHighest)
-        {
-            // Update PlayerPrefs with the new high score
-            loadedData.SetHighestScore(current_height);
-            RankingView.Instance.setScores(current_height);
+    {   
+        int index = -1;
+        for (int i = maxLocalScore-1; i>=0; i--){
+            int previousHighest = loadedData.GetHighestScore(i);
+            // Compare the current score with the previous high score
+            if (current_height > previousHighest)
+            {
+                index = i;
+            }
+            else{
+                break;
+            }
+        }
+        // Update PlayerPrefs with the new high score
+        if (index>=0){
+            Debug.Log(index);
+            Debug.Log(current_height);
+            loadedData.SetHighestScore(index,current_height);
+            // if (index == 0){
+            //     RankingView.Instance.setScores(current_height);
+            // }
             UpdateData();
         }
     }
 
     public void UpdateGoldenEgg(int egg){
         goldenEgg += egg;
-        Debug.Log(goldenEgg);
+        //Debug.Log(goldenEgg);
         loadedData.SetEggs(goldenEgg);
         UpdateData();
     }
@@ -123,7 +147,7 @@ public class DataManager : MonoBehaviour
 
     public int getHighestScore(){
         //return  highestScore;
-        return loadedData.GetHighestScore();
+        return loadedData.GetHighestScore(0); 
     }
 
     public void setPlayerName(string name){
