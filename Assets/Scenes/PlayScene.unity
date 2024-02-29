@@ -8417,7 +8417,7 @@ MonoBehaviour:
   minX: -7
   maxX: 6
   verticalDistanceBetweenPlatforms: 4.1
-  timeBetweenPlatforms: 1.5
+  timeBetweenPlatforms: 1
   startingYPosition: 5.77
   movingPlatformsFrequency: 3
   spikePlatformFrequency: 5
