@@ -23,6 +23,9 @@ public class EventController : MonoBehaviour
     public GameObject lump1;
     public GameObject lump2;
     public GameObject lump3;
+    public GameObject x1;
+    public GameObject x2;
+    public GameObject x3;
     public GameObject piggyback;
     public float piggybackLiftTime;
     public float piggybackDestroyTime=0f;
@@ -97,15 +100,17 @@ public class EventController : MonoBehaviour
 
     public void AddLump(){
         lump += 1;
-        lumpView.UpdateLump(lump);
         if (lump == 1){
             lump1.SetActive(true);
+            x1.SetActive(true);
         }
         if (lump == 2){
             lump2.SetActive(true);
+            x2.SetActive(true);
         }
         if (lump == 3){
             lump3.SetActive(true);
+            x3.SetActive(true);
         }
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
            //Debug.Log("End Game");

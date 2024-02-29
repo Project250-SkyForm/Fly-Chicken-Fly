@@ -145,9 +145,9 @@ public class DataManager : MonoBehaviour
         
     }
 
-    public int getHighestScore(){
+    public int getHighestScore(int index){
         //return  highestScore;
-        return loadedData.GetHighestScore(0); 
+        return loadedData.GetHighestScore(index); 
     }
 
     public void setPlayerName(string name){
