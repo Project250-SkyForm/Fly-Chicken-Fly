@@ -10,8 +10,8 @@ public class AudioController : MonoBehaviour
     
     // Initialize audio source and audio clips
     public AudioSource chicken, backgroundMusicSource;
-    public AudioClip chickenJump, chickenGrassWalk, chickenCloudWalk, chickenLand, obstacleFall;
-    public float hitVolume, jumpVolume, grassWalkVolume, cloudWalkVolume, landVolume, obstacleFallVolume, barkVolume, backgroundMusicVolume;
+    public AudioClip chickenJump, chickenGrassWalk, chickenCloudWalk, chickenLand, obstacleFall, pickEgg;
+    public float hitVolume, jumpVolume, grassWalkVolume, cloudWalkVolume, landVolume, obstacleFallVolume, barkVolume, backgroundMusicVolume, goldenEggVolume;
     public AudioClip[] chickenHits, ambientSounds, backgroundMusicTracks;
 
     void Awake(){
@@ -44,6 +44,11 @@ public class AudioController : MonoBehaviour
 
     public void PlayChickenLand(){
         chicken.PlayOneShot(chickenLand);
+    }
+
+    public void PlayGoldenEggPick(){
+        chicken.volume = goldenEggVolume;
+        chicken.PlayOneShot(pickEgg);
     }
 
     // Plays an ambient sound every 10 seconds 
