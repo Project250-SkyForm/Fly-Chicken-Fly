@@ -463,7 +463,7 @@ Transform:
   m_GameObject: {fileID: 18028558}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -50, y: 0, z: 10}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 212923960}
   m_RootOrder: 4
@@ -507,12 +507,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 62ce01ddca719d34ea9648c586a7cc94, type: 3}
+  m_Sprite: {fileID: 1780456495217799396, guid: 19d0233d7c50f30409777acc7151f033,
+    type: 3}
   m_Color: {r: 0.9716981, g: 0.72358996, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 4.68, y: 6.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -531,18 +532,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.047666073, y: 0.021052599}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 4.68, y: 6.48}
+    newSize: {x: 4.68, y: 6.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 4.1821795, y: 6.3999104}
   m_EdgeRadius: 0
 --- !u!114 &18028562
 MonoBehaviour:
@@ -579,7 +580,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.0124779
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -730,7 +731,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 39634621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d56959026820548983e6ba5a3200ba, type: 3}
+  m_Script: {fileID: 11500000, guid: be845debc2c89434faaa7baf02c8fb80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &39634624
@@ -851,7 +852,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 44473326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d56959026820548983e6ba5a3200ba, type: 3}
+  m_Script: {fileID: 11500000, guid: be845debc2c89434faaa7baf02c8fb80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &44473329
@@ -6614,7 +6615,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1437341788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d56959026820548983e6ba5a3200ba, type: 3}
+  m_Script: {fileID: 11500000, guid: be845debc2c89434faaa7baf02c8fb80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &1437341791

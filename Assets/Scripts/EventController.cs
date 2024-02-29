@@ -170,6 +170,16 @@ public class EventController : MonoBehaviour
         //DataManager.Instance.UpdateGoldenEgg(egg);
     }
 
+    public void LoseGoldenEgg(){
+        if (egg>=2){
+            egg -= 2;
+        }
+        else{
+            egg = 0;
+        }
+        eggView.UpdateGoldenEgg(egg);
+    }
+
     public void EndGame(){
         DataManager.Instance.UpdateGoldenEgg(egg);
         PauseGame();
