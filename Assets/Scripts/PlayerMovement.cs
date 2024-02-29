@@ -16,8 +16,10 @@ public class PlayerMovement : MonoBehaviour
     public float jumpConstant;
 
     // Animation variables
-    public float frameRate = 0.1f; // Adjust this value to control animation speed
-    public List<Sprite> animationFrames; // List to hold the four sprite animations
+    public float walkingFrameRate = 0.1f; // Adjust this value to control walking animation speed
+    public float jumpingFrameRate = 0.1f; // Adjust this value to control jumping animation speed
+    public List<Sprite> animationFrames; // List to hold the walking animation sprites
+    public List<Sprite> jumpAnimationFrames; // Holds jumping sprites
     private int currentFrame = 0;
     private float frameTimer = 0f;
 
@@ -30,14 +32,17 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-        if (withPiggyback){
+    {
+        if (withPiggyback)
+        {
             jump = piggybackJump;
         }
-        else{
+        else
+        {
             jump = jumpConstant;
         }
-        if (ableToMove){
+        if (ableToMove)
+        {
             float move = 0f;
 
             // Check for W, A, D keys
@@ -48,9 +53,15 @@ public class PlayerMovement : MonoBehaviour
                 {
                     body.velocity = new Vector2(body.velocity.x, jump);
                     isJumping = true;
-                    // EventController.Instance.StartCameraMoving();
-                    // EventController.Instance.StartBackgroundMoving();
+
                     AudioController.Instance.PlayChickenJump();
+
+                    if (jumpAnimationFrames.Count > 0 && spriteRenderer != null)
+                    {
+                        spriteRenderer.sprite = jumpAnimationFrames[0];
+                    }
+
+                    AnimatePlayer(jumpingFrameRate);
                 }
             }
             if (Input.GetKey(KeyCode.A))
@@ -71,10 +82,11 @@ public class PlayerMovement : MonoBehaviour
             newPosition.x = Mathf.Clamp(newPosition.x, GetMinXBoundary(), GetMaxXBoundary());
 
             // Apply the adjusted position directly or adjust velocity accordingly
-            if (Time.deltaTime > 0){
+            if (Time.deltaTime > 0)
+            {
                 body.velocity = new Vector2((newPosition.x - transform.position.x) / Time.deltaTime, body.velocity.y);
             }
-            
+
 
             if (move < 0)
             {
@@ -85,38 +97,55 @@ public class PlayerMovement : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 180, 0);
             }
 
-            AnimatePlayer();
+            AnimatePlayer(walkingFrameRate);
         }
     }
 
-    void AnimatePlayer()
+    void AnimatePlayer(float currentFrameRate)
     {
         // Check if any movement key is pressed
         bool isMoving = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D);
 
         // Check if there are frames in the animation list and the spriteRenderer is not null
-        if (animationFrames.Count > 0 && spriteRenderer != null && isMoving)
+        if (animationFrames.Count > 0 && spriteRenderer != null)
         {
-            frameTimer += Time.deltaTime;
-
-            // Check if it's time to change frames based on frameRate
-            if (frameTimer >= frameRate)
+            // If the player is not jumping, play the walking animation
+            if (!isJumping && isMoving)
             {
-                frameTimer = 0f;
-                currentFrame = (currentFrame + 1) % animationFrames.Count;
+                frameTimer += Time.deltaTime;
 
-                // Change the sprite renderer's sprite to the current frame
-                spriteRenderer.sprite = animationFrames[currentFrame];
+                // Check if it's time to change frames based on frameRate
+                if (frameTimer >= currentFrameRate)
+                {
+                    frameTimer = 0f;
+                    currentFrame = (currentFrame + 1) % animationFrames.Count;
+
+                    // Change the sprite renderer's sprite to the current frame
+                    spriteRenderer.sprite = animationFrames[currentFrame];
+                }
+            }
+            else
+            {
+                // If the player is jumping, cycle through the jump animation frames
+                if (isJumping && jumpAnimationFrames.Count > 0)
+                {
+                    frameTimer += Time.deltaTime;
+
+                    if (frameTimer >= jumpingFrameRate)
+                    {
+                        frameTimer = 0f;
+                        currentFrame = (currentFrame + 1) % jumpAnimationFrames.Count;
+                        spriteRenderer.sprite = jumpAnimationFrames[currentFrame];
+                    }
+                }
             }
         }
     }
-
 
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("MovingPlatform"))
         {
-            //DataManager.Instance.UpdateHighestScore((int)transform.position.y);
             isJumping = false;
         }
     }
@@ -124,13 +153,15 @@ public class PlayerMovement : MonoBehaviour
     float GetMinXBoundary()
     {
         return EventController.Instance.GetMinXBoundary();
-        //return 0f; // Placeholder, replace with actual method or value
     }
 
     float GetMaxXBoundary()
     {
         return EventController.Instance.GetMaxXBoundary();
-        //return 10f; // Placeholder, replace with actual method or value
     }
 }
+
+
+
+
 

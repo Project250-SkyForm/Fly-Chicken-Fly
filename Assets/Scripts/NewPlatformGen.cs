@@ -8,7 +8,6 @@ public class NewPlatformGen : MonoBehaviour
     public GameObject movingPlatformPrefab;
     public List<GameObject> spikePlatformPrefab;
     public List<GameObject> rottenEggPlatformPrefab;
-    public int totalPlatforms = 10;
     public int platformsOnScreenLimit = 5; // Adjust this to control the number of platforms on the screen
     public float minX = -7f;
     public float maxX = 6f;
@@ -34,7 +33,7 @@ public class NewPlatformGen : MonoBehaviour
         float currentY = startingYPosition;
         int regularPlatformCounter = 0;
 
-        for (int i = 0; i < totalPlatforms; i++)
+        while (true)
         {
             if (regularPlatformCounter == movingPlatformsFrequency)
             {
