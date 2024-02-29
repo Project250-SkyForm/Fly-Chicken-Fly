@@ -8,6 +8,8 @@ public class AltitudeView : MonoBehaviour
     private float meter;
     private Text text; // Now text is of type UnityEngine.UI.Text
     public PlayerMovement player;
+    public int goldenEgg = 0;
+    public float score=0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,11 @@ public class AltitudeView : MonoBehaviour
     void Update()
     {
         meter = player.transform.position.y;
-        string formattedMeter = meter.ToString("F2");
-        text.text ="Score: "+formattedMeter;    
+        float newScore = meter+goldenEgg*10;
+        if (newScore>score){
+            score = newScore;
+        }
+        string formattedScore = score.ToString("F2");
+        text.text ="Score: "+ formattedScore;    
     }
 }

@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("MovingPlatform"))
         {
-            DataManager.Instance.UpdateHighestScore((int)transform.position.y);
+            //DataManager.Instance.UpdateHighestScore((int)transform.position.y);
             isJumping = false;
         }
     }

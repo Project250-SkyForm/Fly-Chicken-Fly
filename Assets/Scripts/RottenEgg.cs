@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spike : MonoBehaviour
+public class RottenEgg : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class Spike : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.CompareTag("Player")){
-            EventController.Instance.AddLump();
+            EventController.Instance.LoseGoldenEgg();
             AudioController.Instance.PlayChickenHit();
             Destroy(gameObject);
         }
