@@ -8,6 +8,7 @@ public class Obstacles : MonoBehaviour
     public string type;
     public float fallingSpeed;
     public float horizontalSpeed;
+    public float rotationSpeed;
     public int direction;
     public BackgroundScroll camera;
     public float disappear_distance;
@@ -41,27 +42,46 @@ public class Obstacles : MonoBehaviour
             newPos.x = movingPlatform.transform.position.x + gapX;
             transform.position = newPos;
         }
-        else if (fallingSpeed != 0 || horizontalSpeed != 0){     //I have still objects for generation, so we don't want to chaneg any of them
+        else if (!eternal){     //I have still objects for generation, so we don't want to chaneg any of them
             switch (type){
                 case "polaCan":
                     fallingSpeed += 0.04f;
+                    // Get the current rotation in Euler angles
+                    Vector3 currentRotation = transform.rotation.eulerAngles;
+
+                    // Update the Z rotation component
+                    float newZRotation = currentRotation.z + rotationSpeed * Time.deltaTime;
+
+                    // Ensure the rotation stays within 0 to 360 degrees
+                    newZRotation = Mathf.Repeat(newZRotation, 360f);
+
+                    // Construct new Euler angles with only the Z component changed
+                    Vector3 newRotation = new Vector3(currentRotation.x, currentRotation.y, newZRotation);
+
+                    // Set the rotation using Quaternion.Euler
+                    transform.rotation = Quaternion.Euler(newRotation);
+
+                    Vector3 newPos = transform.position;
+                    newPos.y -= fallingSpeed*Time.deltaTime;
+                    newPos.x += direction * horizontalSpeed*Time.deltaTime;
+                    transform.position = newPos;
                     break;
                 case "babyChicken":
                     fallingSpeed += 0.04f;
                     break;
                 case "HandleUpKnife":
-                    // // Check if the platform is beyond the right or left boundary
-                    // if (transform.position.x >= rightBound || transform.position.x <= leftBound)
-                    // {
-                    //     // Change direction to move the platform back
-                    //     direction *= -1;
-                    // }   
+                    transform.Translate(Vector3.down * fallingSpeed * Time.deltaTime +
+                            Vector3.right * direction * horizontalSpeed * Time.deltaTime);
+                    break;
+                case "HandleDownKnife":
+                    transform.Translate(Vector3.down * fallingSpeed * Time.deltaTime +
+                            Vector3.right * direction * horizontalSpeed * Time.deltaTime);
                     break;
             }
         }
         
-        transform.Translate(Vector3.down * fallingSpeed * Time.deltaTime +
-                            Vector3.right * direction * horizontalSpeed * Time.deltaTime);
+        // transform.Translate(Vector3.down * fallingSpeed * Time.deltaTime +
+        //                     Vector3.right * direction * horizontalSpeed * Time.deltaTime);
     }
 
     void OnCollisionEnter2D(Collision2D other){
