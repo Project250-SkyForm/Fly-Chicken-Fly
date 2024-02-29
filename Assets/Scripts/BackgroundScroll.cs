@@ -9,7 +9,7 @@ public class BackgroundScroll : MonoBehaviour
     private Vector3 StartPos; // initial starting position
     public GameObject loopBG;
     public SpriteRenderer spriteRenderer; // get the sprite renderer of the background
-
+    public PlayerMovement player;
 
     
     // Start is called before the first frame update
@@ -25,10 +25,10 @@ public class BackgroundScroll : MonoBehaviour
     void Update()
     {
         transform.Translate(translation: Vector3.down * speed * Time.deltaTime); // move bg based on speed
-        if (transform.position.y<-150){
+        if (transform.position.y < player.transform.position.y-120 ){
             SpriteRenderer loopBGRender = loopBG.GetComponent<SpriteRenderer>(); // get the sprite renderer of the background
             Vector3 newPos = loopBGRender.transform.position;
-            newPos.y +=165.96f;
+            newPos.y = loopBGRender.bounds.max.y + spriteRenderer.bounds.size.y/2;;
             transform.position = newPos;
         }
     }
