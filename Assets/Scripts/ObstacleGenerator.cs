@@ -87,6 +87,7 @@ public class ObstacleGenerator : MonoBehaviour
                     newObstacle.direction = direction;
                     newObstacle.horizontalSpeed = 10;
                     newObstacle.fallingSpeed =1;
+                    newObstacle.rotationSpeed = 180f;
                     break;
                 case "BabyChicken":
                     newObstacle.direction = direction;
