@@ -28,7 +28,7 @@ public class GoldenEgg : MonoBehaviour
             Debug.Log("Gain Egg");
             EventController.Instance.AddGoldenEgg();
             Destroy(gameObject);
-            //AudioController.Instance.pickEgg();
+            AudioController.Instance.PlayGoldenEggPick();
         }
         else{   // for any overlapping
             Destroy(gameObject);

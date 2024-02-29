@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
                     isJumping = true;
                     // EventController.Instance.StartCameraMoving();
                     // EventController.Instance.StartBackgroundMoving();
-                    // AudioController.Instance.PlayChickenJump();
+                    AudioController.Instance.PlayChickenJump();
                 }
             }
             if (Input.GetKey(KeyCode.A))
