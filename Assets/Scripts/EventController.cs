@@ -28,6 +28,7 @@ public class EventController : MonoBehaviour
     public float piggybackDestroyTime=0f;
     public EnemyMovement enemy;
     public LumpView lumpView;
+    public AltitudeView altitudeView;
     public GoldenEggView eggView;
     public BackgroundScroll camera;
     public BackgroundScroll background;
@@ -167,6 +168,7 @@ public class EventController : MonoBehaviour
     public void AddGoldenEgg(){
         egg+=1;
         eggView.UpdateGoldenEgg(egg);
+        altitudeView.goldenEgg=egg;
         //DataManager.Instance.UpdateGoldenEgg(egg);
     }
 
@@ -178,10 +180,12 @@ public class EventController : MonoBehaviour
             egg = 0;
         }
         eggView.UpdateGoldenEgg(egg);
+        altitudeView.goldenEgg=egg;
     }
 
     public void EndGame(){
         DataManager.Instance.UpdateGoldenEgg(egg);
+        DataManager.Instance.UpdateHighestScore((int)altitudeView.score);
         PauseGame();
         UIController.Instance.SetUIActive(gameOverUI);
     }

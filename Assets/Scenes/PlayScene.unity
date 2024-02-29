@@ -462,8 +462,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18028558}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50, y: 0, z: 10}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: -48.56, y: 0.15, z: 10}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_Children: []
   m_Father: {fileID: 212923960}
   m_RootOrder: 4
@@ -509,7 +509,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 1780456495217799396, guid: 19d0233d7c50f30409777acc7151f033,
     type: 3}
-  m_Color: {r: 0.9716981, g: 0.72358996, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -687,7 +687,7 @@ Transform:
   - {fileID: 455194007}
   - {fileID: 1104387340}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &39634621
 GameObject:
@@ -3044,6 +3044,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1366631711}
+  goldenEgg: 0
+  score: 0
 --- !u!1 &614596737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3677,7 +3679,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &782966347
 MonoBehaviour:
@@ -3744,6 +3746,7 @@ MonoBehaviour:
   piggybackDestroyTime: 0
   enemy: {fileID: 227263536}
   lumpView: {fileID: 1855876129}
+  altitudeView: {fileID: 543953001}
   eggView: {fileID: 1469884029}
   camera: {fileID: 519420030}
   background: {fileID: 1434310875}
@@ -4094,7 +4097,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942041141
 GameObject:
@@ -5193,7 +5196,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1133600064
 MonoBehaviour:
@@ -6462,7 +6465,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1403126804
 MonoBehaviour:
@@ -8505,7 +8508,7 @@ Transform:
   - {fileID: 520964787}
   - {fileID: 626934568}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1898764617
 GameObject:
