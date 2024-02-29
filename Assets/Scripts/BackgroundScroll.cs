@@ -25,10 +25,10 @@ public class BackgroundScroll : MonoBehaviour
     void Update()
     {
         transform.Translate(translation: Vector3.down * speed * Time.deltaTime); // move bg based on speed
-        if (transform.position.y<-100){
+        if (transform.position.y<-150){
             SpriteRenderer loopBGRender = loopBG.GetComponent<SpriteRenderer>(); // get the sprite renderer of the background
             Vector3 newPos = loopBGRender.transform.position;
-            newPos.y +=200;
+            newPos.y +=165.96f;
             transform.position = newPos;
         }
     }
