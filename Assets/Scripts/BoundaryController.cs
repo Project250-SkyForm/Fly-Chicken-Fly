@@ -11,15 +11,19 @@ public class BoundaryController : MonoBehaviour
 
 
     // Call this method to start scaling
-    public void StartScaling(bool expand)
+    public void Rescale(bool expand, float minScaleX, float maxScaleX)
     {
+        this.minScaleX = minScaleX;
+        this.maxScaleX = maxScaleX;
         if (!isScaling)
         {
-            StartCoroutine(ScaleBoundary(expand));
+            // Debug.Log("Reshrinking maxScaleX: " + maxScaleX);
+            StartCoroutine(RescaleBoundary(expand));
         }
     }
 
-    private IEnumerator ScaleBoundary(bool expand)
+
+    private IEnumerator RescaleBoundary(bool expand)
     {
         isScaling = true;
         float targetScaleX = expand ? maxScaleX : minScaleX;
@@ -30,6 +34,7 @@ public class BoundaryController : MonoBehaviour
             transform.localScale = newScale;
             yield return null;
         }
-        isScaling = false;
+        // Debug.Log("RescaleBoundary finished");
+        isScaling = false; 
     }
 }

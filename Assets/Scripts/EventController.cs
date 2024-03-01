@@ -162,16 +162,11 @@ public class EventController : MonoBehaviour
 
     private void StartShrinkingBoundaries()
     {
-        leftBoundary.StartScaling(true);
-        rightBoundary.StartScaling(true);
-        //Debug.Log("Start Shrinking Boundaries ");
-    }
-
-    public void StopShrinkingBoundaries()
-    {
-        leftBoundary.StartScaling(false);
-        rightBoundary.StartScaling(false);
-        //Debug.Log("Stop Shrinking Boundaries");
+        float newMaxScaleX = Random.Range(9f, 22f);
+        float newMinScaleX = Random.Range(5f, 8f);
+        leftBoundary.Rescale(true, newMinScaleX, newMaxScaleX);
+        rightBoundary.Rescale(true, newMinScaleX, newMaxScaleX);
+        startShrinking = false; 
     }
 
     public void AddGoldenEgg(){
