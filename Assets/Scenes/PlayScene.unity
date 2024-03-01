@@ -6460,7 +6460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   const_speed: 10
   speed: 0
-  loopBG: {fileID: 0}
+  loopBG: {fileID: 1563824924}
   spriteRenderer: {fileID: 1217592803}
   player: {fileID: 1366631711}
 --- !u!212 &1217592803
@@ -7094,24 +7094,8 @@ MonoBehaviour:
   withPiggyback: 0
   piggybackJump: 15
   jumpConstant: 20
-  walkingFrameRate: 0.1
-  jumpingFrameRate: 0.1
-  hurtFrameRate: 1
-  walkingAnimationFrames:
-  - {fileID: 2733854080569834537, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
-  - {fileID: 3679965644012324363, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
-  - {fileID: -9088870232234587211, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
-  - {fileID: 159730980387677036, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
-  jumpingAnimationFrames:
-  - {fileID: -2302252138917364304, guid: b30d24f6de397ed42b12e7dcb971439a, type: 3}
-  - {fileID: -2374150218160141191, guid: b30d24f6de397ed42b12e7dcb971439a, type: 3}
-  - {fileID: -1210123598094998204, guid: b30d24f6de397ed42b12e7dcb971439a, type: 3}
-  - {fileID: 1701687642695637825, guid: b30d24f6de397ed42b12e7dcb971439a, type: 3}
-  - {fileID: -2498769140343434251, guid: b30d24f6de397ed42b12e7dcb971439a, type: 3}
-  hurtAnimationFrames:
-  - {fileID: 4639411021533911400, guid: b30d24f6de397ed42b12e7dcb971439a, type: 3}
-  - {fileID: 4639411021533911400, guid: b30d24f6de397ed42b12e7dcb971439a, type: 3}
-  - {fileID: 4639411021533911400, guid: b30d24f6de397ed42b12e7dcb971439a, type: 3}
+  frameRate: 0.1
+  animationFrames: []
 --- !u!50 &1366631712
 Rigidbody2D:
   serializedVersion: 4
@@ -8743,6 +8727,7 @@ MonoBehaviour:
   - {fileID: 62946086}
   - {fileID: 520964786}
   - {fileID: 626934567}
+  totalPlatforms: 10
   platformsOnScreenLimit: 50
   minX: -7
   maxX: 6
@@ -9843,9 +9828,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   const_speed: 10
   speed: 0
-  loopBG: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  player: {fileID: 0}
+  loopBG: {fileID: 117382731}
+  spriteRenderer: {fileID: 1905204433}
+  player: {fileID: 1366631711}
 --- !u!1 &1907204744
 GameObject:
   m_ObjectHideFlags: 0
