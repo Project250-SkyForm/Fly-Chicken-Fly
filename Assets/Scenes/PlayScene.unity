@@ -3896,7 +3896,7 @@ MonoBehaviour:
   grassWalkVolume: 0
   cloudWalkVolume: 0
   landVolume: 0
-  obstacleFallVolume: 0.01
+  obstacleFallVolume: 0.003
   barkVolume: 0.03
   backgroundMusicVolume: 0.8
   goldenEggVolume: 0.1
@@ -8456,8 +8456,7 @@ MonoBehaviour:
   - {fileID: 62946086}
   - {fileID: 520964786}
   - {fileID: 626934567}
-  totalPlatforms: 100
-  platformsOnScreenLimit: 20
+  platformsOnScreenLimit: 1000
   minX: -7
   maxX: 6
   verticalDistanceBetweenPlatforms: 4.1
