@@ -3896,7 +3896,7 @@ MonoBehaviour:
   grassWalkVolume: 0
   cloudWalkVolume: 0
   landVolume: 0
-  obstacleFallVolume: 0.01
+  obstacleFallVolume: 0.003
   barkVolume: 0.03
   backgroundMusicVolume: 0.8
   goldenEggVolume: 0.1
@@ -4196,7 +4196,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9f186abf75aeb44e5a5e251348a2d979, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 15135d1040d3c674b9522f5572924aa0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4608,7 +4608,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 382d14a7e854cef48ba1229ce32e2e0b, type: 3}
-  m_Color: {r: 0.5176471, g: 0.93725497, b: 1, a: 0.78431374}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5294118}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8456,8 +8456,7 @@ MonoBehaviour:
   - {fileID: 62946086}
   - {fileID: 520964786}
   - {fileID: 626934567}
-  totalPlatforms: 100
-  platformsOnScreenLimit: 20
+  platformsOnScreenLimit: 1000
   minX: -7
   maxX: 6
   verticalDistanceBetweenPlatforms: 4.1
@@ -9138,7 +9137,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 382d14a7e854cef48ba1229ce32e2e0b, type: 3}
-  m_Color: {r: 0.52156866, g: 0.93333334, b: 1, a: 0.78431374}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5294118}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

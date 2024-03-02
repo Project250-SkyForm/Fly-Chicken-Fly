@@ -14,6 +14,7 @@ public class PlayerData
 
     public int GetHighestScore(int index)
     {
+        Debug.Log(index);
         return highestScore[index];
     }
 
