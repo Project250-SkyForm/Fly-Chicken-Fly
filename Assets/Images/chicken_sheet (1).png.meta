@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: a6ab19e4456b71b4a93b2aa21caaed9c
+guid: dc8e27f9461867f4a9c00f098dac0359
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2302252138917364304
-    second: chicken_sheet_0
+      213: 6769353170354109886
+    second: chicken_sheet (1)_0
   - first:
-      213: -2374150218160141191
-    second: chicken_sheet_1
+      213: 7470244842381721689
+    second: chicken_sheet (1)_1
   - first:
-      213: -1210123598094998204
-    second: chicken_sheet_2
+      213: 5922648040809366747
+    second: chicken_sheet (1)_2
   - first:
-      213: 1701687642695637825
-    second: chicken_sheet_3
+      213: 8465482159922067229
+    second: chicken_sheet (1)_3
   - first:
-      213: -2498769140343434251
-    second: chicken_sheet_4
-  - first:
-      213: 4639411021533911400
-    second: hurt chicken
+      213: -3676383020622849625
+    second: chicken_sheet (1)_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -117,118 +114,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chicken_sheet_0
+      name: chicken_sheet (1)_0
       rect:
         serializedVersion: 2
         x: 596
-        y: 7674
-        width: 1251
-        height: 1920
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bd7274a0e1cc00e0800000000000000
-      internalID: -2302252138917364304
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken_sheet_1
-      rect:
-        serializedVersion: 2
-        x: 2214
-        y: 7933
-        width: 1165
-        height: 2028
-      alignment: 9
-      pivot: {x: 0.44444406, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97c062394f25d0fd0800000000000000
-      internalID: -2374150218160141191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken_sheet_2
-      rect:
-        serializedVersion: 2
-        x: 3638
-        y: 7674
-        width: 1467
-        height: 1985
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 445ea31cff6c43fe0800000000000000
-      internalID: -1210123598094998204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken_sheet_3
-      rect:
-        serializedVersion: 2
-        x: 5127
-        y: 7933
-        width: 1747
-        height: 2114
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14b9b8525eb9d9710800000000000000
-      internalID: 1701687642695637825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken_sheet_4
-      rect:
-        serializedVersion: 2
-        x: 6982
-        y: 7803
-        width: 1553
-        height: 1813
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f31f16b4b6925dd0800000000000000
-      internalID: -2498769140343434251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hurt chicken
-      rect:
-        serializedVersion: 2
-        x: 9506
-        y: 11255
-        width: 1273
-        height: 2115
+        y: 7760
+        width: 1316
+        height: 1856
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +128,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8699f815ebf726040800000000000000
-      internalID: 4639411021533911400
+      spriteID: ebdfe16c7d291fd50800000000000000
+      internalID: 6769353170354109886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken_sheet (1)_1
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 7954
+        width: 1208
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9504b57ea14aba760800000000000000
+      internalID: 7470244842381721689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken_sheet (1)_2
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 7631
+        width: 1467
+        height: 2136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd40b1a7309713250800000000000000
+      internalID: 5922648040809366747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken_sheet (1)_3
+      rect:
+        serializedVersion: 2
+        x: 5213
+        y: 7933
+        width: 1596
+        height: 2071
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17bf822c2f6b7570800000000000000
+      internalID: 8465482159922067229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicken_sheet (1)_4
+      rect:
+        serializedVersion: 2
+        x: 7025
+        y: 7696
+        width: 1575
+        height: 1941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a95f7dfe1ddafcc0800000000000000
+      internalID: -3676383020622849625
       vertices: []
       indices: 
       edges: []

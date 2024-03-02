@@ -6671,11 +6671,11 @@ MonoBehaviour:
   - {fileID: -9088870232234587211, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
   - {fileID: 159730980387677036, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
   jumpAnimationFrames:
-  - {fileID: -2302252138917364304, guid: a6ab19e4456b71b4a93b2aa21caaed9c, type: 3}
-  - {fileID: -2374150218160141191, guid: a6ab19e4456b71b4a93b2aa21caaed9c, type: 3}
-  - {fileID: -1210123598094998204, guid: a6ab19e4456b71b4a93b2aa21caaed9c, type: 3}
-  - {fileID: 1701687642695637825, guid: a6ab19e4456b71b4a93b2aa21caaed9c, type: 3}
-  - {fileID: -2498769140343434251, guid: a6ab19e4456b71b4a93b2aa21caaed9c, type: 3}
+  - {fileID: 6769353170354109886, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
+  - {fileID: 7470244842381721689, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
+  - {fileID: 5922648040809366747, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
+  - {fileID: 8465482159922067229, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
+  - {fileID: -3676383020622849625, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
 --- !u!50 &1366631712
 Rigidbody2D:
   serializedVersion: 4
@@ -8419,6 +8419,7 @@ MonoBehaviour:
   - {fileID: 62946086}
   - {fileID: 520964786}
   - {fileID: 626934567}
+  totalPlatforms: 10
   platformsOnScreenLimit: 20
   minX: -7
   maxX: 6
