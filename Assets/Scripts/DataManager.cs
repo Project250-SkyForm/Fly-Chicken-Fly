@@ -15,7 +15,12 @@ public class PlayerData
     public int GetHighestScore(int index)
     {
         Debug.Log(index);
-        return highestScore[index];
+        try{
+            return highestScore[index];
+        }
+        catch{
+            return highestScore[0];
+        }
     }
 
     public void SetHighestScore(int index, int highest)
