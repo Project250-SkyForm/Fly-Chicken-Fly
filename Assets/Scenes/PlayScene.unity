@@ -3126,17 +3126,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 882012973}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &507123404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4121,17 +4110,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 882012973}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &743139613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4962,8 +4940,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042893950}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -26.5, y: 300.9, z: -1.0999908}
-  m_LocalScale: {x: 9, y: 200, z: 1}
+  m_LocalPosition: {x: -26.5, y: 91.8, z: -1.0999908}
+  m_LocalScale: {x: 9, y: 79.22, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
@@ -5012,7 +4990,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6d8a8d4cd5ef8f040b67c0c7a1a85ed2, type: 3}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5266,17 +5244,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 507123401}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 882012973}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7284,12 +7251,19 @@ MonoBehaviour:
   withPiggyback: 0
   piggybackJump: 15
   jumpConstant: 20
-  frameRate: 0.1
+  walkingFrameRate: 0.1
+  jumpingFrameRate: 0.1
   animationFrames:
   - {fileID: 2733854080569834537, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
   - {fileID: 3679965644012324363, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
   - {fileID: -9088870232234587211, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
   - {fileID: 159730980387677036, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
+  jumpAnimationFrames:
+  - {fileID: 6769353170354109886, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
+  - {fileID: 7470244842381721689, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
+  - {fileID: 5922648040809366747, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
+  - {fileID: 8465482159922067229, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
+  - {fileID: -3676383020622849625, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
 --- !u!50 &1366631712
 Rigidbody2D:
   serializedVersion: 4
@@ -8455,17 +8429,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 254916593}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 882012973}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9757,8 +9720,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887190927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.344639, y: 300.9, z: -1.0999908}
-  m_LocalScale: {x: 9, y: 200, z: 6.6}
+  m_LocalPosition: {x: 26.344639, y: 91.7552, z: -1.0999908}
+  m_LocalScale: {x: 9, y: 79.22, z: 6.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -9807,7 +9770,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6d8a8d4cd5ef8f040b67c0c7a1a85ed2, type: 3}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10111,17 +10074,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 882012973}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1898764620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10389,17 +10341,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 254916593}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 882012973}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10709,17 +10650,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1940888405}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 882012973}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
