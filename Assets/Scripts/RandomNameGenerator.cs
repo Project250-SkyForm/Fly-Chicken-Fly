@@ -38,4 +38,9 @@ public class RandomNameGenerator : MonoBehaviour
         inputText.text = playerName;
     }
 
+    public void ConfirmName(){
+        string playerName = inputText.text;
+        PlayerPrefs.SetString("playerName", playerName);
+    }
+
 }

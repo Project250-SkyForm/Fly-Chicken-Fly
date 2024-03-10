@@ -168,5 +168,6 @@ public class DataManager : MonoBehaviour
 
     public void setPlayerName(string name){
         playerName = name;
+        PlayerPrefs.SetString("plyaerName",playerName);
     }
 }
