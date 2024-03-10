@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerData
 {
     public int numberOfEggs;
+    public string playerName;
     public int numberOfGolds;
     public bool isLocked;
     private int maxLocalScore=5;
@@ -65,6 +66,13 @@ public class PlayerData
     {
         isLocked = isLock;
     }
+
+    public void SetPlayerName(string name){
+        playerName = name;
+    }
+    public string GetPlayerName(){
+        return playerName;
+    }
 }
 
 
@@ -89,6 +97,8 @@ public class DataManager : MonoBehaviour
         savedJson = PlayerPrefs.GetString("playerData");
         loadedData = JsonUtility.FromJson<PlayerData>(savedJson) ?? new PlayerData();
         string updatedJson = JsonUtility.ToJson(loadedData);
+        // playerName = loadedData.GetPlayerName();
+        // Debug.Log("Player Name:");
         Debug.Log("Updated and Saved Player Data - Eggs: " + loadedData.GetEggs() +
               ", Golds: " + loadedData.GetGold() +
               ", Unlocked: " + loadedData.IsLocked() +
