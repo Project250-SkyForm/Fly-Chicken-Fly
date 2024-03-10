@@ -86,7 +86,7 @@ public class DataManager : MonoBehaviour
     private PlayerData loadedData;
     private int goldenEgg;
     public string currentGameMode;
-    public string playerName;
+    public string playerName=null;
     private int maxLocalScore=5;
 
      void Awake(){      // I use awake here instead of Start because I need the highest score to be initialized for the Rankview to be shown

@@ -10,10 +10,17 @@ public class RandomNameGenerator : MonoBehaviour
     string[] nouns = { "Banana", "Penguin", "Unicorn", "Pancake", "Jellybean", "Squid", "Lemon", "Noodle", "Rainbow", "Marshmallow", "Chicken","JoJo", "Dio", "Triangle"};
 
     void Start(){
-        if (DataManager.Instance.playerName !=null){
-            inputText = gameObject.GetComponent<InputField>();
+        inputText = gameObject.GetComponent<InputField>();
+        if (!PlayerPrefs.HasKey("playerName")){
             string playerName = GetRandomName();
             inputText.text = playerName;
+            PlayerPrefs.SetString("playerName", playerName);
+            Debug.Log("Generate New Name");
+        }
+        else{
+            string playerName = PlayerPrefs.GetString("playerName");
+            inputText.text = playerName;
+            Debug.Log("Maintain Old Name");
         }
     }
     // Generate a random name
@@ -27,6 +34,7 @@ public class RandomNameGenerator : MonoBehaviour
 
     public void SetRandomName(){
         string playerName = GetRandomName();
+        PlayerPrefs.SetString("playerName", playerName);
         inputText.text = playerName;
     }
 
