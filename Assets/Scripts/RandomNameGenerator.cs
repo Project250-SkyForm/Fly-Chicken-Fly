@@ -16,11 +16,13 @@ public class RandomNameGenerator : MonoBehaviour
             inputText.text = playerName;
             PlayerPrefs.SetString("playerName", playerName);
             Debug.Log("Generate New Name");
+            DataManager.Instance.playerName = playerName;
         }
         else{
             string playerName = PlayerPrefs.GetString("playerName");
             inputText.text = playerName;
             Debug.Log("Maintain Old Name");
+            DataManager.Instance.playerName = playerName;
         }
     }
     // Generate a random name
@@ -36,11 +38,13 @@ public class RandomNameGenerator : MonoBehaviour
         string playerName = GetRandomName();
         PlayerPrefs.SetString("playerName", playerName);
         inputText.text = playerName;
+        DataManager.Instance.playerName = playerName;
     }
 
     public void ConfirmName(){
         string playerName = inputText.text;
         PlayerPrefs.SetString("playerName", playerName);
+        DataManager.Instance.playerName = playerName;
     }
 
 }
