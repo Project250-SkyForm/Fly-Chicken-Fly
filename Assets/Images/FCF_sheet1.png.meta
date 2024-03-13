@@ -10,7 +10,7 @@ TextureImporter:
     second: grass_short
   - first:
       213: 5070177430556895593
-    second: groun
+    second: grass_long
   - first:
       213: -2580589147946533381
     second: cloud_long
@@ -168,13 +168,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: groun
+      name: grass_long
       rect:
         serializedVersion: 2
         x: 1549
         y: 2367
-        width: 1163
-        height: 446
+        width: 1158
+        height: 463
       alignment: 9
       pivot: {x: 0.5052623, y: 0.46051776}
       border: {x: 6, y: 0, z: 0, w: 0}
