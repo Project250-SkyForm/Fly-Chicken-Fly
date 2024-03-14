@@ -12,7 +12,7 @@ public class RandomNameGenerator : MonoBehaviour
     void Start(){
         inputText = gameObject.GetComponent<InputField>();
         if (!PlayerPrefs.HasKey("playerName")){
-            string playerName = GetRandomName();
+            string playerName = "I’m just chicken";
             inputText.text = playerName;
             PlayerPrefs.SetString("playerName", playerName);
             Debug.Log("Generate New Name");
