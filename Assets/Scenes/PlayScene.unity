@@ -4225,7 +4225,7 @@ MonoBehaviour:
   goldenEggVolume: 0.1
   chickenHits:
   - {fileID: 8300000, guid: 2af9a56e0257e4376be38015a9e51071, type: 3}
-  - {fileID: 8300000, guid: 5b68d4baf7b09450a805590f0e56bbe1, type: 3}
+  - {fileID: 8300000, guid: db6732df5a8b4dc45938dc5db9d46970, type: 3}
   ambientSounds:
   - {fileID: 8300000, guid: 453b604b4873b4f919a8d13d4f035857, type: 3}
   backgroundMusicTracks:
