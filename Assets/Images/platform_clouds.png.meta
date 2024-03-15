@@ -1,13 +1,31 @@
 fileFormatVersion: 2
-guid: 426c5f35f575b204dab2f38b497d51f4
+guid: 76c7dfec0ec5c9e4493eecfe22feb5fe
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 3433404774020652441
-    second: platform_clouds_0
+    second: daycloud_long2
   - first:
       213: 680760123924574329
-    second: platform_clouds_1
+    second: daycloud_short
+  - first:
+      213: -2110000230684747892
+    second: daycloud_fluffy
+  - first:
+      213: -1177822999225110646
+    second: daycloud_long
+  - first:
+      213: -5232097564175815978
+    second: nightcloud_long
+  - first:
+      213: 7468426675474252743
+    second: nightcloud_lon
+  - first:
+      213: 6759008127328534811
+    second: nightcloud_fluffy
+  - first:
+      213: 8104306062220808273
+    second: nightcloud_short
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,16 +123,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: platform_clouds_0
+      name: daycloud_long2
       rect:
         serializedVersion: 2
-        x: 389
-        y: 1102
-        width: 1235
-        height: 388
+        x: 2979
+        y: 1093
+        width: 1255
+        height: 390
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 195, w: 127}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -126,22 +144,148 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: platform_clouds_1
+      name: daycloud_short
       rect:
         serializedVersion: 2
-        x: 2982
-        y: 1106
-        width: 1228
-        height: 369
+        x: 4399
+        y: 1093
+        width: 912
+        height: 383
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 195, w: 110}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 97076c3d9bb827900800000000000000
       internalID: 680760123924574329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: daycloud_fluffy
+      rect:
+        serializedVersion: 2
+        x: 4379
+        y: 432
+        width: 846
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c871b0e28f5c7b2e0800000000000000
+      internalID: -2110000230684747892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: daycloud_long
+      rect:
+        serializedVersion: 2
+        x: 2998
+        y: 432
+        width: 1104
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8fe6eaf83887afe0800000000000000
+      internalID: -1177822999225110646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightcloud_long
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1099
+        width: 1248
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da2d197cfad367b0800000000000000
+      internalID: -5232097564175815978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightcloud_lon
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 439
+        width: 1097
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 33}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3c1beed7e25a760800000000000000
+      internalID: 7468426675474252743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightcloud_fluffy
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 412
+        width: 806
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11456fb412dccd50800000000000000
+      internalID: 6759008127328534811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightcloud_short
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 1099
+        width: 885
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15057b5dc67487070800000000000000
+      internalID: 8104306062220808273
       vertices: []
       indices: 
       edges: []
