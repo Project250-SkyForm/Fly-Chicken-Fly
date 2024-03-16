@@ -7,40 +7,28 @@ using UnityEngine.SceneManagement;
 public class PlayerData
 {
     public int numberOfEggs;
-    public string playerName;
     public int numberOfGolds;
     public bool isLocked;
     private int maxLocalScore=5;
     public bool playCutScene = true;
     public List<int> highestScore = new List<int>(){0,0,0,0,0};  //the first one is the highest
-    public  List<string> playerNames = new List<string>(){"","","","",""};
 
     public int GetHighestScore(int index)
     {
-        //Debug.Log(index);
-        try{
-            return highestScore[index];
-        }
-        catch{
-            return highestScore[0];
-        }
+        Debug.Log(index);
+        return highestScore[index];
     }
 
-    public void SetHighestScore(int index, int highest,string playerName)
+    public void SetHighestScore(int index, int highest)
     {
         // Insert the new highest score at the specified position
         highestScore.Insert(index, highest);
-        playerNames.Insert(index,playerName);
+        
         // If there are more than 5 scores in the list, remove the last one
         if (highestScore.Count > maxLocalScore)
         {
             highestScore.RemoveAt(5); // Removes the last element (index 5)
-            playerNames.RemoveAt(5); // Removes the last element (index 5)
         }
-    }
-
-    public string GetPlayerName(int index){
-        return playerNames[index];
     }
     
 
@@ -74,13 +62,6 @@ public class PlayerData
         isLocked = isLock;
     }
 
-    public void SetPlayerName(string name){
-        playerName = name;
-    }
-    public string GetPlayerName(){
-        return playerName;
-    }
-
     public void SetPlayCutScene(bool play){
         playCutScene = play;
     }
@@ -101,7 +82,7 @@ public class DataManager : MonoBehaviour
     private PlayerData loadedData;
     private int goldenEgg;
     public string currentGameMode;
-    public string playerName=null;
+    public string playerName;
     public bool playCutScene = true;
     private int maxLocalScore=5;
 
@@ -157,9 +138,9 @@ public class DataManager : MonoBehaviour
         }
         // Update PlayerPrefs with the new high score
         if (index>=0){
-            // Debug.Log(index);
-            // Debug.Log(current_height);
-            loadedData.SetHighestScore(index,current_height,playerName);
+            Debug.Log(index);
+            Debug.Log(current_height);
+            loadedData.SetHighestScore(index,current_height);
             // if (index == 0){
             //     RankingView.Instance.setScores(current_height);
             // }
@@ -191,10 +172,5 @@ public class DataManager : MonoBehaviour
 
     public void setPlayerName(string name){
         playerName = name;
-        PlayerPrefs.SetString("plyaerName",playerName);
-    }
-
-    public string GetPlayerName(int index){
-        return loadedData.GetPlayerName(index);
     }
 }
