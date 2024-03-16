@@ -87,11 +87,8 @@ void Update()
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("End Game");
-            if(DataManager.Instance.currentGameMode == "death"){
-                EventController.Instance.EndGame();
-                Destroy(gameObject);
-            }
-            
+            EventController.Instance.EndGame();
+            Destroy(gameObject);
         }
     }
 }

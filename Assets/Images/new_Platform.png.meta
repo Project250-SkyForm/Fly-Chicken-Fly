@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: dc8e27f9461867f4a9c00f098dac0359
+guid: 686f38cfe383c4e42bc44afd453b9e3c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6769353170354109886
-    second: chicken_sheet (1)_0
+      213: -6767751473812463908
+    second: spikePlatform_left
   - first:
-      213: 7470244842381721689
-    second: chicken_sheet (1)_1
+      213: -1818255187763651633
+    second: spikePlatform_middle
   - first:
-      213: 5922648040809366747
-    second: chicken_sheet (1)_2
-  - first:
-      213: 8465482159922067229
-    second: chicken_sheet (1)_3
-  - first:
-      213: -3676383020622849625
-    second: chicken_sheet (1)_4
+      213: 483854950832722939
+    second: spikePlatform_right
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,106 +108,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chicken_sheet (1)_0
+      name: spikePlatform_left
       rect:
         serializedVersion: 2
-        x: 596
-        y: 7760
-        width: 1316
-        height: 1856
+        x: 474
+        y: 2159
+        width: 812
+        height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 27}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebdfe16c7d291fd50800000000000000
-      internalID: 6769353170354109886
+      spriteID: cde184344ed1412a0800000000000000
+      internalID: -6767751473812463908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chicken_sheet (1)_1
+      name: spikePlatform_middle
       rect:
         serializedVersion: 2
-        x: 2106
-        y: 7954
-        width: 1208
-        height: 1921
+        x: 1691
+        y: 2157
+        width: 535
+        height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 29}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9504b57ea14aba760800000000000000
-      internalID: 7470244842381721689
+      spriteID: fcb165e4a8244c6e0800000000000000
+      internalID: -1818255187763651633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chicken_sheet (1)_2
+      name: spikePlatform_right
       rect:
         serializedVersion: 2
-        x: 3552
-        y: 7631
-        width: 1467
-        height: 2136
+        x: 1690
+        y: 1123
+        width: 275
+        height: 187
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd40b1a7309713250800000000000000
-      internalID: 5922648040809366747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken_sheet (1)_3
-      rect:
-        serializedVersion: 2
-        x: 5213
-        y: 7933
-        width: 1596
-        height: 2071
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d17bf822c2f6b7570800000000000000
-      internalID: 8465482159922067229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chicken_sheet (1)_4
-      rect:
-        serializedVersion: 2
-        x: 7025
-        y: 7696
-        width: 1575
-        height: 1941
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a95f7dfe1ddafcc0800000000000000
-      internalID: -3676383020622849625
+      spriteID: bf3d233a38ff6b600800000000000000
+      internalID: 483854950832722939
       vertices: []
       indices: 
       edges: []
