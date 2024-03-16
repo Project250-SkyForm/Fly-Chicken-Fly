@@ -28,11 +28,6 @@ public class VideoScript : MonoBehaviour
         if (vp == videoPlayer)
         {
             // Load the next scene when the video ends
-            if (DataManager.Instance.currentGameMode == "cutscene"){
-                nextSceneName = "StartScene";
-            }else{
-                nextSceneName = "PlayScene";
-            }
             SceneController.Instance.ChangeScene(nextSceneName);
         }
     }
