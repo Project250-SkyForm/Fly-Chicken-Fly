@@ -102,7 +102,7 @@ public class DataManager : MonoBehaviour
     private int goldenEgg;
     public string currentGameMode;
     public string playerName=null;
-    public bool playCutScene = true;
+    public bool playCutScene;
     private int maxLocalScore=5;
 
      void Awake(){      // I use awake here instead of Start because I need the highest score to be initialized for the Rankview to be shown
@@ -113,6 +113,10 @@ public class DataManager : MonoBehaviour
         savedJson = PlayerPrefs.GetString("playerData");
         loadedData = JsonUtility.FromJson<PlayerData>(savedJson) ?? new PlayerData();
         string updatedJson = JsonUtility.ToJson(loadedData);
+        playCutScene = loadedData.GetPlayCutScene();
+        // loadedData.SetPlayCutScene(true);
+        // playCutScene=loadedData.GetPlayCutScene();
+        // UpdateData();
         Debug.Log("Updated and Saved Player Data - Eggs: " + loadedData.GetEggs() +
               ", Golds: " + loadedData.GetGold() +
               ", Unlocked: " + loadedData.IsLocked() +
