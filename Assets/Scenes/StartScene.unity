@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentGameMode: 
   playerName: 
-  playCutScene: 0
+  playCutScene: 1
 --- !u!114 &369169928
 MonoBehaviour:
   m_ObjectHideFlags: 0
