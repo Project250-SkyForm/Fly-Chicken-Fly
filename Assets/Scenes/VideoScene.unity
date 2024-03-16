@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1523943948}
-  nextSceneName: PlayScene
+  nextSceneName: 
   videoFileName: CMPUT250_cutscene_Mar-1.mp4
 --- !u!1 &1581627242
 GameObject:

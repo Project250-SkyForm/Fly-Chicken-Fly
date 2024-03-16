@@ -10,6 +10,7 @@ public class PlayerData
     public int numberOfGolds;
     public bool isLocked;
     private int maxLocalScore=5;
+    public bool playCutScene = true;
     public List<int> highestScore = new List<int>(){0,0,0,0,0};  //the first one is the highest
 
     public int GetHighestScore(int index)
@@ -65,6 +66,14 @@ public class PlayerData
     {
         isLocked = isLock;
     }
+
+    public void SetPlayCutScene(bool play){
+        playCutScene = play;
+    }
+
+    public bool GetPlayCutScene(){
+        return playCutScene;
+    }
 }
 
 
@@ -79,6 +88,7 @@ public class DataManager : MonoBehaviour
     private int goldenEgg;
     public string currentGameMode;
     public string playerName;
+    public bool playCutScene = true;
     private int maxLocalScore=5;
 
      void Awake(){      // I use awake here instead of Start because I need the highest score to be initialized for the Rankview to be shown
@@ -89,6 +99,9 @@ public class DataManager : MonoBehaviour
         savedJson = PlayerPrefs.GetString("playerData");
         loadedData = JsonUtility.FromJson<PlayerData>(savedJson) ?? new PlayerData();
         string updatedJson = JsonUtility.ToJson(loadedData);
+        // loadedData.SetPlayCutScene(true);
+        // UpdateData();
+        playCutScene = loadedData.GetPlayCutScene();
         Debug.Log("Updated and Saved Player Data - Eggs: " + loadedData.GetEggs() +
               ", Golds: " + loadedData.GetGold() +
               ", Unlocked: " + loadedData.IsLocked() +
@@ -144,6 +157,12 @@ public class DataManager : MonoBehaviour
         goldenEgg += egg;
         //Debug.Log(goldenEgg);
         loadedData.SetEggs(goldenEgg);
+        UpdateData();
+    }
+
+    public void DontPlayVideo(){
+        playCutScene = false;
+        loadedData.SetPlayCutScene(playCutScene);
         UpdateData();
     }
 
