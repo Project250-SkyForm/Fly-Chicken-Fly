@@ -16,7 +16,16 @@ public class SceneController : MonoBehaviour
 
     public void ChangeScene(string targetSceneName)
     { 
-        SceneManager.LoadScene(targetSceneName);
+        if (targetSceneName == "VideoScene"){
+            if(DataManager.Instance.playCutScene || DataManager.Instance.currentGameMode == "cutscene" ){
+                SceneManager.LoadScene(targetSceneName);
+            }
+            else{
+                SceneManager.LoadScene("PlayScene");
+            }
+        }else{
+            SceneManager.LoadScene(targetSceneName);
+        }
     }
 
     public void SetGameMode(string gameMode){
