@@ -8,6 +8,7 @@ public class NewPlatformGen : MonoBehaviour
     public GameObject movingPlatformPrefab;
     public List<GameObject> spikePlatformPrefab;
     public List<GameObject> rottenEggPlatformPrefab;
+    public List<GameObject> thunderPlatformPrefab;
     public int platformsOnScreenLimit = 5; // Adjust this to control the number of platforms on the screen
     public float minX = -7f;
     public float maxX = 6f;
@@ -16,10 +17,12 @@ public class NewPlatformGen : MonoBehaviour
     public float startingYPosition = 5.77f;
     public int movingPlatformsFrequency = 3;
     public int spikePlatformFrequency = 5;
-    public int rottenEggPlatformFrequency = 8;
+    public int rottenEggPlatformFrequency = 15;
+    public int thunderPlatformFrequency = 9;
     public float movingPlatformScale = 6.8f;
     public float spikePlatformScale = 6.8f;
     public float rottenEggPlatformScale = 6.8f;
+    public float thunderPlatformScale = 6.8f;
 
     private List<GameObject> platforms = new List<GameObject>();
 
@@ -43,6 +46,12 @@ public class NewPlatformGen : MonoBehaviour
             else if (regularPlatformCounter == spikePlatformFrequency)
             {
                 GenerateSpikePlatform(currentY + spikePlatformScale);
+                regularPlatformCounter++;
+            }
+            // check if it is on night mode and then generate thunder platform
+            else if (EventController.Instance.hardMode == "night" && regularPlatformCounter == thunderPlatformFrequency){
+                Debug.Log("Thurder generated");
+                GenerateThunderPlatform(currentY + thunderPlatformScale);
                 regularPlatformCounter++;
             }
             else if (regularPlatformCounter == rottenEggPlatformFrequency)
@@ -99,6 +108,15 @@ public class NewPlatformGen : MonoBehaviour
         Vector2 spawnPosition = new Vector2(randomX, yPosition);
         GameObject rottenEggPlatform = GetRandomPlatform(rottenEggPlatformPrefab);
         GameObject platform = Instantiate(rottenEggPlatform, spawnPosition, Quaternion.identity);
+        platforms.Add(platform);
+    }
+
+    void GenerateThunderPlatform(float yPosition)
+    {
+        float randomX = Random.Range(minX, maxX);
+        Vector2 spawnPosition = new Vector2(randomX, yPosition);
+        GameObject thurdenPlatform = GetRandomPlatform(thunderPlatformPrefab);
+        GameObject platform = Instantiate(thurdenPlatform, spawnPosition, Quaternion.identity);
         platforms.Add(platform);
     }
 
