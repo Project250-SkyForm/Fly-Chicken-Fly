@@ -9,6 +9,7 @@ public class NewPlatformGen : MonoBehaviour
     public List<GameObject> spikePlatformPrefab;
     public List<GameObject> rottenEggPlatformPrefab;
     public List<GameObject> thunderPlatformPrefab;
+    public List<GameObject> babyChickenPlatformPrefab;
     public int platformsOnScreenLimit = 5; // Adjust this to control the number of platforms on the screen
     public float minX = -7f;
     public float maxX = 6f;
@@ -19,10 +20,12 @@ public class NewPlatformGen : MonoBehaviour
     public int spikePlatformFrequency = 5;
     public int rottenEggPlatformFrequency = 15;
     public int thunderPlatformFrequency = 9;
+    public int babyChickenPlatformFrequency = 19;
     public float movingPlatformScale = 6.8f;
     public float spikePlatformScale = 6.8f;
     public float rottenEggPlatformScale = 6.8f;
     public float thunderPlatformScale = 6.8f;
+    public float babyChickenPlatformScale = 6.8f;
 
     private List<GameObject> platforms = new List<GameObject>();
 
@@ -57,7 +60,12 @@ public class NewPlatformGen : MonoBehaviour
             else if (regularPlatformCounter == rottenEggPlatformFrequency)
             {
                 GenerateRottenEggPlatform(currentY + rottenEggPlatformScale);
-                regularPlatformCounter = 0;
+                regularPlatformCounter++;
+            }
+            else if (regularPlatformCounter == babyChickenPlatformFrequency)
+            {
+                GenerateBabyChickenPlatform(currentY + babyChickenPlatformScale);
+                regularPlatformCounter=0;
             }
             else
             {
@@ -117,6 +125,15 @@ public class NewPlatformGen : MonoBehaviour
         Vector2 spawnPosition = new Vector2(randomX, yPosition);
         GameObject thurdenPlatform = GetRandomPlatform(thunderPlatformPrefab);
         GameObject platform = Instantiate(thurdenPlatform, spawnPosition, Quaternion.identity);
+        platforms.Add(platform);
+    }
+
+    void GenerateBabyChickenPlatform(float yPosition)
+    {
+        float randomX = Random.Range(minX, maxX);
+        Vector2 spawnPosition = new Vector2(randomX, yPosition);
+        GameObject babyChickenPlatform = GetRandomPlatform(babyChickenPlatformPrefab);
+        GameObject platform = Instantiate(babyChickenPlatform, spawnPosition, Quaternion.identity);
         platforms.Add(platform);
     }
 
