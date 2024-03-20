@@ -18,10 +18,14 @@ public class PlayerMovement : MonoBehaviour
     // Animation variables
     public float walkingFrameRate = 0.1f; // Adjust this value to control walking animation speed
     public float jumpingFrameRate = 0.1f; // Adjust this value to control jumping animation speed
+    public float idleFrameRate = 0.1f; // Adjust this value to control idle animation speed
     public List<Sprite> animationFrames; // List to hold the walking animation sprites
     public List<Sprite> jumpAnimationFrames; // Holds jumping sprites
+    public List<Sprite> idleAnimationFrames; // Holds idle sprites
+    
     private int currentFrame = 0;
     private float frameTimer = 0f;
+    private bool isIdle = false;
 
     // Start is called before the first frame update
     void Start()
@@ -68,13 +72,26 @@ public class PlayerMovement : MonoBehaviour
             {
                 // Handle left movement
                 move = -1f;
+                isIdle = false;
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 // Handle right movement
                 move = 1f;
+                isIdle = false;
             }
 
+            else
+            {
+                isIdle = true;
+            }
+
+            if (isIdle)
+            {
+                AnimatePlayer(idleFrameRate); // Use idle frame rate when player is idle
+            }
+
+           
             Vector2 newVelocity = new Vector2(move * speed, body.velocity.y);
 
             // Adjust player movement based on the current boundaries
@@ -103,40 +120,46 @@ public class PlayerMovement : MonoBehaviour
 
     void AnimatePlayer(float currentFrameRate)
     {
-        // Check if any movement key is pressed
-        bool isMoving = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D);
+        // Check if any movement key is pressed and the player is not idle
+        bool isMoving = (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && !isIdle;
 
         // Check if there are frames in the animation list and the spriteRenderer is not null
         if (animationFrames.Count > 0 && spriteRenderer != null)
         {
-            // If the player is not jumping, play the walking animation
-            if (!isJumping && isMoving)
+            // If the player is not jumping and not moving, play the idle animation
+            if (!isJumping && !isMoving && idleAnimationFrames.Count > 0)
             {
                 frameTimer += Time.deltaTime;
 
-                // Check if it's time to change frames based on frameRate
+                if (frameTimer >= idleFrameRate)
+                {
+                    frameTimer = 0f;
+                    currentFrame = (currentFrame + 1) % idleAnimationFrames.Count;
+                    spriteRenderer.sprite = idleAnimationFrames[currentFrame];
+                }
+            }
+            // If the player is jumping, cycle through the jump animation frames
+            else if (isJumping && jumpAnimationFrames.Count > 0)
+            {
+                frameTimer += Time.deltaTime;
+
+                if (frameTimer >= jumpingFrameRate)
+                {
+                    frameTimer = 0f;
+                    currentFrame = (currentFrame + 1) % jumpAnimationFrames.Count;
+                    spriteRenderer.sprite = jumpAnimationFrames[currentFrame];
+                }
+            }
+            // If the player is moving, play the walking animation
+            else if (isMoving && animationFrames.Count > 0)
+            {
+                frameTimer += Time.deltaTime;
+
                 if (frameTimer >= currentFrameRate)
                 {
                     frameTimer = 0f;
                     currentFrame = (currentFrame + 1) % animationFrames.Count;
-
-                    // Change the sprite renderer's sprite to the current frame
                     spriteRenderer.sprite = animationFrames[currentFrame];
-                }
-            }
-            else
-            {
-                // If the player is jumping, cycle through the jump animation frames
-                if (isJumping && jumpAnimationFrames.Count > 0)
-                {
-                    frameTimer += Time.deltaTime;
-
-                    if (frameTimer >= jumpingFrameRate)
-                    {
-                        frameTimer = 0f;
-                        currentFrame = (currentFrame + 1) % jumpAnimationFrames.Count;
-                        spriteRenderer.sprite = jumpAnimationFrames[currentFrame];
-                    }
                 }
             }
         }
@@ -160,6 +183,10 @@ public class PlayerMovement : MonoBehaviour
         return EventController.Instance.GetMaxXBoundary();
     }
 }
+
+
+
+
 
 
 
