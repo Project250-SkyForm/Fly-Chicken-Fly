@@ -277,7 +277,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.1816964, y: 6.96}
+    oldSize: {x: 6.4917817, y: 6.93}
     newSize: {x: 12.241157, y: 19.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2191,6 +2191,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006432522480839595, guid: 7c9fc1f7b211cdb47a286b80137581e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 1006432522480839598, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
@@ -5517,7 +5522,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.1816964, y: 6.96}
+    oldSize: {x: 6.4917817, y: 6.93}
     newSize: {x: 12.241157, y: 19.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5760,7 +5765,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.1816964, y: 6.96}
+    oldSize: {x: 6.4917817, y: 6.93}
     newSize: {x: 12.241157, y: 19.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8832,6 +8837,8 @@ MonoBehaviour:
   walkingFrameRate: 0.1
   jumpingFrameRate: 0.1
   idleFrameRate: 0.5
+  hurtFrameRate: 0.1
+  hurtDuration: 0.5
   animationFrames:
   - {fileID: 2733854080569834537, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
   - {fileID: 3679965644012324363, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
@@ -8848,6 +8855,8 @@ MonoBehaviour:
   - {fileID: 6084859605308855041, guid: 3d1f60411fd77334ab3872dbd74bf6ff, type: 3}
   - {fileID: 8603369663158992956, guid: 3d1f60411fd77334ab3872dbd74bf6ff, type: 3}
   - {fileID: -5906421172241655209, guid: 3d1f60411fd77334ab3872dbd74bf6ff, type: 3}
+  hurtSprite: {fileID: 8306892742345952554, guid: dc8e27f9461867f4a9c00f098dac0359,
+    type: 3}
 --- !u!50 &1366631712
 Rigidbody2D:
   serializedVersion: 4
@@ -10399,6 +10408,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006432522480839595, guid: 7c9fc1f7b211cdb47a286b80137581e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 1006432522480839598, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
@@ -13546,6 +13560,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006432522480839595, guid: 7c9fc1f7b211cdb47a286b80137581e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 1006432522480839598, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
