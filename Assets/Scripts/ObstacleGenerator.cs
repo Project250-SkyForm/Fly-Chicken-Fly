@@ -13,24 +13,23 @@ public class ObstacleGenerator : MonoBehaviour
     private float nextGenerateTime; // Time when the next knife should be generated
     public BackgroundScroll camera;
     //private string[] obstaclesType = {"HandleUpKnife","HandleDownKnife","PolaCan","BabyChicken"};
-    private string[] obstaclesType = {"HandleDownKnife"};
+    private string[] obstaclesType = { "HandleUpKnife", "HandleDownKnife", "PolaCan" };
     private GameObject thisObstacle;
-    public float handleUpKnifeStartGenerateTime;
-    public float polaCanStartGenerateTime;
 
     private float cameraWidth = 40.0f;  //should be update after the implementation of shrink and expand of camera
     void Start()
     {
         // Initialize nextGenerateTime to the current time plus the generateRate
         nextGenerateTime = Time.time + generateRate;
-        
+
     }
 
     void Update()
-    {   
+    {
         string type = GetRandomObstacleType();
         int direction = GetRandomDirection();
-        switch(type){   // find that type of obstacle should be genrated
+        switch (type)
+        {   // find that type of obstacle should be genrated
             case "HandleUpKnife":
                 thisObstacle = handleUpKnifePrefab;
                 break;
@@ -44,27 +43,32 @@ public class ObstacleGenerator : MonoBehaviour
                 thisObstacle = babyChickenPrefab;
                 break;
         }
-        
+
         // Check if it's time to generate a knife
         if (Time.time >= nextGenerateTime)
         {
             Vector3 newPosition = camera.transform.position;
-            newPosition.y = camera.transform.position.y + cameraWidth/2;
-            switch (type){
+            newPosition.y = camera.transform.position.y + cameraWidth / 2;
+            switch (type)
+            {
                 case "PolaCan":
-                    if (direction == 1){
-                        newPosition.x = camera.transform.position.x - cameraWidth/2;
+                    if (direction == 1)
+                    {
+                        newPosition.x = camera.transform.position.x - cameraWidth / 2;
                     }
-                    else{
-                        newPosition.x = camera.transform.position.x + cameraWidth/2;
+                    else
+                    {
+                        newPosition.x = camera.transform.position.x + cameraWidth / 2;
                     }
                     break;
                 case "BabyChicken":
-                    if (direction == 1){
-                        newPosition.x = camera.transform.position.x - cameraWidth/2;
+                    if (direction == 1)
+                    {
+                        newPosition.x = camera.transform.position.x - cameraWidth / 2;
                     }
-                    else{
-                        newPosition.x = camera.transform.position.x + cameraWidth/2;
+                    else
+                    {
+                        newPosition.x = camera.transform.position.x + cameraWidth / 2;
                     }
                     break;
                 default:
@@ -79,25 +83,26 @@ public class ObstacleGenerator : MonoBehaviour
             AudioController.Instance.PlayObstacleFall(newObject.GetComponent<AudioSource>());
             // change the newKnife z value to 0
             Vector3 newPos = newObject.transform.position;
-            newPos.z = 0; 
-            newObject.transform.position = newPos; 
+            newPos.z = 0;
+            newObject.transform.position = newPos;
 
             Obstacles newObstacle = newObject.GetComponent<Obstacles>();
-            
-            switch(type){
+
+            switch (type)
+            {
                 case "PolaCan":
                     newObstacle.direction = direction;
                     newObstacle.horizontalSpeed = 10;
-                    newObstacle.fallingSpeed =1;
+                    newObstacle.fallingSpeed = 1;
                     newObstacle.rotationSpeed = 180f;
                     break;
                 case "BabyChicken":
                     newObstacle.direction = direction;
                     newObstacle.horizontalSpeed = 10;
-                    newObstacle.fallingSpeed =1;
+                    newObstacle.fallingSpeed = 1;
                     break;
                 default:
-                    newObstacle.fallingSpeed =10;
+                    newObstacle.fallingSpeed = 10;
                     break;
             }
             newObstacle.eternal = false;
@@ -107,13 +112,7 @@ public class ObstacleGenerator : MonoBehaviour
     }
 
     private string GetRandomObstacleType()
-    { 
-        if(Time.time>=polaCanStartGenerateTime){
-            obstaclesType = new string[] {"HandleUpKnife","HandleDownKnife","PolaCan"};
-        } 
-        else if (Time.time>=handleUpKnifeStartGenerateTime){
-            obstaclesType = new string[] {"HandleUpKnife","HandleDownKnife"};
-        }
+    {
         // Generate a random index within the range of the array length
         int randomIndex = UnityEngine.Random.Range(0, obstaclesType.Length);
 
@@ -121,7 +120,8 @@ public class ObstacleGenerator : MonoBehaviour
         return obstaclesType[randomIndex];
     }
 
-    private int GetRandomDirection(){
+    private int GetRandomDirection()
+    {
         int randomIndex = UnityEngine.Random.Range(0, 2) * 2 - 1; // only return 1 or -1
         return randomIndex;
     }
