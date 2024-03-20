@@ -8831,6 +8831,7 @@ MonoBehaviour:
   jumpConstant: 20
   walkingFrameRate: 0.1
   jumpingFrameRate: 0.1
+  idleFrameRate: 0.5
   animationFrames:
   - {fileID: 2733854080569834537, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
   - {fileID: 3679965644012324363, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
@@ -8842,6 +8843,11 @@ MonoBehaviour:
   - {fileID: 5922648040809366747, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
   - {fileID: 8465482159922067229, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
   - {fileID: -3676383020622849625, guid: dc8e27f9461867f4a9c00f098dac0359, type: 3}
+  idleAnimationFrames:
+  - {fileID: 8793639957104055765, guid: 3d1f60411fd77334ab3872dbd74bf6ff, type: 3}
+  - {fileID: 6084859605308855041, guid: 3d1f60411fd77334ab3872dbd74bf6ff, type: 3}
+  - {fileID: 8603369663158992956, guid: 3d1f60411fd77334ab3872dbd74bf6ff, type: 3}
+  - {fileID: -5906421172241655209, guid: 3d1f60411fd77334ab3872dbd74bf6ff, type: 3}
 --- !u!50 &1366631712
 Rigidbody2D:
   serializedVersion: 4
