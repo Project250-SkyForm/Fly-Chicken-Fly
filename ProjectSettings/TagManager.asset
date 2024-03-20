@@ -10,7 +10,6 @@ TagManager:
   - Enemy
   - LeftBoundary
   - RightBoundary
-  - Obstacle
   layers:
   - Default
   - TransparentFX

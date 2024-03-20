@@ -253,7 +253,7 @@ MonoBehaviour:
   horizontalSpeed: 0
   rotationSpeed: 0
   direction: 0
-  camera: {fileID: 0}
+  camera: {fileID: 519420030}
   disappear_distance: 20
   movingPlatform: {fileID: 0}
   leftBound: 0
@@ -277,7 +277,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.681834, y: 6.89}
+    oldSize: {x: 6.1816964, y: 6.96}
     newSize: {x: 12.241157, y: 19.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1065,6 +1065,8 @@ MonoBehaviour:
   babyChickenPrefab: {fileID: 12479550}
   generateRate: 4
   camera: {fileID: 519420030}
+  handleUpKnifeStartGenerateTime: 70
+  polaCanStartGenerateTime: 150
 --- !u!4 &168354090
 Transform:
   m_ObjectHideFlags: 0
@@ -1077,7 +1079,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &174047621
 GameObject:
@@ -1413,7 +1415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generateRate: 10
-  camera: {fileID: 0}
+  camera: {fileID: 519420030}
   goldenEggPref: {fileID: 18028558}
 --- !u!4 &210960687
 Transform:
@@ -2118,7 +2120,7 @@ PrefabInstance:
     - target: {fileID: 1006432522480839592, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: eternal
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1006432522480839592, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
@@ -2189,11 +2191,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006432522480839595, guid: 7c9fc1f7b211cdb47a286b80137581e3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 1006432522480839598, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
@@ -2305,7 +2302,7 @@ PrefabInstance:
         type: 3}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 519420030}
     - target: {fileID: 4133012522600270522, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: m_Enabled
@@ -2325,7 +2322,7 @@ PrefabInstance:
         type: 3}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 519420030}
     - target: {fileID: 7485629422514232249, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: fallingSpeed
@@ -3342,8 +3339,8 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3366,7 +3363,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59d4d8594ddc1244eaa5d5d63bb1c55e, type: 3}
   m_Name: 
@@ -4057,8 +4054,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704974120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.06, y: 0.44, z: 0}
-  m_LocalScale: {x: 4.2447667, y: 4.776959, z: 1}
+  m_LocalPosition: {x: 2.33, y: 0.87, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1104387340}
   m_RootOrder: 0
@@ -4084,7 +4081,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 704974120}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a6e2e3099c83c114abdd65720d4667e4, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -4627,7 +4624,7 @@ MonoBehaviour:
   lumpView: {fileID: 0}
   altitudeView: {fileID: 543953001}
   eggView: {fileID: 1469884029}
-  camera: {fileID: 0}
+  camera: {fileID: 519420030}
   background: {fileID: 1434310875}
   BGTransDayNight: {fileID: 356359689}
   BGTransNightDay: {fileID: 1217592802}
@@ -5496,7 +5493,7 @@ MonoBehaviour:
   horizontalSpeed: 0
   rotationSpeed: 0
   direction: 0
-  camera: {fileID: 0}
+  camera: {fileID: 519420030}
   disappear_distance: 20
   movingPlatform: {fileID: 0}
   leftBound: 0
@@ -5520,7 +5517,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.681834, y: 6.89}
+    oldSize: {x: 6.1816964, y: 6.96}
     newSize: {x: 12.241157, y: 19.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5739,7 +5736,7 @@ MonoBehaviour:
   horizontalSpeed: 0
   rotationSpeed: 0
   direction: 0
-  camera: {fileID: 0}
+  camera: {fileID: 519420030}
   disappear_distance: 20
   movingPlatform: {fileID: 0}
   leftBound: 0
@@ -5763,7 +5760,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.681834, y: 6.89}
+    oldSize: {x: 6.1816964, y: 6.96}
     newSize: {x: 12.241157, y: 19.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8182,7 +8179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241861913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 2.46, z: 0}
+  m_LocalPosition: {x: -0.091, y: 1.933, z: 0}
   m_LocalScale: {x: 0.2006463, y: 0.33430946, z: 1}
   m_Children: []
   m_Father: {fileID: 1714004998}
@@ -8835,8 +8832,6 @@ MonoBehaviour:
   walkingFrameRate: 0.1
   jumpingFrameRate: 0.1
   idleFrameRate: 0.5
-  hurtFrameRate: 0.1
-  hurtDuration: 0.6
   animationFrames:
   - {fileID: 2733854080569834537, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
   - {fileID: 3679965644012324363, guid: b89af6610314ad340b7458c2887cdd79, type: 3}
@@ -8853,8 +8848,6 @@ MonoBehaviour:
   - {fileID: 6084859605308855041, guid: 3d1f60411fd77334ab3872dbd74bf6ff, type: 3}
   - {fileID: 8603369663158992956, guid: 3d1f60411fd77334ab3872dbd74bf6ff, type: 3}
   - {fileID: -5906421172241655209, guid: 3d1f60411fd77334ab3872dbd74bf6ff, type: 3}
-  hurtSprite: {fileID: 8306892742345952554, guid: dc8e27f9461867f4a9c00f098dac0359,
-    type: 3}
 --- !u!50 &1366631712
 Rigidbody2D:
   serializedVersion: 4
@@ -10407,11 +10400,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1006432522480839595, guid: 7c9fc1f7b211cdb47a286b80137581e3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
     - target: {fileID: 1006432522480839598, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: m_FlipX
@@ -10516,7 +10504,7 @@ PrefabInstance:
         type: 3}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 519420030}
     - target: {fileID: 4133012522600270522, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: m_Enabled
@@ -10536,7 +10524,7 @@ PrefabInstance:
         type: 3}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 519420030}
     - target: {fileID: 7485629422514232249, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: fallingSpeed
@@ -10766,8 +10754,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707399974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.194, y: 0.665, z: 0}
-  m_LocalScale: {x: 4.454086, y: 4.545306, z: 1}
+  m_LocalPosition: {x: -0.54, y: 0.54, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 455194007}
   m_RootOrder: 0
@@ -10793,7 +10781,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1707399974}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a6e2e3099c83c114abdd65720d4667e4, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -11737,8 +11725,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887612458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.291, y: 0.116, z: 0}
-  m_LocalScale: {x: 4.347234, y: 4.1937766, z: 1}
+  m_LocalPosition: {x: -1.71, y: 0.4, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 1907204747}
   m_RootOrder: 0
@@ -11752,7 +11740,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1887612458}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: a6e2e3099c83c114abdd65720d4667e4, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -12624,7 +12612,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2006638975
 GameObject:
@@ -13559,11 +13547,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1006432522480839595, guid: 7c9fc1f7b211cdb47a286b80137581e3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
-      objectReference: {fileID: 0}
     - target: {fileID: 1006432522480839598, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: m_Enabled
@@ -13658,7 +13641,7 @@ PrefabInstance:
         type: 3}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 519420030}
     - target: {fileID: 4133012522600270522, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: m_Enabled
@@ -13678,7 +13661,7 @@ PrefabInstance:
         type: 3}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 519420030}
     - target: {fileID: 7485629422514232249, guid: 7c9fc1f7b211cdb47a286b80137581e3,
         type: 3}
       propertyPath: fallingSpeed
