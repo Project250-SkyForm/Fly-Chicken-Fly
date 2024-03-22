@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - LeftBoundary
   - RightBoundary
+  - Obstacle
+  - Spike
+  - BabyChicken
   layers:
   - Default
   - TransparentFX

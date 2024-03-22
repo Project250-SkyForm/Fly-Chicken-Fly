@@ -19,13 +19,21 @@ public class PlayerMovement : MonoBehaviour
     public float walkingFrameRate = 0.1f; // Adjust this value to control walking animation speed
     public float jumpingFrameRate = 0.1f; // Adjust this value to control jumping animation speed
     public float idleFrameRate = 0.1f; // Adjust this value to control idle animation speed
+    public float hurtFrameRate = 0.1f; // Adjust this value to control hurt animation speed
+    public float hurtDuration = 0.5f; // how long chicken is hurt for
+    public float tiredWalkingFrameRate = 0.1f; // Adjust this value to control tired walking animation speed
+    public float tiredJumpingFrameRate = 0.1f; // Adjust this value to control tired jumping animation speed
     public List<Sprite> animationFrames; // List to hold the walking animation sprites
     public List<Sprite> jumpAnimationFrames; // Holds jumping sprites
     public List<Sprite> idleAnimationFrames; // Holds idle sprites
-    
+    public List<Sprite> tiredWalkingFrames; // List to hold tired walking animation sprites
+    public List<Sprite> tiredJumpingFrames; // Holds tired jumping sprites
+    public Sprite hurtSprite; // Sprite for the hurt animation
+
     private int currentFrame = 0;
     private float frameTimer = 0f;
     private bool isIdle = false;
+    private bool isHurt = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         if (withPiggyback)
         {
             jump = piggybackJump;
+            
         }
         else
         {
@@ -80,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
                 move = 1f;
                 isIdle = false;
             }
-
             else
             {
                 isIdle = true;
@@ -91,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
                 AnimatePlayer(idleFrameRate); // Use idle frame rate when player is idle
             }
 
-           
+
             Vector2 newVelocity = new Vector2(move * speed, body.velocity.y);
 
             // Adjust player movement based on the current boundaries
@@ -120,56 +128,109 @@ public class PlayerMovement : MonoBehaviour
 
     void AnimatePlayer(float currentFrameRate)
     {
-        // Check if any movement key is pressed and the player is not idle
-        bool isMoving = (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && !isIdle;
-
-        // Check if there are frames in the animation list and the spriteRenderer is not null
-        if (animationFrames.Count > 0 && spriteRenderer != null)
+        // Check if the spriteRenderer is not null
+        if (spriteRenderer != null)
         {
-            // If the player is not jumping and not moving, play the idle animation
-            if (!isJumping && !isMoving && idleAnimationFrames.Count > 0)
+            if (isHurt && hurtSprite != null) // If the player is hurt and a hurt sprite is assigned
             {
-                frameTimer += Time.deltaTime;
-
-                if (frameTimer >= idleFrameRate)
+                spriteRenderer.sprite = hurtSprite; // Display the hurt sprite
+            }
+            else if (withPiggyback) // If the player is carrying a baby chicken
+            {
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) // Tired walking animation
                 {
-                    frameTimer = 0f;
-                    currentFrame = (currentFrame + 1) % idleAnimationFrames.Count;
-                    spriteRenderer.sprite = idleAnimationFrames[currentFrame];
+                    frameTimer += Time.deltaTime;
+
+                    if (frameTimer >= tiredWalkingFrameRate)
+                    {
+                        frameTimer = 0f;
+                        currentFrame = (currentFrame + 1) % tiredWalkingFrames.Count;
+                        spriteRenderer.sprite = tiredWalkingFrames[currentFrame];
+                    }
+                }
+                else if (Input.GetKey(KeyCode.W)) // Tired jumping animation
+                {
+                    frameTimer += Time.deltaTime;
+
+                    if (frameTimer >= tiredJumpingFrameRate)
+                    {
+                        frameTimer = 0f;
+                        currentFrame = (currentFrame + 1) % tiredJumpingFrames.Count;
+                        spriteRenderer.sprite = tiredJumpingFrames[currentFrame];
+                    }
+                }
+                else // Idle animation when not moving
+                {
+                    // Use idle frame rate when player is idle
+                    frameTimer += Time.deltaTime;
+                    if (frameTimer >= idleFrameRate)
+                    {
+                        frameTimer = 0f;
+                        currentFrame = (currentFrame + 1) % idleAnimationFrames.Count;
+                        spriteRenderer.sprite = idleAnimationFrames[currentFrame];
+                    }
                 }
             }
-            // If the player is jumping, cycle through the jump animation frames
-            else if (isJumping && jumpAnimationFrames.Count > 0)
+            else // Regular walking and jumping animations
             {
-                frameTimer += Time.deltaTime;
+                // Check if any movement key is pressed and the player is not idle
+                bool isMoving = (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && !isIdle;
 
-                if (frameTimer >= jumpingFrameRate)
+                if (!isJumping && !isMoving && idleAnimationFrames.Count > 0) // If the player is not jumping and not moving, play the idle animation
                 {
-                    frameTimer = 0f;
-                    currentFrame = (currentFrame + 1) % jumpAnimationFrames.Count;
-                    spriteRenderer.sprite = jumpAnimationFrames[currentFrame];
+                    frameTimer += Time.deltaTime;
+
+                    if (frameTimer >= idleFrameRate)
+                    {
+                        frameTimer = 0f;
+                        currentFrame = (currentFrame + 1) % idleAnimationFrames.Count;
+                        spriteRenderer.sprite = idleAnimationFrames[currentFrame];
+                    }
                 }
-            }
-            // If the player is moving, play the walking animation
-            else if (isMoving && animationFrames.Count > 0)
-            {
-                frameTimer += Time.deltaTime;
-
-                if (frameTimer >= currentFrameRate)
+                else if (isJumping && jumpAnimationFrames.Count > 0) // If the player is jumping, cycle through the jump animation frames
                 {
-                    frameTimer = 0f;
-                    currentFrame = (currentFrame + 1) % animationFrames.Count;
-                    spriteRenderer.sprite = animationFrames[currentFrame];
+                    frameTimer += Time.deltaTime;
+
+                    if (frameTimer >= jumpingFrameRate)
+                    {
+                        frameTimer = 0f;
+                        currentFrame = (currentFrame + 1) % jumpAnimationFrames.Count;
+                        spriteRenderer.sprite = jumpAnimationFrames[currentFrame];
+                    }
+                }
+                else if (isMoving && animationFrames.Count > 0) // If the player is moving, play the walking animation
+                {
+                    frameTimer += Time.deltaTime;
+
+                    if (frameTimer >= currentFrameRate)
+                    {
+                        frameTimer = 0f;
+                        currentFrame = (currentFrame + 1) % animationFrames.Count;
+                        spriteRenderer.sprite = animationFrames[currentFrame];
+                    }
                 }
             }
         }
     }
 
+
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("MovingPlatform"))
+        if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("MovingPlatform") || other.gameObject.CompareTag("Spike"))
         {
             isJumping = false;
+        }
+
+        if (other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Spike"))
+        {
+            // Play the hurt animation when colliding with an obstacle
+            if (!isHurt)
+            {
+                isHurt = true;
+                AnimatePlayer(hurtFrameRate);
+                isJumping = false;
+                StartCoroutine(EndHurtAnimation()); // Start the coroutine to end the hurt animation after the specified duration
+            }
         }
     }
 
@@ -182,7 +243,16 @@ public class PlayerMovement : MonoBehaviour
     {
         return EventController.Instance.GetMaxXBoundary();
     }
+
+    IEnumerator EndHurtAnimation()
+    {
+        // Wait for the specified duration before ending the hurt animation
+        yield return new WaitForSeconds(hurtDuration);
+        isHurt = false;
+    }
+
 }
+
 
 
 
