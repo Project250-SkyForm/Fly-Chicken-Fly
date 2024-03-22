@@ -71,3 +71,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/google-services.json
+
+/[Aa]ssets/Editor Default Resources/
+/[Aa]ssets/ExternalDependencyManager/
+/[Aa]ssets/Firebase/
+
+/[Aa]ssets/Editor Default Resources.meta
+Assets/ExternalDependencyManager.meta
+Assets/Firebase.meta
