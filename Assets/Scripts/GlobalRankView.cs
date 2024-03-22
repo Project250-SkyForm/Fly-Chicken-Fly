@@ -26,15 +26,15 @@ public class GlobalRankView : MonoBehaviour
     }
 
     public void setScores(){
-        rank1.text = DataManager.Instance.getGlobalHighestScore(0) + " m";
-        rank2.text = DataManager.Instance.getGlobalHighestScore(1) + " m";
-        rank3.text = DataManager.Instance.getGlobalHighestScore(2) + " m";
-        rank4.text = DataManager.Instance.getGlobalHighestScore(3) + " m";
-        rank5.text = DataManager.Instance.getGlobalHighestScore(4) + " m";
-        playerName1.text = DataManager.Instance.getGlobalPlayerName(0);
-        playerName2.text = DataManager.Instance.getGlobalPlayerName(1);
-        playerName3.text = DataManager.Instance.getGlobalPlayerName(2);
-        playerName4.text = DataManager.Instance.getGlobalPlayerName(3);
-        playerName5.text = DataManager.Instance.getGlobalPlayerName(4);
+        // rank1.text = DataManager.Instance.getGlobalHighestScore(0) + " m";
+        // rank2.text = DataManager.Instance.getGlobalHighestScore(1) + " m";
+        // rank3.text = DataManager.Instance.getGlobalHighestScore(2) + " m";
+        // rank4.text = DataManager.Instance.getGlobalHighestScore(3) + " m";
+        // rank5.text = DataManager.Instance.getGlobalHighestScore(4) + " m";
+        // playerName1.text = DataManager.Instance.getGlobalPlayerName(0);
+        // playerName2.text = DataManager.Instance.getGlobalPlayerName(1);
+        // playerName3.text = DataManager.Instance.getGlobalPlayerName(2);
+        // playerName4.text = DataManager.Instance.getGlobalPlayerName(3);
+        // playerName5.text = DataManager.Instance.getGlobalPlayerName(4);
     }
 }

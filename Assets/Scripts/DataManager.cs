@@ -118,7 +118,7 @@ public class DataManager : MonoBehaviour
         // loadedData.SetPlayCutScene(true);
         // playCutScene=loadedData.GetPlayCutScene();
         // UpdateData();
-        FetchTopScores();
+        // FetchTopScores();
         Debug.Log("Updated and Saved Player Data - Eggs: " + loadedData.GetEggs() +
               ", Golds: " + loadedData.GetGold() +
               ", Unlocked: " + loadedData.IsLocked() +
@@ -146,7 +146,7 @@ public class DataManager : MonoBehaviour
 
     public void UpdateHighestScore(int current_height)
     {   
-        SubmitScoreToFirebase(current_height, playerName);
+        //SubmitScoreToFirebase(current_height, playerName);
         int index = -1;
         for (int i = maxLocalScore-1; i>=0; i--){
             int previousHighest = loadedData.GetHighestScore(i);
@@ -202,80 +202,80 @@ public class DataManager : MonoBehaviour
         return loadedData.GetPlayerName(index);
     }
 
-    public void SubmitScoreToFirebase(int score, string playerName){
-        try {
-            if (playerName == null || playerName == "") {
-                playerName = "AnonymousPlayer#" + Random.Range(999, 100000).ToString();
-            }
-            var scoreEntry = new Dictionary<string, object>{
-                { "playerName", playerName },
-                { "score", score },
-                { "timestamp", Firebase.Database.ServerValue.Timestamp }
-            };
-            Firebase.Database.DatabaseReference reference = Firebase.Database.FirebaseDatabase.DefaultInstance.GetReference("scores");
-            reference.Push().SetValueAsync(scoreEntry);
-        } catch {
-            Debug.Log("Error submitting score to Firebase");
-        }
-    }
+    // public void SubmitScoreToFirebase(int score, string playerName){
+    //     try {
+    //         if (playerName == null || playerName == "") {
+    //             playerName = "AnonymousPlayer#" + Random.Range(999, 100000).ToString();
+    //         }
+    //         var scoreEntry = new Dictionary<string, object>{
+    //             { "playerName", playerName },
+    //             { "score", score },
+    //             { "timestamp", Firebase.Database.ServerValue.Timestamp }
+    //         };
+    //         Firebase.Database.DatabaseReference reference = Firebase.Database.FirebaseDatabase.DefaultInstance.GetReference("scores");
+    //         reference.Push().SetValueAsync(scoreEntry);
+    //     } catch {
+    //         Debug.Log("Error submitting score to Firebase");
+    //     }
+    // }
 
 
-    public void FetchTopScores(){
-        try{
-        Firebase.Database.DatabaseReference reference = Firebase.Database.FirebaseDatabase.DefaultInstance.GetReference("scores");
-        reference.OrderByChild("score").LimitToLast(5).GetValueAsync().ContinueWith(task =>
-        {
-            if (task.IsCompleted && !task.IsFaulted)
-            {
-                List<LeaderboardEntry> fetchedScores = new List<LeaderboardEntry>();
-                foreach (var childSnapshot in task.Result.Children)
-                {
-                    string playerName = childSnapshot.Child("playerName").Value.ToString();
-                    int score = int.Parse(childSnapshot.Child("score").Value.ToString());
-                    fetchedScores.Add(new LeaderboardEntry(playerName, score));
-                }
+    // public void FetchTopScores(){
+    //     try{
+    //     Firebase.Database.DatabaseReference reference = Firebase.Database.FirebaseDatabase.DefaultInstance.GetReference("scores");
+    //     reference.OrderByChild("score").LimitToLast(5).GetValueAsync().ContinueWith(task =>
+    //     {
+    //         if (task.IsCompleted && !task.IsFaulted)
+    //         {
+    //             List<LeaderboardEntry> fetchedScores = new List<LeaderboardEntry>();
+    //             foreach (var childSnapshot in task.Result.Children)
+    //             {
+    //                 string playerName = childSnapshot.Child("playerName").Value.ToString();
+    //                 int score = int.Parse(childSnapshot.Child("score").Value.ToString());
+    //                 fetchedScores.Add(new LeaderboardEntry(playerName, score));
+    //             }
 
             
-                fetchedScores.Reverse(); 
-                UpdateTopScores(fetchedScores);
-            }
-        });
-        } catch {
-            Debug.Log("Error fetching top scores");
-            }
-    }
+    //             fetchedScores.Reverse(); 
+    //             UpdateTopScores(fetchedScores);
+    //         }
+    //     });
+    //     } catch {
+    //         Debug.Log("Error fetching top scores");
+    //         }
+    // }
 
 
-    public void UpdateTopScores(List<LeaderboardEntry> newTopScores)
-        {
-            TopScores = newTopScores;
-        }
+    // public void UpdateTopScores(List<LeaderboardEntry> newTopScores)
+    //     {
+    //         TopScores = newTopScores;
+    //     }
 
-    public int getGlobalHighestScore(int index){
-        // Check if the index is within the bounds of the list
-        if (index >= 0 && index < TopScores.Count)
-        {
-            return TopScores[index].Score;
-        }
-        else
-        {
-            // Return 0 if the index is out of range
-            return 0;
-        }
-    }
+    // public int getGlobalHighestScore(int index){
+    //     // Check if the index is within the bounds of the list
+    //     if (index >= 0 && index < TopScores.Count)
+    //     {
+    //         return TopScores[index].Score;
+    //     }
+    //     else
+    //     {
+    //         // Return 0 if the index is out of range
+    //         return 0;
+    //     }
+    // }
 
-    public string getGlobalPlayerName(int index) {
-        // Check if the index is within the bounds of the list
-        if (index >= 0 && index < TopScores.Count)
-        {
-            return TopScores[index].PlayerName;
-        }
-        else
-        {
-            // Return "Empty Spot" if the index is out of range
-            return "Empty Spot";
-        }
-    }
+    // public string getGlobalPlayerName(int index) {
+    //     // Check if the index is within the bounds of the list
+    //     if (index >= 0 && index < TopScores.Count)
+    //     {
+    //         return TopScores[index].PlayerName;
+    //     }
+    //     else
+    //     {
+    //         // Return "Empty Spot" if the index is out of range
+    //         return "Empty Spot";
+    //     }
+    // }
 }
 
 public class LeaderboardEntry
