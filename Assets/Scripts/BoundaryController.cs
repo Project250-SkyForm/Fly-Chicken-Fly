@@ -4,37 +4,40 @@ using UnityEngine;
 
 public class BoundaryController : MonoBehaviour
 {
-    public float minScaleX = 8f;
-    public float maxScaleX = 18f;
-    public float scalingSpeed = 0.5f;
-    private bool isScaling = false;
+    public float minPosX = -5f; // Min x position
+    public float maxPosX = 5f;  // Max x position
+    public float movingSpeed = 2f; // Speed of movement along x-axis
+    private bool isMoving = false;
 
-
-    // Call this method to start scaling
-    public void Rescale(bool expand, float minScaleX, float maxScaleX)
+    // Call this method to start moving
+    public void MoveBoundary(bool toRight, float minPosX, float maxPosX)
     {
-        this.minScaleX = minScaleX;
-        this.maxScaleX = maxScaleX;
-        if (!isScaling)
+        this.minPosX = minPosX;
+        this.maxPosX = maxPosX;
+        if (!isMoving)
         {
-            // Debug.Log("Reshrinking maxScaleX: " + maxScaleX);
-            StartCoroutine(RescaleBoundary(expand));
+            StartCoroutine(MoveBoundaryPosition(toRight));
         }
     }
 
-
-    private IEnumerator RescaleBoundary(bool expand)
+    public void moveY(float y)
     {
-        isScaling = true;
-        float targetScaleX = expand ? maxScaleX : minScaleX;
-        while (Mathf.Abs(transform.localScale.x - targetScaleX) > 0.01f)
+        Vector3 pos = transform.position;
+        pos.y = y;
+        transform.position = pos;
+    }
+
+    private IEnumerator MoveBoundaryPosition(bool toRight)
+    {
+        isMoving = true;
+        float targetPosX = toRight ? maxPosX : minPosX;
+        while (Mathf.Abs(transform.position.x - targetPosX) > 0.01f)
         {
-            Vector3 newScale = transform.localScale;
-            newScale.x = Mathf.MoveTowards(newScale.x, targetScaleX, scalingSpeed * Time.deltaTime);
-            transform.localScale = newScale;
+            Vector3 newPos = transform.position;
+            newPos.x = Mathf.MoveTowards(newPos.x, targetPosX, movingSpeed * Time.deltaTime);
+            transform.position = newPos;
             yield return null;
         }
-        // Debug.Log("RescaleBoundary finished");
-        isScaling = false; 
+        isMoving = false;
     }
 }
