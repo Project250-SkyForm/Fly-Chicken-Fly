@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 40049880}
   m_Layer: 0
   m_Name: thundrPlatform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1528,7 +1528,7 @@ GameObject:
   - component: {fileID: 118693604}
   m_Layer: 0
   m_Name: BabyChicken
-  m_TagString: Untagged
+  m_TagString: BabyChicken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6349,7 +6349,7 @@ GameObject:
   - component: {fileID: 782966351}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8222,7 +8222,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.76, y: 4.16}
+  m_Size: {x: 4.43, y: 11}
   m_EdgeRadius: 0
 --- !u!212 &1042893953
 SpriteRenderer:
@@ -8262,7 +8262,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 412646940ddbffd4dad837f8c4c3af70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11548,7 +11548,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.58, y: 12.7, z: 0.2}
+  m_Size: {x: 1.75, y: 12.7, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1355520320
 SpriteRenderer:
@@ -11588,7 +11588,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b5b84e7e7fc32ee4db4d1a094b7910f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13966,7 +13966,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b5b84e7e7fc32ee4db4d1a094b7910f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15751,7 +15751,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.76, y: 4.16}
+  m_Size: {x: 4.19, y: 10.88}
   m_EdgeRadius: 0
 --- !u!212 &1887190930
 SpriteRenderer:
@@ -15791,7 +15791,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 412646940ddbffd4dad837f8c4c3af70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15950,7 +15950,7 @@ GameObject:
   - component: {fileID: 1892224676}
   m_Layer: 0
   m_Name: rottenEggPlatform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
