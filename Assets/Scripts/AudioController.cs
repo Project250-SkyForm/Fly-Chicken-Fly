@@ -10,15 +10,14 @@ public class AudioController : MonoBehaviour
     
     // Initialize audio source and audio clips
     public AudioSource chicken, backgroundMusicSource;
-    public AudioClip chickenJump, chickenGrassWalk, chickenCloudWalk, chickenLand, obstacleFall, pickEgg;
-    public float hitVolume, jumpVolume, grassWalkVolume, cloudWalkVolume, landVolume, obstacleFallVolume, barkVolume, backgroundMusicVolume, goldenEggVolume;
+    public AudioClip chickenJump, chickenGrassLand, chickenCloudLand, chickenStarsLand, obstacleFall, pickEgg, rottenEgg, electrocution, spike;
+    public float hitVolume, jumpVolume, obstacleFallVolume, barkVolume, backgroundMusicVolume, goldenEggVolume, rottenEggVolume, electrocutionVolume, spikeVolume, grassLandVolume, cloudLandVolume, starsLandVolume;
     public AudioClip[] chickenHits, ambientSounds, backgroundMusicTracks;
 
     void Awake(){
         _instance = this;
         playRandomSound();
         playBackgroundMusic();
-        
     }
 
     // Use the following functions in other scripts to call
@@ -34,21 +33,39 @@ public class AudioController : MonoBehaviour
         chicken.PlayOneShot(chickenJump);
     }
 
-    public void PlayChickenGrassWalk(){
-        chicken.PlayOneShot(chickenGrassWalk);
+    public void PlayChickenGrassLand(){
+        chicken.volume = grassLandVolume;
+        chicken.PlayOneShot(chickenGrassLand);
     }
 
-    public void PlayChickenCloudWalk(){
-        chicken.PlayOneShot(chickenCloudWalk);
+    public void PlayChickenCloudLand(){
+        chicken.volume = cloudLandVolume;
+        chicken.PlayOneShot(chickenCloudLand);
     }
 
-    public void PlayChickenLand(){
-        chicken.PlayOneShot(chickenLand);
+    public void PlayChickenStarsLand(){
+        chicken.volume = starsLandVolume;
+        chicken.PlayOneShot(chickenStarsLand);
     }
 
     public void PlayGoldenEggPick(){
         chicken.volume = goldenEggVolume;
         chicken.PlayOneShot(pickEgg);
+    }
+
+    public void PlayRottenEgg(){
+        chicken.volume = rottenEggVolume;
+        chicken.PlayOneShot(rottenEgg);
+    }
+
+    public void PlayElectrocution(){
+        chicken.volume = electrocutionVolume;
+        chicken.PlayOneShot(electrocution);
+    }
+
+    public void PlaySpike(){
+        chicken.volume = spikeVolume;
+        chicken.PlayOneShot(spike);
     }
 
     // Plays an ambient sound every 10 seconds 

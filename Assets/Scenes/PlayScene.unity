@@ -1008,6 +1008,7 @@ GameObject:
   - component: {fileID: 62946089}
   - component: {fileID: 62946088}
   - component: {fileID: 62946090}
+  - component: {fileID: 62946091}
   m_Layer: 8
   m_Name: cloud_middle
   m_TagString: Ground
@@ -1130,6 +1131,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &62946091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62946086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &70200791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,6 +1756,7 @@ GameObject:
   - component: {fileID: 174047624}
   - component: {fileID: 174047623}
   - component: {fileID: 174047625}
+  - component: {fileID: 174047626}
   m_Layer: 8
   m_Name: cloud
   m_TagString: Ground
@@ -1859,6 +1874,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &174047626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174047621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &184667453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,6 +2904,7 @@ GameObject:
   - component: {fileID: 307933838}
   - component: {fileID: 307933840}
   - component: {fileID: 307933839}
+  - component: {fileID: 307933841}
   m_Layer: 0
   m_Name: grass
   m_TagString: Ground
@@ -2974,6 +3003,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &307933841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307933837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &333463035
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,6 +3798,7 @@ GameObject:
   - component: {fileID: 455194009}
   - component: {fileID: 455194010}
   - component: {fileID: 455194008}
+  - component: {fileID: 455194011}
   m_Layer: 8
   m_Name: spike_platform_middle
   m_TagString: Ground
@@ -3877,6 +3920,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &455194011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455194006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &458435536
 GameObject:
   m_ObjectHideFlags: 0
@@ -3889,6 +3945,7 @@ GameObject:
   - component: {fileID: 458435540}
   - component: {fileID: 458435539}
   - component: {fileID: 458435538}
+  - component: {fileID: 458435541}
   m_Layer: 8
   m_Name: cloud_middle (1)
   m_TagString: Ground
@@ -4012,6 +4069,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &458435541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458435536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &474481539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4023,6 +4093,7 @@ GameObject:
   - component: {fileID: 474481540}
   - component: {fileID: 474481542}
   - component: {fileID: 474481541}
+  - component: {fileID: 474481543}
   m_Layer: 0
   m_Name: grass
   m_TagString: Ground
@@ -4121,6 +4192,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &474481543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474481539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &483427254
 GameObject:
   m_ObjectHideFlags: 0
@@ -4764,6 +4848,7 @@ GameObject:
   - component: {fileID: 520964789}
   - component: {fileID: 520964788}
   - component: {fileID: 520964790}
+  - component: {fileID: 520964791}
   m_Layer: 8
   m_Name: cloud left
   m_TagString: Ground
@@ -4884,6 +4969,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &520964791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520964786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &543952997
 GameObject:
   m_ObjectHideFlags: 0
@@ -5325,6 +5423,7 @@ GameObject:
   - component: {fileID: 626934570}
   - component: {fileID: 626934569}
   - component: {fileID: 626934571}
+  - component: {fileID: 626934572}
   m_Layer: 8
   m_Name: cloud_right
   m_TagString: Ground
@@ -5446,6 +5545,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &626934572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626934567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &633453261
 GameObject:
   m_ObjectHideFlags: 0
@@ -6063,6 +6175,7 @@ GameObject:
   - component: {fileID: 728934458}
   - component: {fileID: 728934457}
   - component: {fileID: 728934456}
+  - component: {fileID: 728934459}
   m_Layer: 8
   m_Name: cloud_middle
   m_TagString: Ground
@@ -6181,6 +6294,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &728934459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728934454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &743139610
 GameObject:
   m_ObjectHideFlags: 0
@@ -6395,20 +6521,26 @@ MonoBehaviour:
   chicken: {fileID: 1366631714}
   backgroundMusicSource: {fileID: 782966350}
   chickenJump: {fileID: 8300000, guid: 26cd8e914a386416fb6f8a23119dc8b3, type: 3}
-  chickenGrassWalk: {fileID: 8300000, guid: 17c73001174eb4a60823338c13b7ee27, type: 3}
-  chickenCloudWalk: {fileID: 0}
-  chickenLand: {fileID: 8300000, guid: 0d509dfd61daf406bae96047d78c35f0, type: 3}
+  chickenGrassLand: {fileID: 8300000, guid: 0d509dfd61daf406bae96047d78c35f0, type: 3}
+  chickenCloudLand: {fileID: 8300000, guid: 94d6df7a539c3404e92e720e694dbd4c, type: 3}
+  chickenStarsLand: {fileID: 8300000, guid: b7101a9390675434fbb4c442651204ef, type: 3}
   obstacleFall: {fileID: 8300000, guid: ac00a8ca03bbd4c84a8e1ba6bb729576, type: 3}
   pickEgg: {fileID: 8300000, guid: 276e87391d6754365a2df79521b895d0, type: 3}
+  rottenEgg: {fileID: 8300000, guid: 0015019bb66664ac185b6dc86c4f927b, type: 3}
+  electrocution: {fileID: 8300000, guid: 3a8b2ffe3047249358728175ce8292f9, type: 3}
+  spike: {fileID: 8300000, guid: 910431fa5e3694e2698f0ce9119f12f3, type: 3}
   hitVolume: 0.4
-  jumpVolume: 0.03
-  grassWalkVolume: 0
-  cloudWalkVolume: 0
-  landVolume: 0
+  jumpVolume: 0.05
   obstacleFallVolume: 0.003
-  barkVolume: 0.03
+  barkVolume: 0.015
   backgroundMusicVolume: 0.8
   goldenEggVolume: 0.1
+  rottenEggVolume: 0.2
+  electrocutionVolume: 0.2
+  spikeVolume: 0.1
+  grassLandVolume: 0.35
+  cloudLandVolume: 0.5
+  starsLandVolume: 0.8
   chickenHits:
   - {fileID: 8300000, guid: 2af9a56e0257e4376be38015a9e51071, type: 3}
   - {fileID: 8300000, guid: db6732df5a8b4dc45938dc5db9d46970, type: 3}
@@ -6723,6 +6855,7 @@ GameObject:
   - component: {fileID: 821526352}
   - component: {fileID: 821526354}
   - component: {fileID: 821526353}
+  - component: {fileID: 821526355}
   m_Layer: 0
   m_Name: grass
   m_TagString: Ground
@@ -6821,6 +6954,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &821526355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821526351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &861397331
 GameObject:
   m_ObjectHideFlags: 0
@@ -7089,6 +7235,7 @@ GameObject:
   - component: {fileID: 916898586}
   - component: {fileID: 916898585}
   - component: {fileID: 916898584}
+  - component: {fileID: 916898587}
   m_Layer: 8
   m_Name: cloud_middle (1)
   m_TagString: Ground
@@ -7207,6 +7354,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &916898587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916898582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &942041141
 GameObject:
   m_ObjectHideFlags: 0
@@ -7689,6 +7849,7 @@ GameObject:
   - component: {fileID: 1000090967}
   - component: {fileID: 1000090969}
   - component: {fileID: 1000090968}
+  - component: {fileID: 1000090970}
   m_Layer: 0
   m_Name: grass
   m_TagString: Ground
@@ -7787,6 +7948,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1000090970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000090966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &1031176782
 GameObject:
   m_ObjectHideFlags: 0
@@ -7932,6 +8106,7 @@ GameObject:
   - component: {fileID: 1037191667}
   - component: {fileID: 1037191669}
   - component: {fileID: 1037191668}
+  - component: {fileID: 1037191670}
   m_Layer: 0
   m_Name: grass
   m_TagString: Ground
@@ -8030,6 +8205,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1037191670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037191666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &1042844578
 GameObject:
   m_ObjectHideFlags: 0
@@ -8222,8 +8410,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-
-  m_Size: {x: 4.88, y: 11}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &1042893953
 SpriteRenderer:
@@ -8691,6 +8878,7 @@ GameObject:
   - component: {fileID: 1104387342}
   - component: {fileID: 1104387343}
   - component: {fileID: 1104387341}
+  - component: {fileID: 1104387344}
   m_Layer: 8
   m_Name: spike_platform_right
   m_TagString: Ground
@@ -8812,6 +9000,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &1104387344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104387339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &1112384341
 GameObject:
   m_ObjectHideFlags: 0
@@ -8953,6 +9154,7 @@ GameObject:
   - component: {fileID: 1114912629}
   - component: {fileID: 1114912628}
   - component: {fileID: 1114912627}
+  - component: {fileID: 1114912630}
   m_Layer: 8
   m_Name: cloud_middle (2)
   m_TagString: Ground
@@ -9077,6 +9279,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1114912630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114912625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1001 &1128096225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9788,6 +10003,71 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &1128096238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128096228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
+--- !u!114 &1128096239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128096229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
+--- !u!114 &1128096240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128096230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
+--- !u!114 &1128096241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128096231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
+--- !u!114 &1128096242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128096232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &1132365659
 GameObject:
   m_ObjectHideFlags: 0
@@ -9799,6 +10079,7 @@ GameObject:
   - component: {fileID: 1132365660}
   - component: {fileID: 1132365662}
   - component: {fileID: 1132365661}
+  - component: {fileID: 1132365663}
   m_Layer: 0
   m_Name: 'grass '
   m_TagString: Ground
@@ -9897,6 +10178,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1132365663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132365659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &1133600061
 GameObject:
   m_ObjectHideFlags: 0
@@ -11040,6 +11334,7 @@ GameObject:
   - component: {fileID: 1241861914}
   - component: {fileID: 1241861916}
   - component: {fileID: 1241861915}
+  - component: {fileID: 1241861917}
   m_Layer: 0
   m_Name: grass
   m_TagString: Ground
@@ -11138,6 +11433,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1241861917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241861913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &1299644288
 GameObject:
   m_ObjectHideFlags: 0
@@ -11612,6 +11920,7 @@ GameObject:
   - component: {fileID: 1356781109}
   - component: {fileID: 1356781111}
   - component: {fileID: 1356781110}
+  - component: {fileID: 1356781112}
   m_Layer: 0
   m_Name: grass
   m_TagString: Ground
@@ -11710,6 +12019,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1356781112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356781108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &1360377873
 GameObject:
   m_ObjectHideFlags: 0
@@ -11850,6 +12172,7 @@ GameObject:
   - component: {fileID: 1361813114}
   - component: {fileID: 1361813116}
   - component: {fileID: 1361813115}
+  - component: {fileID: 1361813117}
   m_Layer: 0
   m_Name: 'grass '
   m_TagString: Ground
@@ -11948,6 +12271,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1361813117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361813113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &1366631708
 GameObject:
   m_ObjectHideFlags: 0
@@ -15184,6 +15520,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &1796958811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796958806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!50 &1796958812
 Rigidbody2D:
   serializedVersion: 4
@@ -15467,6 +15816,7 @@ GameObject:
   - component: {fileID: 1871558478}
   - component: {fileID: 1871558480}
   - component: {fileID: 1871558479}
+  - component: {fileID: 1871558481}
   m_Layer: 0
   m_Name: grass
   m_TagString: Ground
@@ -15565,6 +15915,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1871558481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871558477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &1887002813
 GameObject:
   m_ObjectHideFlags: 0
@@ -15577,6 +15940,7 @@ GameObject:
   - component: {fileID: 1887002817}
   - component: {fileID: 1887002816}
   - component: {fileID: 1887002815}
+  - component: {fileID: 1887002818}
   m_Layer: 8
   m_Name: 'cloud '
   m_TagString: Ground
@@ -15694,6 +16058,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1887002818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887002813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &1887190927
 GameObject:
   m_ObjectHideFlags: 0
@@ -16147,6 +16524,7 @@ GameObject:
   - component: {fileID: 1899710107}
   - component: {fileID: 1899710106}
   - component: {fileID: 1899710105}
+  - component: {fileID: 1899710109}
   m_Layer: 8
   m_Name: 'cloud '
   m_TagString: Ground
@@ -16264,6 +16642,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1899710109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899710104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &1907204744
 GameObject:
   m_ObjectHideFlags: 0
@@ -16276,6 +16667,7 @@ GameObject:
   - component: {fileID: 1907204746}
   - component: {fileID: 1907204748}
   - component: {fileID: 1907204745}
+  - component: {fileID: 1907204749}
   m_Layer: 8
   m_Name: spike_platform_left
   m_TagString: Ground
@@ -16397,6 +16789,19 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &1907204749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907204744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &1913502583
 GameObject:
   m_ObjectHideFlags: 0
@@ -16530,6 +16935,7 @@ GameObject:
   - component: {fileID: 1918988884}
   - component: {fileID: 1918988886}
   - component: {fileID: 1918988885}
+  - component: {fileID: 1918988887}
   m_Layer: 0
   m_Name: 'grass '
   m_TagString: Ground
@@ -16628,6 +17034,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1918988887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918988883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &1940888405
 GameObject:
   m_ObjectHideFlags: 0
@@ -17660,6 +18079,7 @@ GameObject:
   - component: {fileID: 2057911956}
   - component: {fileID: 2057911955}
   - component: {fileID: 2057911954}
+  - component: {fileID: 2057911957}
   m_Layer: 8
   m_Name: cloud_middle
   m_TagString: Ground
@@ -17778,6 +18198,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2057911957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057911952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &2058028745
 GameObject:
   m_ObjectHideFlags: 0
@@ -17872,6 +18305,7 @@ GameObject:
   - component: {fileID: 2128213832}
   - component: {fileID: 2128213831}
   - component: {fileID: 2128213830}
+  - component: {fileID: 2128213833}
   m_Layer: 8
   m_Name: cloud_middle (1)
   m_TagString: Ground
@@ -17994,6 +18428,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2128213833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128213828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
 --- !u!1 &2136078951
 GameObject:
   m_ObjectHideFlags: 0
@@ -18668,3 +19115,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb49a0058f709864f9f47900a7fc4766, type: 3}
+--- !u!1 &4901047077940880018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5504702170998770433, guid: fb49a0058f709864f9f47900a7fc4766,
+    type: 3}
+  m_PrefabInstance: {fileID: 4901047077940880017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4901047077940880019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 897457952582958234, guid: fb49a0058f709864f9f47900a7fc4766,
+    type: 3}
+  m_PrefabInstance: {fileID: 4901047077940880017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4901047077940880020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4901047077940880018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
+--- !u!114 &4901047077940880021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4901047077940880019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
+--- !u!1 &4901047077940880022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 384633238492072157, guid: fb49a0058f709864f9f47900a7fc4766,
+    type: 3}
+  m_PrefabInstance: {fileID: 4901047077940880017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4901047077940880023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4901047077940880022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: cloud
