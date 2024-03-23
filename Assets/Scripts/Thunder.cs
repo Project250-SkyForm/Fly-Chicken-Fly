@@ -19,6 +19,7 @@ public class Thunder : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other){
         if (other.gameObject.CompareTag("Player")){
             EventController.Instance.AddLump();
+            AudioController.Instance.PlayElectrocution();
             AudioController.Instance.PlayChickenHit();
             Destroy(gameObject);
         }
