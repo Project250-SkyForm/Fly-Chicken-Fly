@@ -91,6 +91,8 @@ public class EventController : MonoBehaviour
                 StartShrinkingBoundaries();
             }
         }
+        leftBoundary.moveY(camera.transform.position.y);
+        rightBoundary.moveY(camera.transform.position.y);
     }
 
     private void UpdateXBoundary(){
@@ -160,14 +162,18 @@ public class EventController : MonoBehaviour
     }
 
 
-    private void StartShrinkingBoundaries()
-    {
-        float newMaxScaleX = Random.Range(9f, 22f);
-        float newMinScaleX = Random.Range(5f, 8f);
-        leftBoundary.Rescale(true, newMinScaleX, newMaxScaleX);
-        rightBoundary.Rescale(true, newMinScaleX, newMaxScaleX);
-        startShrinking = false; 
-    }
+private void StartShrinkingBoundaries()
+{
+    float newMaxPosX = Random.Range(17f, 24f); 
+    float newMinPosX = Random.Range(25f, 30f);
+
+    rightBoundary.MoveBoundary(true, newMinPosX, newMaxPosX); 
+
+    leftBoundary.MoveBoundary(false, -newMaxPosX, -newMinPosX); 
+
+    startShrinking = false; 
+}
+
 
     public void AddGoldenEgg(){
         egg+=1;
