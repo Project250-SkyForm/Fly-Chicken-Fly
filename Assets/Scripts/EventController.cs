@@ -108,16 +108,17 @@ public class EventController : MonoBehaviour
         lump += 1;
         if (lump == 1){
             lump1.SetActive(true);
-            x1.SetActive(true);
+            //x1.SetActive(true);
         }
         if (lump == 2){
             lump2.SetActive(true);
-            x2.SetActive(true);
+            //x2.SetActive(true);
         }
         if (lump == 3){
             lump3.SetActive(true);
-            x3.SetActive(true);
+            //x3.SetActive(true);
         }
+        lumpView.UpdateLump(lump);
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
            //Debug.Log("End Game");
             EndGame();

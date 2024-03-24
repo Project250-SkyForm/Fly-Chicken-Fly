@@ -35,6 +35,6 @@ public class AltitudeView : MonoBehaviour
             score = newScore;
         }
         string formattedScore = score.ToString("F2");
-        text.text ="Score: "+ formattedScore;    
+        text.text =" "+ formattedScore;    
     }
 }

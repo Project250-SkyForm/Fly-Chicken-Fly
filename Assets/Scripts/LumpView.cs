@@ -15,6 +15,6 @@ public class LumpView : MonoBehaviour
 
     public void UpdateLump(int lump)
     {
-        text.text = "X " + lump;    
+        text.text = "" + lump;    
     }
 }
