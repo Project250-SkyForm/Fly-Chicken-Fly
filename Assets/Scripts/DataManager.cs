@@ -119,13 +119,13 @@ public class DataManager : MonoBehaviour
         // playCutScene=loadedData.GetPlayCutScene();
         // UpdateData();
         // FetchTopScores();
-        Debug.Log("Updated and Saved Player Data - Eggs: " + loadedData.GetEggs() +
-              ", Golds: " + loadedData.GetGold() +
-              ", Unlocked: " + loadedData.IsLocked() +
-              ", Highest Score: " + loadedData.GetHighestScore(0));
-        for (int i = maxLocalScore-1; i>=0; i--){
-             Debug.Log("Highest: " + loadedData.GetHighestScore(i));
-        }
+        // Debug.Log("Updated and Saved Player Data - Eggs: " + loadedData.GetEggs() +
+        //       ", Golds: " + loadedData.GetGold() +
+        //       ", Unlocked: " + loadedData.IsLocked() +
+        //       ", Highest Score: " + loadedData.GetHighestScore(0));
+        // for (int i = maxLocalScore-1; i>=0; i--){
+        //      Debug.Log("Highest: " + loadedData.GetHighestScore(i));
+        // }
     }
 
     void Start(){

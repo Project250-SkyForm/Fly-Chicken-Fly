@@ -5,12 +5,27 @@ using UnityEngine;
 public class Mutable : MonoBehaviour
 {
     private bool isMuted = false;
-    public GameObject muteButton;
-    public GameObject unMuteButton;
+    public GameObject sonOn;
+    public GameObject soffOff;
+    public GameObject sonOff;
+    public GameObject soffOn;
 
+    void Awake(){
+        if (PlayerPrefs.HasKey("mute")){
+            AudioListener.volume = PlayerPrefs.GetInt("mute");
+        }else{
+            PlayerPrefs.SetInt("mute",1);
+            AudioListener.volume = 1;
+        }
+    }
     void Start(){
-        if (AudioListener.volume == 0){
-            UIController.Instance.SetUIActive(unMuteButton);
+        if (AudioListener.volume == 0){ //muted
+            UIController.Instance.SetUIActive(sonOff);
+            UIController.Instance.SetUIActive(soffOn);
+        }
+        else{
+            UIController.Instance.SetUIActive(sonOn);
+            UIController.Instance.SetUIActive(soffOff);
         }
     }
     // Function to toggle mute state
@@ -24,6 +39,7 @@ public class Mutable : MonoBehaviour
     public void Mute()
     {
         isMuted = true;
+        PlayerPrefs.SetInt("mute",0);
         AudioListener.volume = 0; // Mute all audio
     }
 
@@ -31,6 +47,7 @@ public class Mutable : MonoBehaviour
     public void Unmute()
     {
         isMuted = false;
+        PlayerPrefs.SetInt("mute",1);
         AudioListener.volume = 1; // Unmute all audio
     }
 }
