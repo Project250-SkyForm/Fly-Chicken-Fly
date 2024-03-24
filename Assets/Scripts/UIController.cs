@@ -11,6 +11,11 @@ public class UIController : MonoBehaviour
     public GameObject bonOff;
     public GameObject boffOn;
     public GameObject BGmusic;
+    public GameObject tonOn;
+    public GameObject toffOff;
+    public GameObject tonOff;
+    public GameObject toffOn;
+
 
     //Singleton pattern
     private static UIController _instance;
@@ -36,6 +41,21 @@ public class UIController : MonoBehaviour
             UIController.Instance.SetUIActive(bonOn);
             UIController.Instance.SetUIActive(boffOff);
         }
+
+        //tutorial
+        if (PlayerPrefs.HasKey("Tutorial")){
+            if (PlayerPrefs.GetInt("Tutorial")==0){
+                UIController.Instance.SetUIActive(tonOff);
+                UIController.Instance.SetUIActive(toffOn);
+            }else{
+                UIController.Instance.SetUIActive(tonOn);
+                UIController.Instance.SetUIActive(toffOff);
+            }
+        }else{
+            PlayerPrefs.SetInt("Tutorial",1);
+            UIController.Instance.SetUIActive(tonOn);
+            UIController.Instance.SetUIActive(toffOff);
+        }
     }
 
     public void SetUIActive(GameObject ui)
@@ -59,6 +79,17 @@ public class UIController : MonoBehaviour
     {
         PlayerPrefs.SetInt("BGMute",1);
         SetUIActive(BGmusic); // Unmute all audio
+    }
+
+    public void DisableTutorial()
+    {
+        PlayerPrefs.SetInt("Tutorial",0);
+    }
+
+    // Function to explicitly unmute the audio
+    public void EnableTutorial()
+    {
+        PlayerPrefs.SetInt("Tutorial",1);
     }
 
 }
