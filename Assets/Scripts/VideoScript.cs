@@ -19,6 +19,13 @@ public class VideoScript : MonoBehaviour
             string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
             Debug.Log(videoPath);
             videoPlayer.url = videoPath;
+            if (PlayerPrefs.GetInt("mute")==0){
+                // Set the audio output mode to AudioSource
+                videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
+
+                // Find the AudioSource component under the parent GameObject of the plane
+                AudioSource audioSource = GetComponentInParent<AudioSource>();
+            }
             videoPlayer.Play();
         }
     }
