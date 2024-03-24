@@ -10,7 +10,6 @@ public class NewPlatformGen : MonoBehaviour
     public List<GameObject> rottenEggPlatformPrefab;
     public List<GameObject> thunderPlatformPrefab;
     public List<GameObject> babyChickenPlatformPrefab;
-    public int platformsOnScreenLimit = 5; // Adjust this to control the number of platforms on the screen
     public float minX = -7f;
     public float maxX = 6f;
     public float verticalDistanceBetweenPlatforms = 4.5f;
@@ -52,7 +51,8 @@ public class NewPlatformGen : MonoBehaviour
                 regularPlatformCounter++;
             }
             // check if it is on night mode and then generate thunder platform
-            else if (EventController.Instance.hardMode == "night" && regularPlatformCounter == thunderPlatformFrequency){
+            else if (EventController.Instance.hardMode == "night" && regularPlatformCounter == thunderPlatformFrequency)
+            {
                 Debug.Log("Thurder generated");
                 GenerateThunderPlatform(currentY + thunderPlatformScale);
                 regularPlatformCounter++;
@@ -65,7 +65,7 @@ public class NewPlatformGen : MonoBehaviour
             else if (regularPlatformCounter == babyChickenPlatformFrequency)
             {
                 GenerateBabyChickenPlatform(currentY + babyChickenPlatformScale);
-                regularPlatformCounter=0;
+                regularPlatformCounter = 0;
             }
             else
             {
@@ -74,12 +74,6 @@ public class NewPlatformGen : MonoBehaviour
             }
 
             currentY += verticalDistanceBetweenPlatforms;
-
-            // Check if the number of platforms exceeds the limit
-            if (platforms.Count > platformsOnScreenLimit)
-            {
-                DestroyOldestPlatform();
-            }
 
             yield return new WaitForSeconds(timeBetweenPlatforms);
         }
@@ -145,14 +139,6 @@ public class NewPlatformGen : MonoBehaviour
         // Return the platform GameObject at the randomly generated index
         return platformList[randomIndex];
     }
-
-    void DestroyOldestPlatform()
-    {
-        if (platforms.Count > 0)
-        {
-            Destroy(platforms[0]);
-            platforms.RemoveAt(0);
-        }
-    }
 }
+
 
