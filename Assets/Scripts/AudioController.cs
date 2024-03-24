@@ -86,10 +86,12 @@ public class AudioController : MonoBehaviour
     }
 
     public void playBackgroundMusic(){
-    backgroundMusicSource.clip = backgroundMusicTracks[0]; // Assign the first background music track
-    backgroundMusicSource.loop = false;
-    backgroundMusicSource.volume = backgroundMusicVolume; 
-    backgroundMusicSource.Play();
+        if (PlayerPrefs.GetInt("BGMute")==1){
+            backgroundMusicSource.clip = backgroundMusicTracks[0]; // Assign the first background music track
+            backgroundMusicSource.loop = false;
+            backgroundMusicSource.volume = backgroundMusicVolume; 
+            backgroundMusicSource.Play();
+        }
 
     // Start looping another track after the first one finishes
     StartCoroutine(LoopBackgroundMusic());
@@ -97,12 +99,13 @@ public class AudioController : MonoBehaviour
 
     IEnumerator LoopBackgroundMusic()
     {
-        // Wait until the first track finishes playing
-        yield return new WaitForSeconds(backgroundMusicTracks[0].length);
-
-        backgroundMusicSource.clip = backgroundMusicTracks[1]; 
-        backgroundMusicSource.loop = true;
-        backgroundMusicSource.volume = backgroundMusicVolume;
-        backgroundMusicSource.Play();
+        if (PlayerPrefs.GetInt("BGMute")==1){
+            // Wait until the first track finishes playing
+            yield return new WaitForSeconds(backgroundMusicTracks[0].length);
+            backgroundMusicSource.clip = backgroundMusicTracks[1]; 
+            backgroundMusicSource.loop = true;
+            backgroundMusicSource.volume = backgroundMusicVolume;
+            backgroundMusicSource.Play();
+        }
     }
 }
