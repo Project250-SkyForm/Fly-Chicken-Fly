@@ -7309,25 +7309,25 @@ MonoBehaviour:
   chicken: {fileID: 1366631714}
   backgroundMusicSource: {fileID: 782966350}
   chickenJump: {fileID: 8300000, guid: 26cd8e914a386416fb6f8a23119dc8b3, type: 3}
-  chickenGrassLand: {fileID: 8300000, guid: 0d509dfd61daf406bae96047d78c35f0, type: 3}
-  chickenCloudLand: {fileID: 8300000, guid: 94d6df7a539c3404e92e720e694dbd4c, type: 3}
-  chickenStarsLand: {fileID: 8300000, guid: b7101a9390675434fbb4c442651204ef, type: 3}
+  chickenGrassLand: {fileID: 8300000, guid: f74264d13903f47c5af003c46163e4cf, type: 3}
+  chickenCloudLand: {fileID: 8300000, guid: e436e55d8796642759b77648b909f1fc, type: 3}
+  chickenStarsLand: {fileID: 8300000, guid: 4afeb31f2647e47d5adee85fadf7bd39, type: 3}
   obstacleFall: {fileID: 8300000, guid: ac00a8ca03bbd4c84a8e1ba6bb729576, type: 3}
   pickEgg: {fileID: 8300000, guid: 276e87391d6754365a2df79521b895d0, type: 3}
   rottenEgg: {fileID: 8300000, guid: 0015019bb66664ac185b6dc86c4f927b, type: 3}
   electrocution: {fileID: 8300000, guid: 3a8b2ffe3047249358728175ce8292f9, type: 3}
-  spike: {fileID: 8300000, guid: 910431fa5e3694e2698f0ce9119f12f3, type: 3}
+  spike: {fileID: 8300000, guid: 952ed90ea95494db09062fac532a4d62, type: 3}
   hitVolume: 0.4
   jumpVolume: 0.05
   obstacleFallVolume: 0.003
   barkVolume: 0.015
-  backgroundMusicVolume: 0.8
+  backgroundMusicVolume: 0.6
   goldenEggVolume: 0.1
   rottenEggVolume: 0.2
   electrocutionVolume: 0.2
-  spikeVolume: 0.1
+  spikeVolume: 0.01
   grassLandVolume: 0.35
-  cloudLandVolume: 0.5
+  cloudLandVolume: 0.6
   starsLandVolume: 0.8
   chickenHits:
   - {fileID: 8300000, guid: 2af9a56e0257e4376be38015a9e51071, type: 3}
@@ -9663,6 +9663,7 @@ GameObject:
   - component: {fileID: 1047495444}
   - component: {fileID: 1047495443}
   - component: {fileID: 1047495442}
+  - component: {fileID: 1047495445}
   m_Layer: 0
   m_Name: Starting Grass
   m_TagString: Ground
@@ -9761,6 +9762,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1047495445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047495441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edddd5b7e719e45559af069f9fff9643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacleType: grass
 --- !u!1 &1053957090
 GameObject:
   m_ObjectHideFlags: 0
