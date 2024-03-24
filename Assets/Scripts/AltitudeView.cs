@@ -29,12 +29,12 @@ public class AltitudeView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        meter = player.transform.position.y;
-        float newScore = meter+goldenEgg*10;
-        if (newScore>score){
-            score = newScore;
-        }
+        score = player.transform.position.y;
+        // float newScore = meter;
+        // if (newScore>score){
+        //     score = newScore;
+        // }
         string formattedScore = score.ToString("F2");
-        text.text ="Score: "+ formattedScore;    
+        text.text =" "+ formattedScore;    
     }
 }

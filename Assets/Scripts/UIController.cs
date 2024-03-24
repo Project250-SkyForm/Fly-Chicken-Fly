@@ -29,7 +29,9 @@ public class UIController : MonoBehaviour
     void Start(){
         if (PlayerPrefs.HasKey("BGMute")){
             if (PlayerPrefs.GetInt("BGMute")==0){
-                SetUINotActive(BGmusic);
+                if(BGmusic != null){
+                    SetUINotActive(BGmusic);
+                }
                 UIController.Instance.SetUIActive(bonOff);
                 UIController.Instance.SetUIActive(boffOn);
             }else{
@@ -71,14 +73,18 @@ public class UIController : MonoBehaviour
     public void MuteBG()
     {
         PlayerPrefs.SetInt("BGMute",0);
-        SetUINotActive(BGmusic); // Mute all audio
+        if(BGmusic != null){
+            SetUINotActive(BGmusic);
+        }
     }
 
     // Function to explicitly unmute the audio
     public void UnmuteBG()
     {
         PlayerPrefs.SetInt("BGMute",1);
-        SetUIActive(BGmusic); // Unmute all audio
+        if(BGmusic != null){
+            SetUIActive(BGmusic);
+        }
     }
 
     public void DisableTutorial()

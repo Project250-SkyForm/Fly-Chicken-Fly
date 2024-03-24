@@ -8,7 +8,7 @@ public class EventController : MonoBehaviour
     public static EventController Instance { get { return _instance; } }
 
     private int lump=0;
-    private int egg=0;
+    public int egg=0;
 
     public int shrinkScore = 30;
     public float minFieldOfView = 2f;
@@ -108,16 +108,17 @@ public class EventController : MonoBehaviour
         lump += 1;
         if (lump == 1){
             lump1.SetActive(true);
-            x1.SetActive(true);
+            //x1.SetActive(true);
         }
         if (lump == 2){
             lump2.SetActive(true);
-            x2.SetActive(true);
+            //x2.SetActive(true);
         }
         if (lump == 3){
             lump3.SetActive(true);
-            x3.SetActive(true);
+            //x3.SetActive(true);
         }
+        lumpView.UpdateLump(lump);
         if (DataManager.Instance.currentGameMode == "death" && lump >=3){
            //Debug.Log("End Game");
             EndGame();
@@ -195,7 +196,7 @@ private void StartShrinkingBoundaries()
 
     public void EndGame(){
         DataManager.Instance.UpdateGoldenEgg(egg);
-        DataManager.Instance.UpdateHighestScore((int)altitudeView.score);
+        DataManager.Instance.UpdateHighestScore((int)altitudeView.score + egg*10,egg,(int)altitudeView.score);
         PauseGame();
         UIController.Instance.SetUIActive(gameOverUI);
     }
