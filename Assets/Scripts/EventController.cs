@@ -8,7 +8,7 @@ public class EventController : MonoBehaviour
     public static EventController Instance { get { return _instance; } }
 
     private int lump=0;
-    private int egg=0;
+    public int egg=0;
 
     public int shrinkScore = 30;
     public float minFieldOfView = 2f;
