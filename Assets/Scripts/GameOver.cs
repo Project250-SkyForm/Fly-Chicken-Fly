@@ -8,6 +8,7 @@ public class GameOver : MonoBehaviour
     public float duration;
     public GameObject gameOver;
     public GameObject score;
+    public GameObject newScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,9 @@ public class GameOver : MonoBehaviour
         elapsedTime += Time.unscaledDeltaTime;
         if (elapsedTime >= duration){
             UIController.Instance.SetUINotActive(gameOver);
+            if (DataManager.Instance.getNewHighestScore){
+                UIController.Instance.SetUIActive(newScore);
+            }
             UIController.Instance.SetUIActive(score);
         }
     }

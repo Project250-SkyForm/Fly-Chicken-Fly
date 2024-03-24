@@ -103,6 +103,7 @@ public class DataManager : MonoBehaviour
     public string currentGameMode;
     public string playerName=null;
     public bool playCutScene;
+    public bool getNewHighestScore=false;
     private int maxLocalScore=5;
      public List<LeaderboardEntry> TopScores = new List<LeaderboardEntry>();
 
@@ -164,6 +165,7 @@ public class DataManager : MonoBehaviour
             // Debug.Log(index);
             // Debug.Log(current_height);
             loadedData.SetHighestScore(index,current_height,playerName);
+            getNewHighestScore = true;
             // if (index == 0){
             //     RankingView.Instance.setScores(current_height);
             // }
