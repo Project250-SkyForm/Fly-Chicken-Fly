@@ -162,8 +162,6 @@ public class DataManager : MonoBehaviour
         }
         // Update PlayerPrefs with the new high score
         if (index>=0){
-            // Debug.Log(index);
-            // Debug.Log(current_height);
             loadedData.SetHighestScore(index,current_height,playerName);
             getNewHighestScore = true;
             // if (index == 0){
