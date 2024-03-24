@@ -13,6 +13,8 @@ public class PlayerData
     private int maxLocalScore=5;
     public bool playCutScene = true;
     public List<int> highestScore = new List<int>(){0,0,0,0,0};  //the first one is the highest
+    public List<int> goldenEggs = new List<int>(){0,0,0,0,0};
+    public List<int> highestMeter = new List<int>(){0,0,0,0,0};
     public  List<string> playerNames = new List<string>(){"","","","",""};
 
     public int GetHighestScore(int index)
@@ -26,15 +28,41 @@ public class PlayerData
         }
     }
 
-    public void SetHighestScore(int index, int highest,string playerName)
+    public int GetHighestMeter(int index)
+    {
+        //Debug.Log(index);
+        try{
+            return highestMeter[index];
+        }
+        catch{
+            return highestMeter[0];
+        }
+    }
+
+    public int GetGoldenEgg(int index)
+    {
+        //Debug.Log(index);
+        try{
+            return goldenEggs[index];
+        }
+        catch{
+            return goldenEggs[0];
+        }
+    }
+
+    public void SetHighestScore(int index, int highest,string playerName,int goldenEgg, int meter)
     {
         // Insert the new highest score at the specified position
         highestScore.Insert(index, highest);
+        goldenEggs.Insert(index,goldenEgg);
+        highestMeter.Insert(index,meter);
         playerNames.Insert(index,playerName);
         // If there are more than 5 scores in the list, remove the last one
         if (highestScore.Count > maxLocalScore)
         {
             highestScore.RemoveAt(5); // Removes the last element (index 5)
+            goldenEggs.RemoveAt(5);
+            highestMeter.RemoveAt(5);
             playerNames.RemoveAt(5); // Removes the last element (index 5)
         }
     }
@@ -145,7 +173,7 @@ public class DataManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void UpdateHighestScore(int current_height)
+    public void UpdateHighestScore(int current_height, int goldenEgg,int meter)
     {   
         //SubmitScoreToFirebase(current_height, playerName);
         int index = -1;
@@ -162,7 +190,7 @@ public class DataManager : MonoBehaviour
         }
         // Update PlayerPrefs with the new high score
         if (index>=0){
-            loadedData.SetHighestScore(index,current_height,playerName);
+            loadedData.SetHighestScore(index,current_height,playerName,goldenEgg,meter);
             getNewHighestScore = true;
             // if (index == 0){
             //     RankingView.Instance.setScores(current_height);
@@ -191,6 +219,16 @@ public class DataManager : MonoBehaviour
     public int getHighestScore(int index){
         //return  highestScore;
         return loadedData.GetHighestScore(index); 
+    }
+
+    public int getGoldenEgg(int index){
+        //return  highestScore;
+        return loadedData.GetGoldenEgg(index); 
+    }
+    
+    public int getHighestMeter(int index){
+        //return  highestScore;
+        return loadedData.GetHighestMeter(index); 
     }
 
     public void setPlayerName(string name){
