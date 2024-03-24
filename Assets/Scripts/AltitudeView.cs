@@ -30,7 +30,7 @@ public class AltitudeView : MonoBehaviour
     void Update()
     {
         meter = player.transform.position.y;
-        float newScore = meter+goldenEgg*10;
+        float newScore = meter;
         if (newScore>score){
             score = newScore;
         }

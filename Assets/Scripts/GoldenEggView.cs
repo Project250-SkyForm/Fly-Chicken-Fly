@@ -15,6 +15,6 @@ public class GoldenEggView : MonoBehaviour
 
     public void UpdateGoldenEgg(int egg)
     {
-        text.text = "Egg: " + egg;    
+        text.text = "" + egg;    
     }
 }
