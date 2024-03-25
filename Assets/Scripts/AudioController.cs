@@ -10,9 +10,11 @@ public class AudioController : MonoBehaviour
     
     // Initialize audio source and audio clips
     public AudioSource chicken, backgroundMusicSource;
-    public AudioClip chickenJump, chickenGrassLand, chickenCloudLand, chickenStarsLand, obstacleFall, pickEgg, rottenEgg, electrocution, spike;
-    public float hitVolume, jumpVolume, obstacleFallVolume, barkVolume, backgroundMusicVolume, goldenEggVolume, rottenEggVolume, electrocutionVolume, spikeVolume, grassLandVolume, cloudLandVolume, starsLandVolume;
-    public AudioClip[] chickenHits, ambientSounds, backgroundMusicTracks;
+    public AudioClip chickenJump, chickenGrassLand, chickenCloudLand, chickenStarsLand, obstacleFall, pickEgg, rottenEgg, electrocution, spike, machine, siren;
+    public float hitVolume, jumpVolume, obstacleFallVolume, barkVolume, backgroundMusicVolume, goldenEggVolume, rottenEggVolume, electrocutionVolume, spikeVolume, grassLandVolume, cloudLandVolume, starsLandVolume, machineVolume, sirenVolume;
+    public AudioClip[] chickenHits, ambientSounds, backgroundMusicTracks, gameOverSounds;
+    public float[] gameOverVolumes;
+    private int index;
 
     void Awake(){
         _instance = this;
@@ -107,5 +109,26 @@ public class AudioController : MonoBehaviour
             backgroundMusicSource.volume = backgroundMusicVolume;
             backgroundMusicSource.Play();
         }
+    }
+
+    public void stopBackgroundMusic(){
+        backgroundMusicSource.Stop();
+    }
+
+    // Randomly plays a sound from array of game over sounds
+    public void PlayGameOverSounds(){
+        index = Random.Range(0, ambientSounds.Length);
+        backgroundMusicSource.volume = gameOverVolumes[index];
+        backgroundMusicSource.PlayOneShot(gameOverSounds[index]);
+    }
+
+    public void PlaySiren(){
+        chicken.volume = sirenVolume;
+        chicken.PlayOneShot(siren);
+    }
+
+    public void PlayMachineRumble(){
+        chicken.volume = machineVolume;
+        chicken.PlayOneShot(machine);
     }
 }
