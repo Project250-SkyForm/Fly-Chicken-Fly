@@ -10521,9 +10521,11 @@ MonoBehaviour:
   chickenStarsLand: {fileID: 8300000, guid: 4afeb31f2647e47d5adee85fadf7bd39, type: 3}
   obstacleFall: {fileID: 8300000, guid: ac00a8ca03bbd4c84a8e1ba6bb729576, type: 3}
   pickEgg: {fileID: 8300000, guid: 276e87391d6754365a2df79521b895d0, type: 3}
-  rottenEgg: {fileID: 8300000, guid: 0015019bb66664ac185b6dc86c4f927b, type: 3}
+  rottenEgg: {fileID: 8300000, guid: 54808a066d13145f2bd6e3275a89918a, type: 3}
   electrocution: {fileID: 8300000, guid: 3a8b2ffe3047249358728175ce8292f9, type: 3}
   spike: {fileID: 8300000, guid: 952ed90ea95494db09062fac532a4d62, type: 3}
+  machine: {fileID: 8300000, guid: 4755c21eefc3f44898254614370fb6e2, type: 3}
+  siren: {fileID: 8300000, guid: 2869af3bfef5e49e7b59f22322003e9a, type: 3}
   hitVolume: 0.4
   jumpVolume: 0.05
   obstacleFallVolume: 0.003
@@ -10534,8 +10536,10 @@ MonoBehaviour:
   electrocutionVolume: 0.2
   spikeVolume: 0.01
   grassLandVolume: 0.35
-  cloudLandVolume: 0.6
+  cloudLandVolume: 0.4
   starsLandVolume: 0.8
+  machineVolume: 0.5
+  sirenVolume: 0.6
   chickenHits:
   - {fileID: 8300000, guid: 2af9a56e0257e4376be38015a9e51071, type: 3}
   - {fileID: 8300000, guid: db6732df5a8b4dc45938dc5db9d46970, type: 3}
@@ -10544,6 +10548,14 @@ MonoBehaviour:
   backgroundMusicTracks:
   - {fileID: 8300000, guid: 937b46d2d8bbb42e0b61cc528d52facc, type: 3}
   - {fileID: 8300000, guid: dc82d3a7fee014de988293aafff67fa4, type: 3}
+  gameOverSounds:
+  - {fileID: 8300000, guid: 17681ebaa509d43afbc297fb70a06e50, type: 3}
+  - {fileID: 8300000, guid: dfac2e57df90849e9ba38b0a970adc17, type: 3}
+  - {fileID: 8300000, guid: 76544282cd1154d419fa69e43253f281, type: 3}
+  gameOverVolumes:
+  - 0.5
+  - 0.5
+  - 0.5
 --- !u!114 &782966348
 MonoBehaviour:
   m_ObjectHideFlags: 0

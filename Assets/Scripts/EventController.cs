@@ -206,6 +206,8 @@ private void StartShrinkingBoundaries()
         DataManager.Instance.UpdateGoldenEgg(egg);
         DataManager.Instance.UpdateHighestScore((int)altitudeView.score + egg*10,egg,(int)altitudeView.score);
         PauseGame();
+        AudioController.Instance.stopBackgroundMusic();
+        AudioController.Instance.PlayGameOverSounds();
         UIController.Instance.SetUIActive(gameOverUI);
     }
 
