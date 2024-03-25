@@ -14,6 +14,7 @@ TagManager:
   - Spike
   - BabyChicken
   - Platform
+  - Thunder
   layers:
   - Default
   - TransparentFX
