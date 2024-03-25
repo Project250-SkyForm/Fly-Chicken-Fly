@@ -9,7 +9,7 @@ public class AudioController : MonoBehaviour
     public static AudioController Instance {get {return _instance;}}
     
     // Initialize audio source and audio clips
-    public AudioSource chicken, backgroundMusicSource;
+    public AudioSource chicken, backgroundMusicSource, obstacleSounds, platformSounds, miscSounds, machineSounds;
     public AudioClip chickenJump, chickenGrassLand, chickenCloudLand, chickenStarsLand, obstacleFall, pickEgg, rottenEgg, electrocution, spike, machine, siren;
     public float hitVolume, jumpVolume, obstacleFallVolume, barkVolume, backgroundMusicVolume, goldenEggVolume, rottenEggVolume, electrocutionVolume, spikeVolume, grassLandVolume, cloudLandVolume, starsLandVolume, machineVolume, sirenVolume;
     public AudioClip[] chickenHits, ambientSounds, backgroundMusicTracks, gameOverSounds;
@@ -25,9 +25,9 @@ public class AudioController : MonoBehaviour
     // Use the following functions in other scripts to call
     // desired sound effect
     public void PlayChickenHit(){
-        chicken.volume = hitVolume;
+        obstacleSounds.volume = hitVolume;
         int randomIndex = Random.Range(0, chickenHits.Length); 
-        chicken.PlayOneShot(chickenHits[randomIndex]);
+        obstacleSounds.PlayOneShot(chickenHits[randomIndex]);
     }
 
     public void PlayChickenJump(){
@@ -36,18 +36,18 @@ public class AudioController : MonoBehaviour
     }
 
     public void PlayChickenGrassLand(){
-        chicken.volume = grassLandVolume;
-        chicken.PlayOneShot(chickenGrassLand);
+        platformSounds.volume = grassLandVolume;
+        platformSounds.PlayOneShot(chickenGrassLand);
     }
 
     public void PlayChickenCloudLand(){
-        chicken.volume = cloudLandVolume;
-        chicken.PlayOneShot(chickenCloudLand);
+        platformSounds.volume = cloudLandVolume;
+        platformSounds.PlayOneShot(chickenCloudLand);
     }
 
     public void PlayChickenStarsLand(){
-        chicken.volume = starsLandVolume;
-        chicken.PlayOneShot(chickenStarsLand);
+        platformSounds.volume = starsLandVolume;
+        platformSounds.PlayOneShot(chickenStarsLand);
     }
 
     public void PlayGoldenEggPick(){
@@ -56,18 +56,18 @@ public class AudioController : MonoBehaviour
     }
 
     public void PlayRottenEgg(){
-        chicken.volume = rottenEggVolume;
-        chicken.PlayOneShot(rottenEgg);
+        obstacleSounds.volume = rottenEggVolume;
+        obstacleSounds.PlayOneShot(rottenEgg);
     }
 
     public void PlayElectrocution(){
-        chicken.volume = electrocutionVolume;
-        chicken.PlayOneShot(electrocution);
+        obstacleSounds.volume = electrocutionVolume;
+        obstacleSounds.PlayOneShot(electrocution);
     }
 
     public void PlaySpike(){
-        chicken.volume = spikeVolume;
-        chicken.PlayOneShot(spike);
+        obstacleSounds.volume = spikeVolume;
+        obstacleSounds.PlayOneShot(spike);
     }
 
     // Plays an ambient sound every 10 seconds 
@@ -76,8 +76,8 @@ public class AudioController : MonoBehaviour
     }
 
     public void PlayAmbientSounds(){
-        chicken.volume = barkVolume;
-        chicken.PlayOneShot(ambientSounds[Random.Range(0, ambientSounds.Length)]);
+        miscSounds.volume = barkVolume;
+        miscSounds.PlayOneShot(ambientSounds[Random.Range(0, ambientSounds.Length)]);
         playRandomSound();
     }
 
@@ -123,12 +123,12 @@ public class AudioController : MonoBehaviour
     }
 
     public void PlaySiren(){
-        chicken.volume = sirenVolume;
-        chicken.PlayOneShot(siren);
+        machineSounds.volume = sirenVolume;
+        machineSounds.PlayOneShot(siren);
     }
 
     public void PlayMachineRumble(){
-        chicken.volume = machineVolume;
-        chicken.PlayOneShot(machine);
+        machineSounds.volume = machineVolume;
+        machineSounds.PlayOneShot(machine);
     }
 }
