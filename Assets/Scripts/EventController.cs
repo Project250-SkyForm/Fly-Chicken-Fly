@@ -165,12 +165,13 @@ public class EventController : MonoBehaviour
 
 private void StartShrinkingBoundaries()
 {
-    float newMaxPosX = Random.Range(17f, 24f); 
-    float newMinPosX = Random.Range(25f, 30f);
+    float newMaxPosX = Random.Range(10f, 15f); 
+    float newMinPosX = Random.Range(14f, 22f);
 
     float control = Random.Range(0, 1);
     if (control > 0.5){
         rightBoundary.MoveBoundary(true, newMinPosX, newMaxPosX); 
+
         newMaxPosX = newMaxPosX + 7f;
         leftBoundary.MoveBoundary(false, -newMaxPosX, -newMinPosX); 
     } else {
