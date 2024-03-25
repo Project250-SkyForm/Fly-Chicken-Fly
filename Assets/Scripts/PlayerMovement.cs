@@ -29,11 +29,15 @@ public class PlayerMovement : MonoBehaviour
     public List<Sprite> tiredWalkingFrames; // List to hold tired walking animation sprites
     public List<Sprite> tiredJumpingFrames; // Holds tired jumping sprites
     public Sprite hurtSprite; // Sprite for the hurt animation
+    public List<Sprite> thunderHurtFrames; // List to hold thunder hurt animation sprites
+    public float thunderHurtFrameRate = 0.1f; // Adjust this value to control thunder hurt animation speed
+    public float thunderHurtDuration = 0.5f; // Duration of thunder hurt animation
 
     private int currentFrame = 0;
     private float frameTimer = 0f;
     private bool isIdle = false;
     private bool isHurt = false;
+    private bool isHurtByThunder = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         if (withPiggyback)
         {
             jump = piggybackJump;
-            
+
         }
         else
         {
@@ -131,9 +135,23 @@ public class PlayerMovement : MonoBehaviour
         // Check if the spriteRenderer is not null
         if (spriteRenderer != null)
         {
-            if (isHurt && hurtSprite != null) // If the player is hurt and a hurt sprite is assigned
+            if (isHurt)
             {
-                spriteRenderer.sprite = hurtSprite; // Display the hurt sprite
+                if (isHurtByThunder && thunderHurtFrames.Count > 0)
+                {
+                    frameTimer += Time.deltaTime;
+
+                    if (frameTimer >= thunderHurtFrameRate)
+                    {
+                        frameTimer = 0f;
+                        currentFrame = (currentFrame + 1) % thunderHurtFrames.Count;
+                        spriteRenderer.sprite = thunderHurtFrames[currentFrame];
+                    }
+                }
+                else if (hurtSprite != null)
+                {
+                    spriteRenderer.sprite = hurtSprite; // Display the regular hurt sprite
+                }
             }
             else if (withPiggyback) // If the player is carrying a baby chicken
             {
@@ -221,18 +239,22 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
         }
 
-        if (other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Spike"))
+        if (other.gameObject.CompareTag("Obstacle"))
         {
-            // Play the hurt animation when colliding with an obstacle
-            if (!isHurt)
-            {
-                isHurt = true;
-                AnimatePlayer(hurtFrameRate);
-                isJumping = false;
-                StartCoroutine(EndHurtAnimation()); // Start the coroutine to end the hurt animation after the specified duration
-            }
+            isHurt = true;
+            isHurtByThunder = false; // Reset the thunder hurt flag
+
+            StartCoroutine(EndHurtAnimation());
+        }
+        else if (other.gameObject.CompareTag("Thunder"))
+        {
+            isHurt = true;
+            isHurtByThunder = true; // Set the thunder hurt flag
+
+            StartCoroutine(EndHurtAnimation());
         }
     }
+
 
     float GetMinXBoundary()
     {
@@ -246,19 +268,9 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator EndHurtAnimation()
     {
-        // Wait for the specified duration before ending the hurt animation
-        yield return new WaitForSeconds(hurtDuration);
+        yield return new WaitForSeconds(thunderHurtDuration);
         isHurt = false;
+        isHurtByThunder = false; // Reset the thunder hurt flag after the hurt animation ends
     }
-
 }
-
-
-
-
-
-
-
-
-
 
