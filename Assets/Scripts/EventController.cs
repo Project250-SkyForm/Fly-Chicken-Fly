@@ -44,6 +44,7 @@ public class EventController : MonoBehaviour
     public BoundaryController leftBoundary;
     public BoundaryController rightBoundary;
     public float cameraGoDownDistance;
+    public GameObject enemyObject;
 
     void Awake(){
         _instance = this;
@@ -209,6 +210,7 @@ private void StartShrinkingBoundaries()
         AudioController.Instance.stopBackgroundMusic();
         AudioController.Instance.PlayGameOverSounds();
         UIController.Instance.SetUIActive(gameOverUI);
+        UIController.Instance.SetUINotActive(enemyObject);
     }
 
     public void PauseGame()
