@@ -10637,6 +10637,7 @@ MonoBehaviour:
   toffOff: {fileID: 935469030}
   tonOff: {fileID: 64333704}
   toffOn: {fileID: 1045207659}
+  tutorial: {fileID: 965603923}
 --- !u!82 &782966350
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11671,7 +11672,7 @@ MonoBehaviour:
         m_MethodName: SetUINotActive
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1045207659}
+          m_ObjectArgument: {fileID: 122703576}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -11680,17 +11681,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 782966349}
         m_MethodName: SetUINotActive
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 64333704}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 782966349}
-        m_MethodName: SetUIActive
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 935469030}
@@ -11704,7 +11694,18 @@ MonoBehaviour:
         m_MethodName: SetUIActive
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 122703576}
+          m_ObjectArgument: {fileID: 1045207659}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 782966349}
+        m_MethodName: SetUIActive
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 64333704}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
