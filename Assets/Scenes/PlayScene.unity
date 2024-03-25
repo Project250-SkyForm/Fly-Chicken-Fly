@@ -4514,6 +4514,7 @@ GameObject:
   - component: {fileID: 279474093}
   - component: {fileID: 279474095}
   - component: {fileID: 279474094}
+  - component: {fileID: 279474096}
   m_Layer: 5
   m_Name: NewScore
   m_TagString: Untagged
@@ -4579,6 +4580,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279474092}
   m_CullTransparentMesh: 0
+--- !u!114 &279474096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279474092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8799223bfa35a504b96d1d3151de23be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newScore: {fileID: 279474092}
+  audioSource: {fileID: 882012973}
 --- !u!1 &296792588
 GameObject:
   m_ObjectHideFlags: 0
@@ -21936,29 +21951,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1688236133}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 782966349}
-        m_MethodName: SetUINotActive
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 279474092}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 882012973}
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1688236133
 MonoBehaviour:
   m_ObjectHideFlags: 0
