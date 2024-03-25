@@ -165,7 +165,7 @@ public class EventController : MonoBehaviour
 
 
 private void StartShrinkingBoundaries()
-{
+{   
     float newMaxPosX = Random.Range(10f, 15f); 
     float newMinPosX = Random.Range(14f, 22f);
 
@@ -204,8 +204,8 @@ private void StartShrinkingBoundaries()
     }
 
     public void EndGame(){
-        DataManager.Instance.UpdateGoldenEgg(egg);
-        DataManager.Instance.UpdateHighestScore((int)altitudeView.score + egg*10,egg,(int)altitudeView.score);
+        //DataManager.Instance.UpdateGoldenEgg(egg);
+        //DataManager.Instance.UpdateHighestScore((int)altitudeView.score + egg*10,egg,(int)altitudeView.score);
         PauseGame();
         AudioController.Instance.stopBackgroundMusic();
         AudioController.Instance.PlayGameOverSounds();
