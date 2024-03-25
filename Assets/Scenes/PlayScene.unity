@@ -11111,7 +11111,7 @@ MonoBehaviour:
   backgroundMusicVolume: 0.6
   goldenEggVolume: 0.1
   rottenEggVolume: 0.2
-  electrocutionVolume: 0.2
+  electrocutionVolume: 0.1
   spikeVolume: 0.01
   grassLandVolume: 0.2
   cloudLandVolume: 0.4
@@ -11124,8 +11124,8 @@ MonoBehaviour:
   ambientSounds:
   - {fileID: 8300000, guid: 453b604b4873b4f919a8d13d4f035857, type: 3}
   backgroundMusicTracks:
-  - {fileID: 8300000, guid: 937b46d2d8bbb42e0b61cc528d52facc, type: 3}
-  - {fileID: 8300000, guid: dc82d3a7fee014de988293aafff67fa4, type: 3}
+  - {fileID: 8300000, guid: 871b0cbcf00e94aa18affabe98119222, type: 3}
+  - {fileID: 8300000, guid: 365795a1b3ef64745af88041d0b9eab2, type: 3}
   gameOverSounds:
   - {fileID: 8300000, guid: 17681ebaa509d43afbc297fb70a06e50, type: 3}
   - {fileID: 8300000, guid: dfac2e57df90849e9ba38b0a970adc17, type: 3}
@@ -11136,7 +11136,7 @@ MonoBehaviour:
   - 0.5
   chickenHitVolumes:
   - 0.6
-  - 0.3
+  - 0.2
 --- !u!114 &782966348
 MonoBehaviour:
   m_ObjectHideFlags: 0
