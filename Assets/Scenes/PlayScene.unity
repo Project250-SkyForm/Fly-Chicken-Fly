@@ -1648,7 +1648,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 882012973}
+      - m_Target: {fileID: 1403126802}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -10744,7 +10744,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 882012973}
+      - m_Target: {fileID: 1133600062}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -11530,7 +11530,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 882012973}
+      - m_Target: {fileID: 1403126802}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -12677,16 +12677,15 @@ MonoBehaviour:
   spike: {fileID: 8300000, guid: 952ed90ea95494db09062fac532a4d62, type: 3}
   machine: {fileID: 8300000, guid: 4755c21eefc3f44898254614370fb6e2, type: 3}
   siren: {fileID: 8300000, guid: 2869af3bfef5e49e7b59f22322003e9a, type: 3}
-  hitVolume: 0.4
   jumpVolume: 0.05
   obstacleFallVolume: 0.003
   barkVolume: 0.015
   backgroundMusicVolume: 0.6
   goldenEggVolume: 0.1
   rottenEggVolume: 0.2
-  electrocutionVolume: 0.2
+  electrocutionVolume: 0.1
   spikeVolume: 0.01
-  grassLandVolume: 0.35
+  grassLandVolume: 0.2
   cloudLandVolume: 0.4
   starsLandVolume: 0.8
   machineVolume: 0.5
@@ -12697,8 +12696,8 @@ MonoBehaviour:
   ambientSounds:
   - {fileID: 8300000, guid: 453b604b4873b4f919a8d13d4f035857, type: 3}
   backgroundMusicTracks:
-  - {fileID: 8300000, guid: 937b46d2d8bbb42e0b61cc528d52facc, type: 3}
-  - {fileID: 8300000, guid: dc82d3a7fee014de988293aafff67fa4, type: 3}
+  - {fileID: 8300000, guid: 871b0cbcf00e94aa18affabe98119222, type: 3}
+  - {fileID: 8300000, guid: 365795a1b3ef64745af88041d0b9eab2, type: 3}
   gameOverSounds:
   - {fileID: 8300000, guid: 17681ebaa509d43afbc297fb70a06e50, type: 3}
   - {fileID: 8300000, guid: dfac2e57df90849e9ba38b0a970adc17, type: 3}
@@ -12707,6 +12706,9 @@ MonoBehaviour:
   - 0.5
   - 0.5
   - 0.5
+  chickenHitVolumes:
+  - 0.6
+  - 0.2
 --- !u!114 &782966348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21691,7 +21693,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 882012973}
+      - m_Target: {fileID: 1133600062}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -22357,7 +22359,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 882012973}
+      - m_Target: {fileID: 1403126802}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:

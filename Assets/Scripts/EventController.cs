@@ -165,7 +165,7 @@ public class EventController : MonoBehaviour
 
 
 private void StartShrinkingBoundaries()
-{
+{   
     float newMaxPosX = Random.Range(10f, 15f); 
     float newMinPosX = Random.Range(14f, 22f);
 

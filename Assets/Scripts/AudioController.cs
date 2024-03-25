@@ -11,10 +11,9 @@ public class AudioController : MonoBehaviour
     // Initialize audio source and audio clips
     public AudioSource chicken, backgroundMusicSource, obstacleSounds, platformSounds, miscSounds, machineSounds;
     public AudioClip chickenJump, chickenGrassLand, chickenCloudLand, chickenStarsLand, obstacleFall, pickEgg, rottenEgg, electrocution, spike, machine, siren;
-    public float hitVolume, jumpVolume, obstacleFallVolume, barkVolume, backgroundMusicVolume, goldenEggVolume, rottenEggVolume, electrocutionVolume, spikeVolume, grassLandVolume, cloudLandVolume, starsLandVolume, machineVolume, sirenVolume;
+    public float jumpVolume, obstacleFallVolume, barkVolume, backgroundMusicVolume, goldenEggVolume, rottenEggVolume, electrocutionVolume, spikeVolume, grassLandVolume, cloudLandVolume, starsLandVolume, machineVolume, sirenVolume;
     public AudioClip[] chickenHits, ambientSounds, backgroundMusicTracks, gameOverSounds;
-    public float[] gameOverVolumes;
-    private int index;
+    public float[] gameOverVolumes, chickenHitVolumes;
 
     void Awake(){
         _instance = this;
@@ -25,8 +24,8 @@ public class AudioController : MonoBehaviour
     // Use the following functions in other scripts to call
     // desired sound effect
     public void PlayChickenHit(){
-        obstacleSounds.volume = hitVolume;
         int randomIndex = Random.Range(0, chickenHits.Length); 
+        obstacleSounds.volume = chickenHitVolumes[randomIndex];
         obstacleSounds.PlayOneShot(chickenHits[randomIndex]);
     }
 
@@ -117,7 +116,15 @@ public class AudioController : MonoBehaviour
 
     // Randomly plays a sound from array of game over sounds
     public void PlayGameOverSounds(){
-        index = Random.Range(0, ambientSounds.Length);
+
+        if (gameOverSounds.Length != gameOverVolumes.Length)
+        {
+            Debug.LogError("Array lengths are not equal. Ensure Game Over Sounds and Game Over Volumes are equal in size");
+            return;
+        }
+
+        //int index = Random.Range(0, gameOverSounds.Length);
+        int index = Random.Range(0, 1);
         backgroundMusicSource.volume = gameOverVolumes[index];
         backgroundMusicSource.PlayOneShot(gameOverSounds[index]);
     }
