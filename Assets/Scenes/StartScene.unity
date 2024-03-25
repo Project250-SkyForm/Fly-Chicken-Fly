@@ -2185,6 +2185,7 @@ MonoBehaviour:
   toffOff: {fileID: 1565053000}
   tonOff: {fileID: 1352091883}
   toffOn: {fileID: 2098607126}
+  tutorial: {fileID: 0}
 --- !u!114 &369169931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4627,7 +4628,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 15
+  m_CharacterLimit: 18
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
@@ -8307,7 +8308,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 15
+  m_CharacterLimit: 18
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:

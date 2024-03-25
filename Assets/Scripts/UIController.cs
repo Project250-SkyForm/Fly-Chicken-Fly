@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     public GameObject toffOff;
     public GameObject tonOff;
     public GameObject toffOn;
+    public GameObject tutorial;
 
 
     //Singleton pattern
@@ -47,6 +48,9 @@ public class UIController : MonoBehaviour
         //tutorial
         if (PlayerPrefs.HasKey("Tutorial")){
             if (PlayerPrefs.GetInt("Tutorial")==0){
+                if(tutorial != null){
+                    SetUINotActive(tutorial);
+                }
                 UIController.Instance.SetUIActive(tonOff);
                 UIController.Instance.SetUIActive(toffOn);
             }else{
@@ -90,12 +94,18 @@ public class UIController : MonoBehaviour
     public void DisableTutorial()
     {
         PlayerPrefs.SetInt("Tutorial",0);
+        if(tutorial != null){
+            SetUINotActive(tutorial);
+        }
     }
 
     // Function to explicitly unmute the audio
     public void EnableTutorial()
     {
         PlayerPrefs.SetInt("Tutorial",1);
+        if(tutorial != null){
+            SetUIActive(tutorial);
+        }
     }
 
 }
