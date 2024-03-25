@@ -13,6 +13,7 @@ public class EnemyMovement : MonoBehaviour
     private float lastPlayerYPosition;
     private float lastPlayerXPosition;
     private float catchUpTimer;
+    public List<Sprite> animationFrames;
 
     void Start()
     {
@@ -80,6 +81,8 @@ void Update()
 
     // Update lastPlayerYPosition for the next frame
     lastPlayerYPosition = playerYPos;
+
+    AnimateEnemy(10f);
 }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -92,6 +95,15 @@ void Update()
                 Destroy(gameObject);
             }
             
+        }
+    }
+
+    private void AnimateEnemy(float currentFrameRate)
+    {
+        if (animationFrames.Count > 0)
+        {
+            int index = (int)(Time.time * currentFrameRate) % animationFrames.Count;
+            GetComponent<SpriteRenderer>().sprite = animationFrames[index];
         }
     }
 }

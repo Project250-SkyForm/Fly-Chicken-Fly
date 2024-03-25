@@ -4156,8 +4156,8 @@ GameObject:
   - component: {fileID: 227263540}
   - component: {fileID: 227263539}
   - component: {fileID: 227263538}
-  - component: {fileID: 227263537}
   - component: {fileID: 227263536}
+  - component: {fileID: 227263537}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
@@ -4182,6 +4182,10 @@ MonoBehaviour:
   maxDistance: 20
   catchUpDelay: 4
   detectionRadius: 15
+  animationFrames:
+  - {fileID: -1825394375793483689, guid: 84319cc0991423d488258413181d78b8, type: 3}
+  - {fileID: -3367120377825276228, guid: 84319cc0991423d488258413181d78b8, type: 3}
+  - {fileID: -542201440521370326, guid: 84319cc0991423d488258413181d78b8, type: 3}
 --- !u!50 &227263537
 Rigidbody2D:
   serializedVersion: 4
@@ -4220,7 +4224,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.31, y: 0.32}
+    oldSize: {x: 6.7734313, y: 9.719999}
     newSize: {x: 0.31, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4267,8 +4271,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -54653985
   m_SortingLayer: 1
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 961901bb00d0d4e4bb51ceb8fbc00748, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 6732295780426311008, guid: 84319cc0991423d488258413181d78b8,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4287,8 +4292,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227263535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.05, y: 1.134, z: 0}
-  m_LocalScale: {x: 5.05789, y: 7.460268, z: 1}
+  m_LocalPosition: {x: -11.506, y: 1.11, z: 0}
+  m_LocalScale: {x: 0.26062378, y: 0.29858848, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
