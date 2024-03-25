@@ -168,9 +168,16 @@ private void StartShrinkingBoundaries()
     float newMaxPosX = Random.Range(17f, 24f); 
     float newMinPosX = Random.Range(25f, 30f);
 
-    rightBoundary.MoveBoundary(true, newMinPosX, newMaxPosX); 
-
-    leftBoundary.MoveBoundary(false, -newMaxPosX, -newMinPosX); 
+    float control = Random.Range(0, 1);
+    if (control > 0.5){
+        rightBoundary.MoveBoundary(true, newMinPosX, newMaxPosX); 
+        newMaxPosX = newMaxPosX + 7f;
+        leftBoundary.MoveBoundary(false, -newMaxPosX, -newMinPosX); 
+    } else {
+        leftBoundary.MoveBoundary(false, -newMinPosX, -newMaxPosX); 
+        newMaxPosX = newMaxPosX - 7f;
+        rightBoundary.MoveBoundary(true, newMaxPosX, newMinPosX); 
+    }
 
     startShrinking = false; 
 }
