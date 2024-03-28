@@ -4664,7 +4664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &227263536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28035,6 +28035,11 @@ MonoBehaviour:
   rottenEggPlatformScale: 9.7
   thunderPlatformScale: 9.7
   babyChickenPlatformScale: 9
+  isGenerating: 1
+  player: {fileID: 1366631708}
+  currentY: 5.77
+  regularPlatformCounter: 0
+  generatingDistance: 10
 --- !u!1 &1688236130
 GameObject:
   m_ObjectHideFlags: 0
